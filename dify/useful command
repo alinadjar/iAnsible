@@ -1,0 +1,14 @@
+# Build the custom Dify API image (run from the repository root)
+Set-Location E:\Work\dify
+docker build -f api/Dockerfile -t langgenius/dify-api:sadgan .
+docker images langgenius/dify-api:sadgan
+
+# Start the project with the Sadgan Compose override
+Set-Location E:\Work\dify\docker
+docker compose -f docker-compose.yaml -f docker-compose.sadgan.yaml up -d
+
+# Check running services
+docker compose -f docker-compose.yaml -f docker-compose.sadgan.yaml ps
+
+# Follow API logs
+docker compose -f docker-compose.yaml -f docker-compose.sadgan.yaml logs -f api

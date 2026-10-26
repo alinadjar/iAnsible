@@ -1,0 +1,17 @@
+services:
+  api:
+    image: langgenius/dify-api:sadgan
+    environment:
+      APP_WEB_URL: http://localhost:3000
+  api_websocket:
+    image: langgenius/dify-api:sadgan
+  worker:
+    image: langgenius/dify-api:sadgan
+  worker_beat:
+    image: langgenius/dify-api:sadgan
+  ssrf_proxy:
+    environment:
+      SSRF_PROXY_ALLOW_PRIVATE_DOMAINS: host.docker.internal
+  db_postgres:
+    ports:
+      - "127.0.0.1:5433:5432"

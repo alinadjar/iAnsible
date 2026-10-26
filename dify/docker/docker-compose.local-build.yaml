@@ -1,0 +1,31 @@
+# Overlay for locally built dify-api / dify-web images.
+#
+# Build first (all or selected targets):
+#   ./docker/build-images.sh           # api + web
+#   ./docker/build-images.sh api       # api only
+#   ./docker/build-images.sh web       # web only
+#
+# Deploy:
+#   cd docker
+#   docker compose -f docker-compose.yaml -f docker-compose.local-build.yaml \
+#     --env-file .build-tag.env up -d --force-recreate api api_websocket worker worker_beat web
+#
+# Per-service tags are written to .build-tag.env by build-images.sh.
+# Partial builds preserve the previous tag for services that were not rebuilt.
+
+services:
+  api:
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG:?Run ./docker/build-images.sh api first}
+
+  api_websocket:
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG}
+
+  worker:
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG}
+
+  worker_beat:
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG}
+
+  web:
+    image: ${DIFY_WEB_IMAGE:-langgenius/dify-web}:${DIFY_WEB_IMAGE_TAG:?Run ./docker/build-images.sh web first, or ./docker/build-images.sh api to seed upstream web tag}
+
