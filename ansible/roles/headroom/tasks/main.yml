@@ -1,0 +1,17 @@
+---
+# Headroom has no compose file in this monorepo yet — placeholder for a systemd + venv install.
+- name: Ensure Headroom deploy directory exists
+  when: headroom_enabled
+  ansible.builtin.file:
+    path: "{{ headroom_deploy_path }}"
+    state: directory
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0755"
+
+- name: Headroom deployment placeholder
+  when: headroom_enabled
+  ansible.builtin.debug:
+    msg: >-
+      Add headroom-ai package source and a systemd unit here.
+      Point Dify/ERP OTLP or proxy settings to {{ platform_integration.headroom_public_url }}.

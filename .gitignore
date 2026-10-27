@@ -1,0 +1,38 @@
+# =============================================================================
+# Sadgan platform monorepo — deployment & local secrets
+# Prefer Ansible Vault (ansible/inventory/.../vault.yml) over committed .env
+# =============================================================================
+
+# ERP runtime config (rendered on servers from ansible/roles/erp/templates/)
+# erp/.env
+
+# Ansible secrets and local artifacts
+ansible/inventory/**/vault.yml
+ansible/inventory/**/vault.yaml
+ansible/**/*.retry
+ansible/collections/
+.ansible/
+vault_password.txt
+*.vault_pass
+
+# Stack env files (examples stay tracked; see dify/docker/.gitignore, superset/.gitignore)
+# superset/docker/.env
+# superset/docker/.env-local
+# langfuse/.env
+
+# Headroom — local virtualenvs only (not application source)
+headroom-ai/venv/
+headroom-ai/venv-*/
+
+# OS & editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs & scratch
+*.log
+.cache/

@@ -1,0 +1,8 @@
+flowchart TD
+  A[gather_facts] --> B[role: common]
+  B --> C{superset_enabled?}
+  C -->|yes| D[role: superset]
+  D --> D1[stack_deploy: sync only]
+  D1 --> D2[Ensure superset/docker directory]
+  D2 --> D3[template superset.env.j2 to docker/.env]
+  D3 --> D4[stack_deploy: compose up pull_images=false]

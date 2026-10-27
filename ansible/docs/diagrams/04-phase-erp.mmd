@@ -1,0 +1,11 @@
+flowchart TD
+  A[gather_facts] --> B[role: common]
+  B --> C{erp_enabled?}
+  C -->|no| SKIP[Skip erp role]
+  C -->|yes| D[role: erp]
+
+  D --> D1[docker_resources: external networks and volumes]
+  D1 --> D2[stack_deploy: sync only stack_skip_compose]
+  D2 --> D3[template erp.env.j2 to deploy_path/.env]
+  D3 --> D4[stack_deploy: compose only stack_skip_sync]
+  D4 --> D5[pull images + docker compose up]

@@ -1,0 +1,38 @@
+---
+- name: Prepare ERP Docker networks and volumes
+  ansible.builtin.include_role:
+    name: docker_resources
+  vars:
+    docker_external_networks: "{{ erp_external_networks }}"
+    docker_external_volumes: "{{ erp_external_volumes }}"
+
+- name: Sync ERP stack files
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ erp_deploy_path }}"
+    stack_subpath: "{{ erp_stack_subpath }}"
+    stack_compose_project_name: "{{ erp_compose_project_name }}"
+    stack_compose_files:
+      - "{{ erp_compose_file }}"
+    stack_skip_compose: true
+
+- name: Render ERP environment file
+  ansible.builtin.template:
+    src: "{{ erp_env_template }}"
+    dest: "{{ erp_deploy_path }}/.env"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0600"
+  no_log: true
+
+- name: Apply ERP Docker Compose stack
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ erp_deploy_path }}"
+    stack_subpath: "{{ erp_stack_subpath }}"
+    stack_compose_project_name: "{{ erp_compose_project_name }}"
+    stack_compose_files:
+      - "{{ erp_compose_file }}"
+    stack_skip_sync: true

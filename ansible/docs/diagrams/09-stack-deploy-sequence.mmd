@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant App as erp / dify / superset / langfuse role
+  participant SD as stack_deploy
+  participant Host as Target host Docker
+
+  App->>SD: include (sync phase)
+  SD->>Host: mkdir, rsync or git copy
+  App->>Host: template .env and extra files
+  App->>SD: include (compose phase)
+  SD->>Host: docker compose pull
+  SD->>Host: docker compose up

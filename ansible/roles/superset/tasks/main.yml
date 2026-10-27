@@ -1,0 +1,40 @@
+---
+- name: Sync Superset stack files
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ superset_deploy_path }}"
+    stack_subpath: "{{ superset_stack_subpath }}"
+    stack_compose_project_name: "{{ superset_compose_project_name }}"
+    stack_compose_files:
+      - "{{ superset_compose_file }}"
+    stack_skip_compose: true
+
+- name: Ensure Superset docker env directory exists
+  ansible.builtin.file:
+    path: "{{ superset_deploy_path }}/docker"
+    state: directory
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0755"
+
+- name: Render Superset docker environment file
+  ansible.builtin.template:
+    src: "{{ superset_env_template }}"
+    dest: "{{ superset_deploy_path }}/docker/.env"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0600"
+  no_log: true
+
+- name: Apply Superset Docker Compose stack
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ superset_deploy_path }}"
+    stack_subpath: "{{ superset_stack_subpath }}"
+    stack_compose_project_name: "{{ superset_compose_project_name }}"
+    stack_compose_files:
+      - "{{ superset_compose_file }}"
+    stack_skip_sync: true
+    stack_compose_pull_images: false

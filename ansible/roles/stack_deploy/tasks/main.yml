@@ -1,0 +1,87 @@
+---
+- name: Ensure stack deploy directory exists
+  ansible.builtin.file:
+    path: "{{ stack_deploy_path }}"
+    state: directory
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0755"
+  when: not (stack_skip_sync | default(false))
+
+- name: Clone or update monorepo on target (git source)
+  ansible.builtin.git:
+    repo: "{{ stack_git_url }}"
+    dest: "{{ stack_git_dest | default(stack_deploy_path + '/repo') }}"
+    version: "{{ stack_git_version }}"
+    force: false
+    update: true
+  become_user: "{{ deploy_user }}"
+  when:
+    - stack_source == "git"
+    - not (stack_skip_sync | default(false))
+
+- name: Set stack content path for git source
+  ansible.builtin.set_fact:
+    stack_content_src: "{{ stack_git_dest | default(stack_deploy_path + '/repo') }}/{{ stack_subpath }}"
+  when:
+    - stack_source == "git"
+    - not (stack_skip_sync | default(false))
+
+- name: Copy stack from cloned monorepo (git source)
+  ansible.builtin.copy:
+    src: "{{ stack_content_src }}/"
+    dest: "{{ stack_deploy_path }}/"
+    remote_src: true
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: preserve
+  when:
+    - stack_source == "git"
+    - not (stack_skip_sync | default(false))
+
+- name: Set stack content path for local source
+  ansible.builtin.set_fact:
+    stack_content_src: "{{ repo_root }}/{{ stack_subpath }}"
+  when: stack_source == "local"
+
+- name: Sync stack files to deploy path (local source)
+  ansible.posix.synchronize:
+    src: "{{ stack_content_src }}/"
+    dest: "{{ deploy_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ stack_deploy_path }}/"
+    delete: true
+    rsync_opts:
+      - "--exclude=.env"
+      - "--exclude=docker/.env"
+      - "--exclude=.git"
+      - "--exclude=venv"
+      - "--exclude=venv-313"
+      - "--exclude=node_modules"
+  delegate_to: localhost
+  when:
+    - stack_source == "local"
+    - not (stack_skip_sync | default(false))
+
+- name: Pull container images
+  community.docker.docker_compose_v2:
+    project_src: "{{ stack_deploy_path }}"
+    project_name: "{{ stack_compose_project_name }}"
+    files: "{{ stack_compose_files }}"
+    pull: always
+    state: present
+  become_user: "{{ deploy_user }}"
+  register: stack_compose_pull
+  when:
+    - not (stack_skip_compose | default(false))
+    - stack_compose_pull_images | default(true)
+
+- name: Apply Docker Compose stack
+  community.docker.docker_compose_v2:
+    project_src: "{{ stack_deploy_path }}"
+    project_name: "{{ stack_compose_project_name }}"
+    files: "{{ stack_compose_files }}"
+    state: present
+    recreate: "{{ stack_compose_recreate | default('auto') }}"
+    remove_orphans: true
+  become_user: "{{ deploy_user }}"
+  register: stack_compose_up
+  when: not (stack_skip_compose | default(false))

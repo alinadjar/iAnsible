@@ -1,0 +1,10 @@
+---
+- name: Deploy Dify stack
+  hosts: dify
+  gather_facts: true
+  roles:
+    - role: common
+      tags: [common, bootstrap]
+    - role: dify
+      tags: [dify]
+      when: dify_enabled | default(true)

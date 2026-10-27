@@ -1,0 +1,12 @@
+flowchart LR
+  subgraph inv["inventory/production/hosts.yml"]
+    platform[platform]
+    erp[erp]
+    dify[dify]
+    superset[superset]
+    obs[observability]
+    platform --> erp
+    platform --> dify
+    platform --> superset
+    platform --> obs
+  end

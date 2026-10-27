@@ -1,0 +1,10 @@
+---
+- name: Deploy Superset stack
+  hosts: superset
+  gather_facts: true
+  roles:
+    - role: common
+      tags: [common, bootstrap]
+    - role: superset
+      tags: [superset]
+      when: superset_enabled | default(true)

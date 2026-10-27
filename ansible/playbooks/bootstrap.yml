@@ -1,0 +1,6 @@
+---
+- name: Bootstrap Docker hosts
+  hosts: platform
+  gather_facts: true
+  roles:
+    - common

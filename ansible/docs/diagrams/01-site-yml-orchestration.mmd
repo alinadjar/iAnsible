@@ -1,0 +1,19 @@
+flowchart TD
+  START([ansible-playbook playbooks/site.yml]) --> P1
+
+  subgraph site_yml["site.yml (import order)"]
+    P1[bootstrap.yml]
+    P2[deploy-erp.yml]
+    P3[deploy-dify.yml]
+    P4[deploy-superset.yml]
+    P5[deploy-observability.yml]
+    P1 --> P2 --> P3 --> P4 --> P5
+  end
+
+  P5 --> END([Run complete])
+
+  P1 -.-> H_ALL[(hosts: platform)]
+  P2 -.-> H_ERP[(hosts: erp)]
+  P3 -.-> H_DIFY[(hosts: dify)]
+  P4 -.-> H_SS[(hosts: superset)]
+  P5 -.-> H_OBS[(hosts: observability)]

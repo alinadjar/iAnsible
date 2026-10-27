@@ -1,0 +1,11 @@
+---
+- name: Deploy Langfuse and Headroom (phase 2)
+  hosts: observability
+  gather_facts: true
+  roles:
+    - role: common
+      tags: [common, bootstrap]
+    - role: langfuse
+      tags: [langfuse]
+    - role: headroom
+      tags: [headroom]

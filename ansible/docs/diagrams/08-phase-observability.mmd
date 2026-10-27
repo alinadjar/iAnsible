@@ -1,0 +1,8 @@
+flowchart TD
+  A[gather_facts] --> B[role: common]
+  B --> C{langfuse_enabled?}
+  C -->|yes| L1[langfuse: sync + copy compose origin + .env + compose up]
+  C -->|no| L0[langfuse tasks skipped]
+  B --> D{headroom_enabled?}
+  D -->|yes| H1[headroom: create dir + debug placeholder]
+  D -->|no| H0[headroom tasks skipped]

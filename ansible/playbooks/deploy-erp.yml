@@ -1,0 +1,10 @@
+---
+- name: Deploy Sadgan ERP stack
+  hosts: erp
+  gather_facts: true
+  roles:
+    - role: common
+      tags: [common, bootstrap]
+    - role: erp
+      tags: [erp]
+      when: erp_enabled | default(true)

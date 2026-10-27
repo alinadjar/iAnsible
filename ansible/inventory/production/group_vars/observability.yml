@@ -1,0 +1,14 @@
+---
+# Phase 2 — Langfuse + Headroom (optional hosts in observability group).
+
+langfuse_enabled: false
+langfuse_deploy_path: /opt/sadgan/langfuse
+langfuse_compose_project_name: langfuse
+langfuse_stack_subpath: langfuse
+langfuse_compose_file: docker-compose.yml
+langfuse_compose_origin_file: docker-compose.yml.origin
+langfuse_env_template: langfuse.env.j2
+
+headroom_enabled: false
+headroom_deploy_path: /opt/sadgan/headroom
+headroom_service_port: 8080

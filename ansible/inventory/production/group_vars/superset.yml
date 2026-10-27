@@ -1,0 +1,15 @@
+---
+superset_enabled: true
+superset_deploy_path: /opt/sadgan/superset
+superset_compose_project_name: superset
+
+superset_stack_subpath: superset
+superset_compose_file: docker-compose-non-dev.yml
+
+# Connect Superset to ERP Postgres BI user (read replica / HAProxy read port).
+superset_erp_sqlalchemy_uri: >-
+  postgresql+psycopg2://{{ vault_erp_pg_bi_user }}:{{ vault_erp_pg_bi_password }}@
+  {{ erp_pg_bi_host | default(hostvars[groups['erp'] | first]['ansible_host']) }}:
+  {{ erp_pg_bi_port | default(5401) }}/{{ vault_erp_postgres_db }}
+
+superset_env_template: superset.env.j2

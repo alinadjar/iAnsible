@@ -1,0 +1,19 @@
+---
+dify_enabled: true
+dify_deploy_path: /opt/sadgan/dify
+dify_compose_project_name: dify
+
+dify_stack_subpath: dify/docker
+dify_compose_files:
+  - docker-compose.yaml
+dify_compose_overlays:
+  - docker-compose.sadgan.yaml
+
+# URLs exposed to browsers and to ERP when calling Dify API.
+dify_console_url: "{{ platform_integration.dify_public_url }}"
+dify_app_web_url: "{{ platform_integration.dify_public_url }}"
+
+# Allow ERP (and other app servers) to reach Dify when Dify runs on another host.
+dify_ssrf_allow_private_domains: "{{ groups['erp'] | map('extract', hostvars, 'ansible_host') | list | join(',') }}"
+
+dify_env_template: dify.env.j2

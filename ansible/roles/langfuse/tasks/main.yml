@@ -1,0 +1,46 @@
+---
+- name: Sync Langfuse stack files
+  when: langfuse_enabled
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ langfuse_deploy_path }}"
+    stack_subpath: "{{ langfuse_stack_subpath }}"
+    stack_compose_project_name: "{{ langfuse_compose_project_name }}"
+    stack_compose_files:
+      - "{{ langfuse_compose_file }}"
+    stack_skip_compose: true
+
+- name: Install Langfuse compose file from upstream origin
+  ansible.builtin.copy:
+    src: "{{ langfuse_deploy_path }}/{{ langfuse_compose_origin_file }}"
+    dest: "{{ langfuse_deploy_path }}/{{ langfuse_compose_file }}"
+    remote_src: true
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
+  when:
+    - langfuse_enabled
+    - langfuse_compose_origin_file | length > 0
+
+- name: Render Langfuse environment file
+  when: langfuse_enabled
+  ansible.builtin.template:
+    src: "{{ langfuse_env_template }}"
+    dest: "{{ langfuse_deploy_path }}/.env"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0600"
+  no_log: true
+
+- name: Apply Langfuse Docker Compose stack
+  when: langfuse_enabled
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ langfuse_deploy_path }}"
+    stack_subpath: "{{ langfuse_stack_subpath }}"
+    stack_compose_project_name: "{{ langfuse_compose_project_name }}"
+    stack_compose_files:
+      - "{{ langfuse_compose_file }}"
+    stack_skip_sync: true

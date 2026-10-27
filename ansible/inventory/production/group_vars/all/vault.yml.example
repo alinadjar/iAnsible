@@ -1,0 +1,19 @@
+---
+# Copy to vault.yml and encrypt: ansible-vault encrypt inventory/production/group_vars/all/vault.yml
+# Never commit real vault.yml.
+
+vault_erp_postgres_password: "CHANGE_ME"
+vault_erp_postgres_ro_password: "CHANGE_ME"
+vault_erp_postgres_bi_password: "CHANGE_ME"
+vault_erp_redis_password: "CHANGE_ME"
+vault_erp_pg_bi_user: ro
+vault_erp_postgres_db: SADGAN
+
+vault_dify_secret_key: "CHANGE_ME"
+vault_dify_db_password: "CHANGE_ME"
+
+vault_superset_secret_key: "CHANGE_ME"
+vault_superset_admin_password: "CHANGE_ME"
+
+vault_langfuse_salt: "CHANGE_ME"
+vault_langfuse_encryption_key: "CHANGE_ME"

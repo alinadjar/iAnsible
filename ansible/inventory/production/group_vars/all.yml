@@ -1,0 +1,33 @@
+---
+# Monorepo location on the Ansible control node (this workspace).
+repo_root: "{{ playbook_dir }}/../.."
+
+# How stack files reach targets: local (rsync from control) or git (clone on target).
+stack_source: local
+stack_git_url: "" # e.g. git@github.com:org/ansibleeeeeeeeeeee.git
+stack_git_version: main
+
+deploy_user: deploy
+deploy_group: deploy
+
+docker_packages_state: present
+docker_users:
+  - "{{ deploy_user }}"
+
+# Private registries used by ERP / internal images.
+docker_registries: []
+#  - registry_url: nexus.sadgan.int
+#    username: "{{ vault_nexus_user }}"
+#    password: "{{ vault_nexus_password }}"
+
+# Public URLs used for cross-service configuration (ERP ↔ Dify ↔ Superset).
+platform_integration:
+  erp_public_api_url: "https://alpha.api.fx.sadgan.int"
+  erp_public_app_url: "https://alpha.fx.sadgan.int"
+  dify_public_url: "https://dify.example.int"
+  dify_internal_api_url: "http://dify-01:80"
+  superset_public_url: "https://superset.example.int"
+  langfuse_public_url: ""
+  headroom_public_url: ""
+
+timezone: Asia/Tehran

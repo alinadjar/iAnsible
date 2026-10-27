@@ -1,0 +1,6 @@
+flowchart TD
+  S1[Ensure erp_deploy_path exists] --> S2{stack_source}
+  S2 -->|local| S3[rsync from control node repo_root/erp]
+  S2 -->|git| S4[git clone on target + copy subpath]
+  S3 --> S5[Excludes .env from sync]
+  S4 --> S5

@@ -1,0 +1,7 @@
+flowchart TD
+  A[gather_facts] --> B[role: common]
+  B --> B1[Create deploy user and group]
+  B1 --> B2[Install Docker Engine + Compose plugin]
+  B2 --> B3[Start and enable docker service]
+  B3 --> B4[Set timezone from group_vars]
+  B4 --> B5[docker_login for private registries if configured]

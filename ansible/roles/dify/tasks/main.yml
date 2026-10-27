@@ -1,0 +1,49 @@
+---
+- name: Build Dify compose file list
+  ansible.builtin.set_fact:
+    dify_compose_file_list: "{{ dify_compose_files + (dify_compose_overlays | default([])) }}"
+
+- name: Sync Dify stack files
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ dify_deploy_path }}"
+    stack_subpath: "{{ dify_stack_subpath }}"
+    stack_compose_project_name: "{{ dify_compose_project_name }}"
+    stack_compose_files: "{{ dify_compose_file_list }}"
+    stack_skip_compose: true
+
+- name: Render Dify environment file
+  ansible.builtin.template:
+    src: "{{ dify_env_template }}"
+    dest: "{{ dify_deploy_path }}/.env"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0600"
+  no_log: true
+
+- name: Ensure Dify env directory exists
+  ansible.builtin.file:
+    path: "{{ dify_deploy_path }}/envs/core-services"
+    state: directory
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0755"
+
+- name: Render Dify Sadgan overlay env
+  ansible.builtin.template:
+    src: dify-overlay.env.j2
+    dest: "{{ dify_deploy_path }}/envs/core-services/shared.env"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
+
+- name: Apply Dify Docker Compose stack
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ dify_deploy_path }}"
+    stack_subpath: "{{ dify_stack_subpath }}"
+    stack_compose_project_name: "{{ dify_compose_project_name }}"
+    stack_compose_files: "{{ dify_compose_file_list }}"
+    stack_skip_sync: true

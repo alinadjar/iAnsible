@@ -1,0 +1,15 @@
+---
+- name: Bootstrap all platform hosts
+  ansible.builtin.import_playbook: bootstrap.yml
+
+- name: Deploy ERP
+  ansible.builtin.import_playbook: deploy-erp.yml
+
+- name: Deploy Dify
+  ansible.builtin.import_playbook: deploy-dify.yml
+
+- name: Deploy Superset
+  ansible.builtin.import_playbook: deploy-superset.yml
+
+- name: Deploy observability (optional)
+  ansible.builtin.import_playbook: deploy-observability.yml

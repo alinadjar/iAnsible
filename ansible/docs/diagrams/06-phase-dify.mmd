@@ -1,0 +1,9 @@
+flowchart TD
+  A[gather_facts] --> B[role: common]
+  B --> C{dify_enabled?}
+  C -->|yes| D[role: dify]
+  D --> D1[Build compose file list: docker-compose.yaml + sadgan overlay]
+  D1 --> D2[stack_deploy: sync only]
+  D2 --> D3[template dify.env.j2 to .env]
+  D3 --> D4[template dify-overlay.env.j2 to envs/core-services/shared.env]
+  D4 --> D5[stack_deploy: pull + compose up]

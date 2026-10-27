@@ -1,0 +1,28 @@
+---
+erp_enabled: true
+erp_deploy_path: /opt/sadgan/erp
+erp_compose_project_name: fx_alpha
+
+# Paths inside the monorepo (relative to repo root).
+erp_stack_subpath: erp
+erp_compose_file: compose.yaml
+
+erp_external_networks:
+  - net_fx_alpha
+  - redis_insight
+
+erp_external_volumes:
+  - pg-csv-exports-alpha
+
+# Rendered on the server; do not copy erp/.env from the repo (contains secrets).
+erp_env_template: erp.env.j2
+
+erp_registry_url: nexus.sadgan.int
+erp_version: v1.20.0-alpha.2
+
+erp_nginx_port_front: 7076
+erp_nginx_port_back: 5056
+
+# Superset / BI read-only access to ERP Postgres (via HAProxy read port on ERP host).
+erp_pg_bi_host: "{{ hostvars[groups['erp'] | first]['ansible_host'] }}"
+erp_pg_bi_port: 5401

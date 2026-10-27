@@ -1,0 +1,10 @@
+flowchart LR
+  Users[Users / browsers] --> ERP_FE[ERP nginx front]
+  Users --> DIFY_UI[Dify web URL]
+  Users --> SS_UI[Superset :8088]
+
+  ERP_BE[ERP backend] -->|HTTPS Service API| DIFY_API[Dify public API]
+  SS_UI -->|SQL BI user TCP 5401| ERP_PG[ERP HAProxy read pool]
+
+  DIFY_API -.->|optional phase 2| LF[Langfuse]
+  ERP_BE -.->|optional phase 2| LF

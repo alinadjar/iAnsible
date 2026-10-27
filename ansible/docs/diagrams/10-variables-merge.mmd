@@ -1,0 +1,6 @@
+flowchart LR
+  V1[all.yml] --> MERGE[Merged vars per host]
+  V2[erp.yml / dify.yml / ...] --> MERGE
+  V3[vault.yml] --> MERGE
+  MERGE --> TPL[Jinja templates erp.env.j2 / dify.env.j2 / ...]
+  TPL --> ENV[On-server .env files]
