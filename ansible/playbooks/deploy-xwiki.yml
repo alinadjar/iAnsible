@@ -1,0 +1,10 @@
+---
+- name: Deploy XWiki stack
+  hosts: xwiki
+  gather_facts: true
+  roles:
+    - role: common
+      tags: [common, bootstrap]
+    - role: xwiki
+      tags: [xwiki]
+      when: xwiki_enabled | default(true)

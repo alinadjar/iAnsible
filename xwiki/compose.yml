@@ -3,38 +3,39 @@ networks:
     driver: bridge
 services:
   web:
-    image: nexus.sadgan.int/xwiki:18.8.0-postgres-tomcat-202610271445
-    #image: nexus.sadgan.int/xwiki:18.8.0-postgres-tomcat-202610271039
+    image: ${XWIKI_IMAGE}
     container_name: xwiki-postgres-tomcat-web
     init: true
     depends_on:
       - db
     ports:
-      - "8080:8080"
+      - "${XWIKI_HTTP_PORT}:8080"
     environment:
-      - XWIKI_VERSION=18.8.0
-      - DB_USER=xwiki
-      - DB_PASSWORD=xwiki
-      - DB_DATABASE=xwiki
+      - XWIKI_VERSION=${XWIKI_VERSION}
+      - DB_USER=${XWIKI_DB_USER}
+      - DB_PASSWORD=${XWIKI_DB_PASSWORD}
+      - DB_DATABASE=${XWIKI_DB_DATABASE}
       - DB_HOST=xwiki-postgres-db
     volumes:
       - xwiki-data:/usr/local/xwiki
     networks:
       - bridge
+    restart: unless-stopped
   db:
-    image: postgres:latest
+    image: ${XWIKI_POSTGRES_IMAGE}
     container_name: xwiki-postgres-db
     volumes:
       - postgres-data:/var/lib/postgresql
     environment:
-      - POSTGRES_PASSWORD=xwiki
-      - POSTGRES_USER=xwiki
-      - POSTGRES_DB=xwiki
+      - POSTGRES_PASSWORD=${XWIKI_DB_PASSWORD}
+      - POSTGRES_USER=${XWIKI_DB_USER}
+      - POSTGRES_DB=${XWIKI_DB_DATABASE}
       - POSTGRES_INITDB_ARGS=--encoding=UTF8 --locale-provider=builtin --locale=C.UTF-8
     networks:
       - bridge
     ports:
-      - "5433:5432"
+      - "${XWIKI_POSTGRES_HOST_PORT}:5432"
+    restart: unless-stopped
 volumes:
   postgres-data: {}
   xwiki-data: {}

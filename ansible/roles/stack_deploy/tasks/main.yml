@@ -49,13 +49,7 @@
     src: "{{ stack_content_src }}/"
     dest: "{{ deploy_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ stack_deploy_path }}/"
     delete: true
-    rsync_opts:
-      - "--exclude=.env"
-      - "--exclude=docker/.env"
-      - "--exclude=.git"
-      - "--exclude=venv"
-      - "--exclude=venv-313"
-      - "--exclude=node_modules"
+    rsync_opts: "{{ stack_rsync_opts | default([]) + ['--exclude=.env', '--exclude=docker/.env', '--exclude=.git', '--exclude=venv', '--exclude=venv-313', '--exclude=node_modules'] }}"
   delegate_to: localhost
   when:
     - stack_source == "local"

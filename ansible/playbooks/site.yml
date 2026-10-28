@@ -11,5 +11,8 @@
 - name: Deploy Superset
   ansible.builtin.import_playbook: deploy-superset.yml
 
+- name: Deploy XWiki
+  ansible.builtin.import_playbook: deploy-xwiki.yml
+
 - name: Deploy observability (optional)
   ansible.builtin.import_playbook: deploy-observability.yml

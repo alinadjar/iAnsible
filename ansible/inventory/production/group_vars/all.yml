@@ -27,6 +27,7 @@ platform_integration:
   dify_public_url: "https://dify.example.int"
   dify_internal_api_url: "http://dify-01:80"
   superset_public_url: "https://superset.example.int"
+  xwiki_public_url: "http://xwiki.example.int:8080"
   langfuse_public_url: ""
   headroom_public_url: ""
 

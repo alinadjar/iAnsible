@@ -11,6 +11,7 @@ Deploy **ERP**, **Dify**, and **Superset** from this monorepo with **one host pe
 | `erp`             | `deploy-erp.yml`         | `erp/`          | `/opt/sadgan/erp`     |
 | `dify`            | `deploy-dify.yml`        | `dify/docker/`  | `/opt/sadgan/dify`    |
 | `superset`        | `deploy-superset.yml`    | `superset/`     | `/opt/sadgan/superset`|
+| `xwiki`           | `deploy-xwiki.yml`       | `xwiki/`        | `/opt/sadgan/xwiki`   |
 | `observability`   | `deploy-observability.yml` | `langfuse/`   | phase 2               |
 
 Cross-service URLs live in `inventory/production/group_vars/all.yml` under `platform_integration`.
@@ -32,6 +33,7 @@ vim inventory/production/group_vars/all.yml
 ansible-playbook playbooks/deploy-erp.yml --ask-vault-pass
 ansible-playbook playbooks/deploy-dify.yml --ask-vault-pass
 ansible-playbook playbooks/deploy-superset.yml --ask-vault-pass
+ansible-playbook playbooks/deploy-xwiki.yml --ask-vault-pass
 ```
 
 Or everything:

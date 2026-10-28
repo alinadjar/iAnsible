@@ -1,0 +1,32 @@
+---
+- name: Sync XWiki stack files
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ xwiki_deploy_path }}"
+    stack_subpath: "{{ xwiki_stack_subpath }}"
+    stack_compose_project_name: "{{ xwiki_compose_project_name }}"
+    stack_compose_files:
+      - "{{ xwiki_compose_file }}"
+    stack_skip_compose: true
+    stack_rsync_opts: "{{ (xwiki_rsync_extra_opts | default([])) if not (xwiki_sync_lib | default(false)) else [] }}"
+
+- name: Render XWiki environment file
+  ansible.builtin.template:
+    src: "{{ xwiki_env_template }}"
+    dest: "{{ xwiki_deploy_path }}/.env"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0600"
+  no_log: true
+
+- name: Apply XWiki Docker Compose stack
+  ansible.builtin.include_role:
+    name: stack_deploy
+  vars:
+    stack_deploy_path: "{{ xwiki_deploy_path }}"
+    stack_subpath: "{{ xwiki_stack_subpath }}"
+    stack_compose_project_name: "{{ xwiki_compose_project_name }}"
+    stack_compose_files:
+      - "{{ xwiki_compose_file }}"
+    stack_skip_sync: true

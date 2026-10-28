@@ -19,6 +19,7 @@ vault_password.txt
 # superset/docker/.env
 # superset/docker/.env-local
 # langfuse/.env
+xwiki/.env
 
 # Headroom — local virtualenvs only (not application source)
 headroom-ai/venv/

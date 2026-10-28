@@ -1,0 +1,23 @@
+---
+xwiki_enabled: true
+xwiki_deploy_path: /opt/sadgan/xwiki
+xwiki_compose_project_name: xwiki
+xwiki_stack_subpath: xwiki
+xwiki_compose_file: compose.yml
+
+xwiki_image: nexus.sadgan.int/xwiki:18.8.0-postgres-tomcat-202610271445
+xwiki_version: "18.8.0"
+xwiki_postgres_image: postgres:latest
+
+xwiki_http_port: 8080
+xwiki_postgres_host_port: 5433
+
+xwiki_db_user: xwiki
+xwiki_db_database: xwiki
+
+# Bundled extension metadata under xwiki/lib/ is not mounted by compose; skip on sync.
+xwiki_sync_lib: false
+xwiki_rsync_extra_opts:
+  - "--exclude=lib"
+
+xwiki_env_template: xwiki.env.j2

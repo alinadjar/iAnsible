@@ -330,6 +330,7 @@ flowchart LR
 | `deploy-erp.yml` | `erp` | `common`, `erp` |
 | `deploy-dify.yml` | `dify` | `common`, `dify` |
 | `deploy-superset.yml` | `superset` | `common`, `superset` |
+| `deploy-xwiki.yml` | `xwiki` | `common`, `xwiki` |
 | `deploy-observability.yml` | `observability` | `common`, `langfuse`, `headroom` |
 
 Role task entry points:
@@ -337,6 +338,7 @@ Role task entry points:
 - `roles/erp/tasks/main.yml`
 - `roles/dify/tasks/main.yml`
 - `roles/superset/tasks/main.yml`
+- `roles/xwiki/tasks/main.yml`
 - `roles/langfuse/tasks/main.yml`
 - `roles/headroom/tasks/main.yml`
 - `roles/stack_deploy/tasks/main.yml`
