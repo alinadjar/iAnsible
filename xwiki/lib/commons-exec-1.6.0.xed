@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.commons:commons-exec</id>
+    <version>1.6.0</version>
+    <type>jar</type>
+    <name>Apache Commons Exec</name>
+    <summary>Apache Commons Exec is a library that reliably executes external processes from within the JVM.</summary>
+    <website>https://commons.apache.org/proper/commons-exec/</website>
+    <authors>
+        <author>
+            <name>Brett Porter</name>
+        </author>
+        <author>
+            <name>Trygve Laugstøl</name>
+        </author>
+        <author>
+            <name>Siegfried Goeschl</name>
+        </author>
+        <author>
+            <name>Sebastian Bazley</name>
+        </author>
+        <author>
+            <name>Gary Gregory</name>
+            <url>https://www.garygregory.com</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitbox.apache.org/repos/asf/commons-exec</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/commons-exec</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/commons-exec</path>
+        </developerconnection>
+        <tag>https://gitbox.apache.org/repos/asf/commons-exec</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://issues.apache.org/jira/browse/EXEC</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.junit-pioneer:junit-pioneer</id>
+            <version>1.9.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-bom</id>
+            <version>4.11.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-api</id>
+            <version>5.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-engine</id>
+            <version>5.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-migrationsupport</id>
+            <version>5.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-params</id>
+            <version>5.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-commons</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-console</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-engine</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-jfr</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-launcher</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-reporting</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-runner</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-api</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-commons</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-engine</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-testkit</id>
+            <version>1.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.vintage:junit-vintage-engine</id>
+            <version>5.14.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.commons</maven.groupid>
+        <maven.artifactid>commons-exec</maven.artifactid>
+    </properties>
+</extension>

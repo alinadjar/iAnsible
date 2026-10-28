@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>aopalliance:aopalliance</id>
+    <version>1.0</version>
+    <type>jar</type>
+    <name>AOP alliance</name>
+    <summary>AOP Alliance</summary>
+    <website>http://aopalliance.sourceforge.net</website>
+    <extensionfeatures>
+        <feature>
+            <feature>org.glassfish.hk2.external:aopalliance-repackaged</feature>
+            <version>1.0</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>org.glassfish.hk2.external:aopalliance-repackaged</feature>
+    </features>
+    <licenses>
+        <license>
+            <name>Public Domain</name>
+        </license>
+    </licenses>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>aopalliance</maven.groupid>
+        <maven.artifactid>aopalliance</maven.artifactid>
+    </properties>
+</extension>

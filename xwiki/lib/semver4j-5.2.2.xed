@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.semver4j:semver4j</id>
+    <version>5.2.2</version>
+    <type>jar</type>
+    <name>semver4j</name>
+    <summary>Semantic versioning for Java apps.</summary>
+    <website>https://github.com/semver4j/semver4j</website>
+    <authors>
+        <author>
+            <name>Piotr Olaszewski</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:semver4j/semver4j.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:semver4j/semver4j.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:semver4j/semver4j.git</path>
+        </developerconnection>
+        <tag>git@github.com:semver4j/semver4j.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/semver4j/semver4j/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.semver4j</maven.groupid>
+        <maven.artifactid>semver4j</maven.artifactid>
+    </properties>
+</extension>

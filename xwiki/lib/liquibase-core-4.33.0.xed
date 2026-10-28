@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.liquibase:liquibase-core</id>
+    <version>4.33.0</version>
+    <type>jar</type>
+    <name>Liquibase</name>
+    <summary>Liquibase is a tool for managing and executing database changes.</summary>
+    <website>http://www.liquibase.com</website>
+    <authors>
+        <author>
+            <name>Nathan Voxland</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>scm:git:git@github.com:liquibase/liquibase.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:liquibase/liquibase.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:liquibase/liquibase.git</path>
+        </developerconnection>
+        <tag>scm:git:git@github.com:liquibase/liquibase.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>com.opencsv:opencsv</id>
+            <version>5.11.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>commons-beanutils:commons-beanutils</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.yaml:snakeyaml</id>
+            <version>2.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.xml.bind:jaxb-api</id>
+            <version>2.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>javax.activation:javax.activation-api</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-collections4</id>
+            <version>4.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-text</id>
+            <version>1.13.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.17.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>2.19.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.liquibase</maven.groupid>
+        <maven.artifactid>liquibase-core</maven.artifactid>
+    </properties>
+</extension>

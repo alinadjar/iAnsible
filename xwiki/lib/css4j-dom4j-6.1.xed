@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.sf.carte:css4j-dom4j</id>
+    <version>6.1</version>
+    <type>jar</type>
+    <summary>css4j DOM4J module</summary>
+    <website>https://css4j.github.io/</website>
+    <licenses>
+        <license>
+            <name>BSD 3-clause license</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/css4j/css4j-dom4j</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/css4j/css4j-dom4j.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git://git@github.com:css4j/css4j-dom4j.git</path>
+        </developerconnection>
+        <tag>https://github.com/css4j/css4j-dom4j</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>io.sf.carte:css4j</id>
+            <version>[6.1,)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.dom4j:dom4j</id>
+            <version>[1.6.0,)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.sf.carte</maven.groupid>
+        <maven.artifactid>css4j-dom4j</maven.artifactid>
+    </properties>
+</extension>

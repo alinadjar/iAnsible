@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.transaction:jakarta.transaction-api</id>
+    <version>2.0.1</version>
+    <type>jar</type>
+    <name>jakarta.transaction API</name>
+    <summary>Jakarta Transactions</summary>
+    <website>https://projects.eclipse.org/projects/ee4j.jta</website>
+    <authors>
+        <author>
+            <name>Stephen Felts</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/jta-api</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/eclipse-ee4j/jta-api.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:eclipse-ee4j/jta-api.git</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/jta-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/jta-api/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.transaction</maven.groupid>
+        <maven.artifactid>jakarta.transaction-api</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.micrometer:micrometer-observation</id>
+    <version>1.17.1</version>
+    <type>jar</type>
+    <name>micrometer-observation</name>
+    <summary>Module containing Observation related code</summary>
+    <website>https://github.com/micrometer-metrics/micrometer-commercial</website>
+    <authors>
+        <author>
+            <name>Tommy Ludwig</name>
+        </author>
+        <author>
+            <name>Jonatan Ivanov</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/micrometer-metrics/micrometer-commercial.git</url>
+        <tag>https://github.com/micrometer-metrics/micrometer-commercial.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.jspecify:jspecify</id>
+            <version>1.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.micrometer:micrometer-commons</id>
+            <version>1.17.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.micrometer</maven.groupid>
+        <maven.artifactid>micrometer-observation</maven.artifactid>
+    </properties>
+</extension>

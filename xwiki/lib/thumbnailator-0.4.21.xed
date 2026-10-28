@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>net.coobird:thumbnailator</id>
+    <version>0.4.21</version>
+    <type>jar</type>
+    <name>thumbnailator</name>
+    <summary>Thumbnailator - a thumbnail generation library for Java</summary>
+    <website>https://github.com/coobird/thumbnailator</website>
+    <authors>
+        <author>
+            <name>Chris Kroells</name>
+            <url>https://coobird.net</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/coobird/thumbnailator</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:coobird/thumbnailator.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:coobird/thumbnailator.git</path>
+        </developerconnection>
+        <tag>https://github.com/coobird/thumbnailator</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>net.coobird</maven.groupid>
+        <maven.artifactid>thumbnailator</maven.artifactid>
+    </properties>
+</extension>

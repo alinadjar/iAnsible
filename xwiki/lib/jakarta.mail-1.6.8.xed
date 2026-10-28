@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.sun.mail:jakarta.mail</id>
+    <version>1.6.8</version>
+    <type>jar</type>
+    <name>Jakarta Mail API</name>
+    <summary>Jakarta Mail API</summary>
+    <website>http://eclipse-ee4j.github.io/mail/jakarta.mail</website>
+    <extensionfeatures>
+        <feature>
+            <feature>javax.mail:mail</feature>
+            <version>1.6.8</version>
+        </feature>
+        <feature>
+            <feature>javax.mail:mailapi</feature>
+            <version>1.6.8</version>
+        </feature>
+        <feature>
+            <feature>com.sun.mail:javax.mail</feature>
+            <version>1.6.8</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>javax.mail:mail</feature>
+        <feature>javax.mail:mailapi</feature>
+        <feature>com.sun.mail:javax.mail</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Bill Shannon</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+        <license>
+            <name>EDL 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/mail/jakarta.mail</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/mail.git/jakarta.mail</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/mail.git/jakarta.mail</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/mail/jakarta.mail</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/eclipse-ee4j/mail/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.sun.activation:jakarta.activation</id>
+            <version>1.2.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>com.sun.activation:jakarta.activation</id>
+            <version>1.2.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:jakarta.mail</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:mailapi</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:dsn</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:imap</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:gimap</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:mbox</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.mail:taglib</id>
+            <version>1.6.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.servlet:jakarta.servlet-api</id>
+            <version>4.0.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.servlet.jsp:jakarta.servlet.jsp-api</id>
+            <version>2.3.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.sun.mail</maven.groupid>
+        <maven.artifactid>jakarta.mail</maven.artifactid>
+    </properties>
+</extension>

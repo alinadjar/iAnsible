@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.googlecode.plist:dd-plist</id>
+    <version>1.29</version>
+    <type>jar</type>
+    <name>dd-plist</name>
+    <summary>This library enables Java applications to work with property lists in various formats.
+    Supported formats for reading and writing are OS X/iOS binary and XML property lists.
+    ASCII property lists are also supported.
+    The library also provides access to basic functions of NeXTSTEP/Cocoa classes like
+    NSDictionary, NSArray, etc.</summary>
+    <website>http://www.github.com/3breadt/dd-plist</website>
+    <authors>
+        <author>
+            <name>Daniel Dreibrodt</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/3breadt/dd-plist/tree/master</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/3breadt/dd-plist.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:3breadt/dd-plist.git</path>
+        </developerconnection>
+        <tag>https://github.com/3breadt/dd-plist/tree/master</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/3breadt/dd-plist/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.googlecode.plist</maven.groupid>
+        <maven.artifactid>dd-plist</maven.artifactid>
+    </properties>
+</extension>

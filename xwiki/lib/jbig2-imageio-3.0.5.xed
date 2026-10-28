@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.pdfbox:jbig2-imageio</id>
+    <version>3.0.5</version>
+    <type>jar</type>
+    <name>PDFBox JBIG2 ImageIO plugin</name>
+    <summary>Java Image I/O plugin for reading JBIG2-compressed image data. 
+	Formerly known as the levigo JBig2 ImageIO plugin (com.levigo.jbig2:levigo-jbig2-imageio).</summary>
+    <website>https://www.apache.org/jbig2-imageio/</website>
+    <authors>
+        <author>
+            <name>Andreas Lehmkühler</name>
+        </author>
+        <author>
+            <name>Adam Nichols</name>
+        </author>
+        <author>
+            <name>Ben Litchfield</name>
+        </author>
+        <author>
+            <name>Brian Carrier</name>
+        </author>
+        <author>
+            <name>Daniel Wilson</name>
+        </author>
+        <author>
+            <name>Guillaume Bailleul</name>
+        </author>
+        <author>
+            <name>Jörg Henne</name>
+        </author>
+        <author>
+            <name>Sebastian Holder</name>
+        </author>
+        <author>
+            <name>John Hewson</name>
+        </author>
+        <author>
+            <name>Jeremias Maerki</name>
+        </author>
+        <author>
+            <name>Kevin Jackson</name>
+        </author>
+        <author>
+            <name>Johannes Koch</name>
+        </author>
+        <author>
+            <name>Carolin Köhler</name>
+        </author>
+        <author>
+            <name>Matthäus Mayer</name>
+        </author>
+        <author>
+            <name>Maruan Sayhoun</name>
+        </author>
+        <author>
+            <name>Phillipp Koch</name>
+        </author>
+        <author>
+            <name>Tim Allison</name>
+        </author>
+        <author>
+            <name>Thomas Chojecki</name>
+        </author>
+        <author>
+            <name>Timo Boehme</name>
+        </author>
+        <author>
+            <name>Tilman Hausherr</name>
+        </author>
+        <author>
+            <name>Villu Ruusmann</name>
+        </author>
+        <author>
+            <name>Eric Leleu</name>
+        </author>
+        <author>
+            <name>Jukka Zitting</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://git-wip-us.apache.org/repos/asf?p=pdfbox-jbig2.git</url>
+        <connection>
+            <system>git</system>
+            <path>http://git-wip-us.apache.org/repos/asf/pdfbox-jbig2.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://git-wip-us.apache.org/repos/asf/pdfbox-jbig2.git</path>
+        </developerconnection>
+        <tag>https://git-wip-us.apache.org/repos/asf?p=pdfbox-jbig2.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/PDFBOX</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.pdfbox</maven.groupid>
+        <maven.artifactid>jbig2-imageio</maven.artifactid>
+    </properties>
+</extension>

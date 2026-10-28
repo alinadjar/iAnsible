@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.openoffice:juh</id>
+    <version>4.1.2</version>
+    <type>jar</type>
+    <name>Java Uno Helper</name>
+    <summary>Allows the boostrapping of a ServicemManager and gives access to the native component loader.</summary>
+    <website>https://wiki.openoffice.org/wiki/Uno</website>
+    <authors>
+        <author>
+            <name>Apache OpenOffice Project</name>
+        </author>
+        <author>
+            <name>Carl Marcum</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://svn.apache.org/repos/asf/openoffice/trunk/main/javaunohelper</url>
+        <connection>
+            <system>http</system>
+            <path>//svn.apache.org/repos/asf/openoffice/trunk/main/javaunohelper</path>
+        </connection>
+        <developerconnection>
+            <system>https</system>
+            <path>//svn.apache.org/repos/asf/openoffice/trunk/main/javaunohelper</path>
+        </developerconnection>
+        <tag>http://svn.apache.org/repos/asf/openoffice/trunk/main/javaunohelper</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.openoffice:jurt</id>
+            <version>4.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.openoffice:ridl</id>
+            <version>4.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.openoffice</maven.groupid>
+        <maven.artifactid>juh</maven.artifactid>
+    </properties>
+</extension>

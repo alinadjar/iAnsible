@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.sgr:s2-geometry-library-java</id>
+    <version>1.0.0</version>
+    <type>jar</type>
+    <name>Google S2 geometry library</name>
+    <summary>A java library for Google s2</summary>
+    <website>https://github.com/sgr-io/s2-geometry-library-java</website>
+    <authors>
+        <author>
+            <name>SgrAlpha</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/sgr-io/s2-geometry-library-java</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:sgr-io/s2-geometry-library-java.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:sgr-io/s2-geometry-library-java.git</path>
+        </developerconnection>
+        <tag>https://github.com/sgr-io/s2-geometry-library-java</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.sgr</maven.groupid>
+        <maven.artifactid>s2-geometry-library-java</maven.artifactid>
+    </properties>
+</extension>

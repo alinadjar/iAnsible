@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.maven.resolver:maven-resolver-util</id>
+    <version>1.9.27</version>
+    <type>jar</type>
+    <name>Maven Artifact Resolver Utilities</name>
+    <summary>A collection of utility classes to ease usage of the repository system.</summary>
+    <website>https://maven.apache.org/resolver/maven-resolver-util/</website>
+    <authors>
+        <author>
+            <name>Hervé Boutemy</name>
+        </author>
+        <author>
+            <name>Arnaud Héritier</name>
+        </author>
+        <author>
+            <name>Anders Hammar</name>
+        </author>
+        <author>
+            <name>Barrie Treloar</name>
+        </author>
+        <author>
+            <name>Benson Margulies</name>
+        </author>
+        <author>
+            <name>Benjamin Marwell</name>
+        </author>
+        <author>
+            <name>Brian Fox</name>
+        </author>
+        <author>
+            <name>Tamas Cservenak</name>
+        </author>
+        <author>
+            <name>Dennis Lundberg</name>
+        </author>
+        <author>
+            <name>Daniel Kulp</name>
+        </author>
+        <author>
+            <name>Emmanuel Venisse</name>
+        </author>
+        <author>
+            <name>Guillaume Boué</name>
+        </author>
+        <author>
+            <name>Guillaume Nodet</name>
+        </author>
+        <author>
+            <name>Henning Schmiedehausen</name>
+        </author>
+        <author>
+            <name>Jason van Zyl</name>
+        </author>
+        <author>
+            <name>Karl Heinz Marbaise</name>
+        </author>
+        <author>
+            <name>Kristian Rosenvold</name>
+        </author>
+        <author>
+            <name>Konrad Windszus</name>
+        </author>
+        <author>
+            <name>Milos Kleint</name>
+        </author>
+        <author>
+            <name>Maarten Mulders</name>
+        </author>
+        <author>
+            <name>Olivier Lamy</name>
+        </author>
+        <author>
+            <name>Michael Osipov</name>
+        </author>
+        <author>
+            <name>Robert Scholte</name>
+        </author>
+        <author>
+            <name>Ralph Goers</name>
+        </author>
+        <author>
+            <name>Slawomir Jaranowski</name>
+        </author>
+        <author>
+            <name>Stephen Connolly</name>
+        </author>
+        <author>
+            <name>Sylwester Lachiewicz</name>
+        </author>
+        <author>
+            <name>Mark Struberg</name>
+        </author>
+        <author>
+            <name>Tibor Digaňa</name>
+        </author>
+        <author>
+            <name>Vincent Siveton</name>
+        </author>
+        <author>
+            <name>Wayne Fay</name>
+        </author>
+        <author>
+            <name>Andreas Dangel</name>
+        </author>
+        <author>
+            <name>Brian Demers</name>
+        </author>
+        <author>
+            <name>Fabrice Bellingard</name>
+        </author>
+        <author>
+            <name>Benjamin Bentmann</name>
+        </author>
+        <author>
+            <name>Chris Graham</name>
+        </author>
+        <author>
+            <name>Dan Tran</name>
+        </author>
+        <author>
+            <name>Damian Bradicich</name>
+        </author>
+        <author>
+            <name>Brett Porter</name>
+        </author>
+        <author>
+            <name>Daniel Fabulich</name>
+        </author>
+        <author>
+            <name>Enrico Olivelli</name>
+        </author>
+        <author>
+            <name>Fabrizio Giustina</name>
+        </author>
+        <author>
+            <name>Evgeny Mandrikov</name>
+        </author>
+        <author>
+            <name>Andrew Williams</name>
+        </author>
+        <author>
+            <name>Dominik Bartholdi</name>
+        </author>
+        <author>
+            <name>Jeff Jensen</name>
+        </author>
+        <author>
+            <name>Lukas Theussl</name>
+        </author>
+        <author>
+            <name>Mark Hobson</name>
+        </author>
+        <author>
+            <name>Martin Kanters</name>
+        </author>
+        <author>
+            <name>Mauro Talevi</name>
+        </author>
+        <author>
+            <name>Matthias Bünger</name>
+        </author>
+        <author>
+            <name>Mirko Friedenhagen</name>
+        </author>
+        <author>
+            <name>Manfred Moser</name>
+        </author>
+        <author>
+            <name>Nicolas de Loof</name>
+        </author>
+        <author>
+            <name>Maria Odea B. Ching</name>
+        </author>
+        <author>
+            <name>Paul Gier</name>
+        </author>
+        <author>
+            <name>Petar Tahchiev</name>
+        </author>
+        <author>
+            <name>Raphaël Piéroni</name>
+        </author>
+        <author>
+            <name>Christian Schulte</name>
+        </author>
+        <author>
+            <name>Stephane Nicoll</name>
+        </author>
+        <author>
+            <name>Simone Tripodi</name>
+        </author>
+        <author>
+            <name>Christian Stein</name>
+        </author>
+        <author>
+            <name>Sandra Parsick</name>
+        </author>
+        <author>
+            <name>Tony Chemit</name>
+        </author>
+        <author>
+            <name>Vincent Massol</name>
+        </author>
+        <author>
+            <name>Elliotte Rusty Harold</name>
+        </author>
+        <author>
+            <name>Andreas Gudian</name>
+        </author>
+        <author>
+            <name>Allan Q. Ramirez</name>
+        </author>
+        <author>
+            <name>Henri Yandell</name>
+        </author>
+        <author>
+            <name>Carlos Sanchez</name>
+        </author>
+        <author>
+            <name>Chris Stevenson</name>
+        </author>
+        <author>
+            <name>David Blevins</name>
+        </author>
+        <author>
+            <name>Daniel Rall</name>
+        </author>
+        <author>
+            <name>Edwin Punzalan</name>
+        </author>
+        <author>
+            <name>Felipe Leme</name>
+        </author>
+        <author>
+            <name>Igor Fedorenko</name>
+        </author>
+        <author>
+            <name>John Casey</name>
+        </author>
+        <author>
+            <name>Jesse McConnell</name>
+        </author>
+        <author>
+            <name>Joakim Erdfelt</name>
+        </author>
+        <author>
+            <name>Johnny Ruiz III</name>
+        </author>
+        <author>
+            <name>James Strachan</name>
+        </author>
+        <author>
+            <name>Ernesto Tolentino Jr.</name>
+        </author>
+        <author>
+            <name>Kenney Westerhof</name>
+        </author>
+        <author>
+            <name>Mike Perham</name>
+        </author>
+        <author>
+            <name>Oleg Gusakov</name>
+        </author>
+        <author>
+            <name>Patrick Schneider</name>
+        </author>
+        <author>
+            <name>Rahul Thakur</name>
+        </author>
+        <author>
+            <name>Shinobu Kuwai</name>
+        </author>
+        <author>
+            <name>Torbjorn Eikli Smorgrav</name>
+        </author>
+        <author>
+            <name>Trygve Laugstol</name>
+        </author>
+        <author>
+            <name>Wendy Smoak</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/apache/maven-resolver/tree/maven-resolver-1.9.27/maven-resolver-util</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/maven-resolver.git/maven-resolver-util</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/maven-resolver.git/maven-resolver-util</path>
+        </developerconnection>
+        <tag>https://github.com/apache/maven-resolver/tree/maven-resolver-1.9.27/maven-resolver-util</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/apache/maven-resolver/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-api</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-api</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-spi</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-util</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-named-locks</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-impl</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-connector-basic</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-transport-classpath</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-transport-file</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-transport-http</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-transport-wagon</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-supplier</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-test-util</id>
+            <version>1.9.27</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hamcrest:hamcrest</id>
+            <version>3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hamcrest:hamcrest-core</id>
+            <version>3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>4.11.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.codehaus.plexus:plexus-utils</id>
+            <version>3.6.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.inject:javax.inject</id>
+            <version>1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.sisu:org.eclipse.sisu.inject</id>
+            <version>1.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.sisu:org.eclipse.sisu.plexus</id>
+            <version>1.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.inject:guice:classes</id>
+            <version>5.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.guava:guava</id>
+            <version>33.5.0-jre</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-simple</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.codehaus.plexus:plexus-xml</id>
+            <version>3.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-api</id>
+            <version>5.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-engine</id>
+            <version>5.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-migrationsupport</id>
+            <version>5.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-params</id>
+            <version>5.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-commons</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-console</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-engine</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-jfr</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-launcher</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-reporting</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-runner</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-api</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-commons</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-engine</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-testkit</id>
+            <version>1.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.vintage:junit-vintage-engine</id>
+            <version>5.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.maven.resolver</maven.groupid>
+        <maven.artifactid>maven-resolver-util</maven.artifactid>
+    </properties>
+</extension>

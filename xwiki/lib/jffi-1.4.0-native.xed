@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.jnr:jffi:native</id>
+    <version>1.4.0</version>
+    <type>jar</type>
+    <name>jffi</name>
+    <summary>Java Foreign Function Interface</summary>
+    <website>http://github.com/jnr/jffi</website>
+    <authors>
+        <author>
+            <name>Wayne Meissner</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+        <license>
+            <name>GNU Lesser General Public License 3</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:jnr/jffi.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jnr/jffi.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jnr/jffi.git</path>
+        </developerconnection>
+        <tag>git@github.com:jnr/jffi.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>central-portal-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.jnr</maven.groupid>
+        <maven.artifactid>jffi</maven.artifactid>
+        <maven.classifier>native</maven.classifier>
+    </properties>
+</extension>

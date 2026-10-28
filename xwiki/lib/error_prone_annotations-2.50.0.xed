@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.errorprone:error_prone_annotations</id>
+    <version>2.50.0</version>
+    <type>jar</type>
+    <name>error-prone annotations</name>
+    <summary>Error Prone is a static analysis tool for Java that catches common programming mistakes at compile-time.</summary>
+    <website>https://errorprone.info/error_prone_annotations</website>
+    <authors>
+        <author>
+            <name>Eddie Aftandilian</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/error-prone/error_prone_annotations</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/google/error-prone.git/error_prone_annotations</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:google/error-prone.git/error_prone_annotations</path>
+        </developerconnection>
+        <tag>https://github.com/google/error-prone/error_prone_annotations</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.errorprone</maven.groupid>
+        <maven.artifactid>error_prone_annotations</maven.artifactid>
+    </properties>
+</extension>

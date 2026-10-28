@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.velocity:velocity-engine-core</id>
+    <version>2.4.1</version>
+    <type>jar</type>
+    <name>Apache Velocity - Engine</name>
+    <summary>Apache Velocity is a general purpose template engine.</summary>
+    <website>http://velocity.apache.org/engine/devel/velocity-engine-core/</website>
+    <authors>
+        <author>
+            <name>Claude Brisson</name>
+            <url>http://claude.brisson.info</url>
+        </author>
+        <author>
+            <name>Nathan Bubna</name>
+        </author>
+        <author>
+            <name>Will Glass-Husain</name>
+        </author>
+        <author>
+            <name>Marinó A. Jónsson</name>
+        </author>
+        <author>
+            <name>Geir Magnusson Jr.</name>
+        </author>
+        <author>
+            <name>Daniel Rall</name>
+        </author>
+        <author>
+            <name>Henning P. Schmiedehausen</name>
+        </author>
+        <author>
+            <name>Jon S. Stevens</name>
+        </author>
+        <author>
+            <name>Jason van Zyl</name>
+        </author>
+        <author>
+            <name>Christopher Schultz</name>
+        </author>
+        <author>
+            <name>Sergiu Dumitriu</name>
+            <url>http://purl.org/net/sergiu</url>
+        </author>
+        <author>
+            <name>Dishara Wijewardana</name>
+        </author>
+        <author>
+            <name>Mike Kienenberger</name>
+        </author>
+        <author>
+            <name>Michael Osipov</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitbox.apache.org/repos/asf?p=velocity-engine.git/velocity-engine-core</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/velocity-engine.git/velocity-engine-core</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/velocity-engine.git/velocity-engine-core</path>
+        </developerconnection>
+        <tag>https://gitbox.apache.org/repos/asf?p=velocity-engine.git/velocity-engine-core</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://issues.apache.org/jira/browse/VELOCITY</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.17.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-simple</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.plugin-tools:maven-plugin-annotations</id>
+            <version>3.13.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.velocity</maven.groupid>
+        <maven.artifactid>velocity-engine-core</maven.artifactid>
+    </properties>
+</extension>

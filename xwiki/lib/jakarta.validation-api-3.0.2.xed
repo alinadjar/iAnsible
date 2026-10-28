@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.validation:jakarta.validation-api</id>
+    <version>3.0.2</version>
+    <type>jar</type>
+    <name>Jakarta Bean Validation API</name>
+    <summary>Jakarta Bean Validation API</summary>
+    <website>https://beanvalidation.org</website>
+    <extensionfeatures>
+        <feature>
+            <feature>javax.validation:validation-api</feature>
+            <version>3.0.2</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>javax.validation:validation-api</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Emmanuel Bernard</name>
+            <url>http://in.relation.to/emmanuel-bernard/</url>
+        </author>
+        <author>
+            <name>Emmanuel Bernard</name>
+            <url>http://in.relation.to/emmanuel-bernard/</url>
+        </author>
+        <author>
+            <name>Hardy Ferentschik</name>
+            <url>http://in.relation.to/hardy-ferentschik/</url>
+        </author>
+        <author>
+            <name>Gunnar Morling</name>
+            <url>http://in.relation.to/gunnar-morling/</url>
+        </author>
+        <author>
+            <name>Guillaume Smet</name>
+            <url>http://in.relation.to/guillaume-smet/</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/beanvalidation-api</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/eclipse-ee4j/beanvalidation-api.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:eclipse-ee4j/beanvalidation-api.git</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/beanvalidation-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://hibernate.atlassian.net/projects/BVAL/</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.validation</maven.groupid>
+        <maven.artifactid>jakarta.validation-api</maven.artifactid>
+    </properties>
+</extension>

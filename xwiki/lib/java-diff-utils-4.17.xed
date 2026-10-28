@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.github.java-diff-utils:java-diff-utils</id>
+    <version>4.17</version>
+    <type>jar</type>
+    <name>java-diff-utils</name>
+    <summary>The DiffUtils library for computing diffs, applying patches, generationg side-by-side view in Java.</summary>
+    <website>https://github.com/java-diff-utils/java-diff-utils/java-diff-utils</website>
+    <authors>
+        <author>
+            <name>Tobias Warneke</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/java-diff-utils/java-diff-utils.git/java-diff-utils</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/java-diff-utils/java-diff-utils.git/java-diff-utils</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com:java-diff-utils/java-diff-utils.git/java-diff-utils</path>
+        </developerconnection>
+        <tag>https://github.com/java-diff-utils/java-diff-utils.git/java-diff-utils</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/java-diff-utils/java-diff-utils/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.27.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.github.java-diff-utils</maven.groupid>
+        <maven.artifactid>java-diff-utils</maven.artifactid>
+    </properties>
+</extension>

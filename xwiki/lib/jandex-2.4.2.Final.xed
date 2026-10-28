@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jboss:jandex</id>
+    <version>2.4.2.Final</version>
+    <type>jar</type>
+    <name>Java Annotation Indexer</name>
+    <summary>Parent POM for JBoss projects. Provides default project build configuration.</summary>
+    <website>http://www.jboss.org/jandex</website>
+    <authors>
+        <author>
+            <name>JBoss.org Community</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/jboss/jboss-parent-pom/jandex</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jboss/jboss-parent-pom.git/jandex</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jboss/jboss-parent-pom.git/jandex</path>
+        </developerconnection>
+        <tag>http://github.com/jboss/jboss-parent-pom/jandex</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://issues.jboss.org/</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>jboss-public-repository</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jboss</maven.groupid>
+        <maven.artifactid>jandex</maven.artifactid>
+    </properties>
+</extension>

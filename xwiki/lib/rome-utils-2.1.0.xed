@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.rometools:rome-utils</id>
+    <version>2.1.0</version>
+    <type>jar</type>
+    <name>rome-utils</name>
+    <summary>Utility classes for ROME projects</summary>
+    <website>http://rometools.com/rome-utils</website>
+    <authors>
+        <author>
+            <name>Patrick Gotthard</name>
+        </author>
+        <author>
+            <name>David M. Johnson</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/rometools/rome/rome-utils</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/rometools/rome.git/rome-utils</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/rometools/rome.git/rome-utils</path>
+        </developerconnection>
+        <tag>https://github.com/rometools/rome/rome-utils</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>com.rometools:rome</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.rometools:rome-modules</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.rometools:rome-opml</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.rometools:rome-utils</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jdom:jdom2</id>
+            <version>2.0.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.logback:logback-classic</id>
+            <version>1.3.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xmlunit:xmlunit</id>
+            <version>1.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hamcrest:hamcrest-library</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.24.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.tomakehurst:wiremock</id>
+            <version>2.27.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.rometools</maven.groupid>
+        <maven.artifactid>rome-utils</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.ibm.icu:icu4j</id>
+    <version>78.3</version>
+    <type>jar</type>
+    <name>ICU4J</name>
+    <summary>International Components for Unicode for Java (ICU4J) is a mature, widely used Java library
+    providing Unicode and Globalization support</summary>
+    <website>https://icu.unicode.org/</website>
+    <authors>
+        <author>
+            <name>Markus Scherer</name>
+        </author>
+        <author>
+            <name>Richard Gillam</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Unicode-3.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/unicode-org/icu</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/unicode-org/icu.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:unicode-org/icu.git</path>
+        </developerconnection>
+        <tag>https://github.com/unicode-org/icu</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.ibm.icu</maven.groupid>
+        <maven.artifactid>icu4j</maven.artifactid>
+    </properties>
+</extension>

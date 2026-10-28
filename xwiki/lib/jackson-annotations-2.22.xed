@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.fasterxml.jackson.core:jackson-annotations</id>
+    <version>2.22</version>
+    <type>jar</type>
+    <name>Jackson-annotations</name>
+    <summary>Core annotations used for value types, used by Jackson data binding package.</summary>
+    <website>https://github.com/FasterXML/jackson</website>
+    <authors>
+        <author>
+            <name>Tatu Saloranta</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/FasterXML/jackson-annotations</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/jackson-annotations.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/jackson-annotations.git</path>
+        </developerconnection>
+        <tag>https://github.com/FasterXML/jackson-annotations</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issue Management</system>
+        <url>https://github.com/FasterXML/jackson-annotations/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>central-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.fasterxml.jackson.core</maven.groupid>
+        <maven.artifactid>jackson-annotations</maven.artifactid>
+    </properties>
+</extension>

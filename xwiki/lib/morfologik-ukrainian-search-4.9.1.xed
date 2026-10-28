@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>ua.net.nlp:morfologik-ukrainian-search</id>
+    <version>4.9.1</version>
+    <type>jar</type>
+    <name>Ukrainian POS tag dictionary for Morfologik</name>
+    <summary>Ukrainian part-of-speech dictionaries in Morfologik binary format</summary>
+    <website>https://github.com/brown-uk/dict_uk</website>
+    <authors>
+        <author>
+            <name>Andriy Rysin</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/brown-uk/dict_uk.git</url>
+        <tag>https://github.com/brown-uk/dict_uk.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>ua.net.nlp</maven.groupid>
+        <maven.artifactid>morfologik-ukrainian-search</maven.artifactid>
+    </properties>
+</extension>

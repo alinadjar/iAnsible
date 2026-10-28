@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.dropwizard.metrics:metrics-jmx</id>
+    <version>4.2.21</version>
+    <type>jar</type>
+    <name>Metrics Integration with JMX</name>
+    <summary>A set of classes which allow you to report metrics via JMX.</summary>
+    <website>https://metrics.dropwizard.io/metrics-jmx</website>
+    <authors>
+        <author>
+            <name>Coda Hale</name>
+        </author>
+        <author>
+            <name>Ryan Tenney</name>
+        </author>
+        <author>
+            <name>Artem Prigoda</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/dropwizard/metrics/metrics-jmx/</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/dropwizard/metrics.git/metrics-jmx</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:dropwizard/metrics.git/metrics-jmx</path>
+        </developerconnection>
+        <tag>https://github.com/dropwizard/metrics/metrics-jmx/</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/dropwizard/metrics/issues/</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-core</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy</id>
+            <version>1.14.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-annotation</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-caffeine</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-caffeine3</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-core</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-collectd</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-ehcache</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-graphite</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-healthchecks</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-httpclient</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-httpclient5</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-httpasyncclient</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jakarta-servlet</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jakarta-servlet6</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jakarta-servlets</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jcache</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jdbi</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jdbi3</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jersey2</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jersey3</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jersey31</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jetty9</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jetty10</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jetty11</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jetty12</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jetty12-ee10</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jmx</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-json</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-jvm</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-log4j2</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-logback</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-logback13</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-logback14</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-servlet</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.dropwizard.metrics:metrics-servlets</id>
+            <version>4.2.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.dropwizard.metrics</maven.groupid>
+        <maven.artifactid>metrics-jmx</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>javax.ws.rs:javax.ws.rs-api</id>
+    <version>2.1.1</version>
+    <type>jar</type>
+    <name>javax.ws.rs-api</name>
+    <summary>Java API for RESTful Web Services</summary>
+    <website>https://github.com/eclipse-ee4j/jaxrs-api</website>
+    <extensionfeatures>
+        <feature>
+            <feature>javax.ws.rs:jsr311-api</feature>
+            <version>2.1.1</version>
+        </feature>
+        <feature>
+            <feature>org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec</feature>
+            <version>2.1.1</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>javax.ws.rs:jsr311-api</feature>
+        <feature>org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec</feature>
+    </features>
+    <authors>
+        <author>
+            <name>JAX-RS API Developers</name>
+            <url>https://github.com/eclipse-ee4j/jaxrs-api/graphs/contributors</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/jaxrs-api</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/eclipse-ee4j/jaxrs-api</path>
+        </connection>
+        <tag>https://github.com/eclipse-ee4j/jaxrs-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>Github</system>
+        <url>https://github.com/eclipse-ee4j/jaxrs-api/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>javax.ws.rs</maven.groupid>
+        <maven.artifactid>javax.ws.rs-api</maven.artifactid>
+    </properties>
+</extension>

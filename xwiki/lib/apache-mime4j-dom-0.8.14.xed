@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.james:apache-mime4j-dom</id>
+    <version>0.8.14</version>
+    <type>jar</type>
+    <name>Apache James :: Mime4j :: DOM</name>
+    <summary>Java MIME Document Object Model</summary>
+    <website>http://james.apache.org/mime4j/apache-mime4j-dom</website>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://git-wip-us.apache.org/repos/asf/james-mime4j.git/apache-mime4j-dom</url>
+        <connection>
+            <system>git</system>
+            <path>http://git-wip-us.apache.org/repos/asf/james-mime4j.git/apache-mime4j-dom</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/apache/james-mime4j.git/apache-mime4j-dom</path>
+        </developerconnection>
+        <tag>https://git-wip-us.apache.org/repos/asf/james-mime4j.git/apache-mime4j-dom</tag>
+    </scm>
+    <issuemanagement>
+        <url>http://issues.apache.org/jira/browse/MIME4J</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-core</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>2.19.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-core</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-dom</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-mbox-iterator</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-examples</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-storage</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.james:apache-mime4j-benchmark</id>
+            <version>0.8.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-logging:commons-logging</id>
+            <version>1.3.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-core</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.27.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>4.11.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>2.19.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.james</maven.groupid>
+        <maven.artifactid>apache-mime4j-dom</maven.artifactid>
+    </properties>
+</extension>

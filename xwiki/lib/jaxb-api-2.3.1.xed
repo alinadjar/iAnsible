@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>javax.xml.bind:jaxb-api</id>
+    <version>2.3.1</version>
+    <type>jar</type>
+    <summary>JAXB (JSR 222) API</summary>
+    <website>https://github.com/javaee/jaxb-spec/jaxb-api</website>
+    <extensionfeatures>
+        <feature>
+            <feature>org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec</feature>
+            <version>2.3.1</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Roman Grigoriadi</name>
+        </author>
+        <author>
+            <name>Martin Grebac</name>
+        </author>
+        <author>
+            <name>Iaroslav Savytskyi</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>CDDL 1.1</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/javaee/jaxb-spec.git/jaxb-api</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/javaee/jaxb-spec.git/jaxb-api</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:javaee/jaxb-spec.git/jaxb-api</path>
+        </developerconnection>
+        <tag>https://github.com/javaee/jaxb-spec.git/jaxb-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://github.com/javaee/jaxb-spec/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>javax.activation:javax.activation-api</id>
+            <version>1.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>javax.activation:javax.activation-api</id>
+            <version>1.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>jvnet-nexus-releases</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>javax.xml.bind</maven.groupid>
+        <maven.artifactid>jaxb-api</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.slf4j:jcl-over-slf4j</id>
+    <version>2.0.19</version>
+    <type>jar</type>
+    <name>JCL 1.2 implemented over SLF4J</name>
+    <summary>JCL 1.2 implemented over SLF4J</summary>
+    <website>http://www.slf4j.org</website>
+    <extensionfeatures>
+        <feature>
+            <feature>commons-logging:commons-logging</feature>
+            <version>1.2</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>commons-logging:commons-logging</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Ceki Gulcu</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/qos-ch/slf4j/slf4j-parent/jcl-over-slf4j</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/qos-ch/slf4j.git/slf4j-parent/jcl-over-slf4j</path>
+        </connection>
+        <tag>https://github.com/qos-ch/slf4j/slf4j-parent/jcl-over-slf4j</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>ch.qos.reload4j:reload4j</id>
+            <version>1.2.22</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.cal10n:cal10n-api</id>
+            <version>0.8.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-simple</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-nop</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-jdk14</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-jdk-platform-logging</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-log4j12</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-reload4j</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-ext</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:jcl-over-slf4j</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:log4j-over-slf4j</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:jul-to-slf4j</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:osgi-over-slf4j</id>
+            <version>2.0.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.slf4j</maven.groupid>
+        <maven.artifactid>jcl-over-slf4j</maven.artifactid>
+    </properties>
+</extension>

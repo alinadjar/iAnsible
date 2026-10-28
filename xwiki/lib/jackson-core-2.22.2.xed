@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.fasterxml.jackson.core:jackson-core</id>
+    <version>2.22.2</version>
+    <type>jar</type>
+    <name>Jackson-core</name>
+    <summary>Core Jackson processing abstractions (aka Streaming API), implementation for JSON</summary>
+    <website>https://github.com/FasterXML/jackson-core</website>
+    <authors>
+        <author>
+            <name>Tatu Saloranta</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/FasterXML/jackson-core</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/jackson-core.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/jackson-core.git</path>
+        </developerconnection>
+        <tag>https://github.com/FasterXML/jackson-core</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issue Management</system>
+        <url>https://github.com/FasterXML/jackson-core/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>javax.activation:javax.activation-api</id>
+            <version>1.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.27.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.core:jackson-annotations</id>
+            <version>2.22</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.core:jackson-core</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.core:jackson-databind</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-avro</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-cbor</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-csv</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-ion</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-properties</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-smile</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-toml</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-xml</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-yaml</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-eclipse-collections</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-guava</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate4</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate5</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate5-jakarta</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate6</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate7</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hppc</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jakarta-jsonp</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jaxrs</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-javax-money</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jdk8</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-joda</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-joda-money</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-json-org</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jsr310</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jsr353</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-moneta</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-pcollections</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-base</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-cbor-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-smile-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-xml-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-yaml-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-base</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-cbor-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-smile-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-xml-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-yaml-provider</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-all</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-annotation-support</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-extension-javatime</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-objects</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-retrofit2</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-stree</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-afterburner</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-android-record</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-blackbird</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-guice</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-guice7</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jaxb-annotations</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jsonSchema</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jsonSchema-jakarta</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-kotlin</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-mrbean</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-no-ctor-deser</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-osgi</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-parameter-names</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-paranamer</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_2.11</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_2.12</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_2.13</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_3</id>
+            <version>2.22.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-api</id>
+            <version>5.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-engine</id>
+            <version>5.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-migrationsupport</id>
+            <version>5.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-params</id>
+            <version>5.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-commons</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-console</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-engine</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-jfr</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-launcher</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-reporting</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-runner</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-api</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-commons</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-engine</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-testkit</id>
+            <version>1.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.vintage:junit-vintage-engine</id>
+            <version>5.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>central-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.fasterxml.jackson.core</maven.groupid>
+        <maven.artifactid>jackson-core</maven.artifactid>
+    </properties>
+</extension>

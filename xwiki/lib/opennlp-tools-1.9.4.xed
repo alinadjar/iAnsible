@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.opennlp:opennlp-tools</id>
+    <version>1.9.4</version>
+    <type>jar</type>
+    <name>Apache OpenNLP Tools</name>
+    <summary>The Apache Software Foundation provides support for the Apache community of open-source software projects.
+    The Apache projects are characterized by a collaborative, consensus based development process, an open and
+    pragmatic software license, and a desire to create high quality software that leads the way in its field.
+    We consider ourselves not simply a group of projects sharing a server, but rather a community of developers
+    and users.</summary>
+    <website>https://www.apache.org/opennlp/opennlp-tools/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/apache/opennlp.git/opennlp-tools</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/apache/opennlp.git/opennlp-tools</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:apache/opennlp.git/opennlp-tools</path>
+        </developerconnection>
+        <tag>https://github.com/apache/opennlp.git/opennlp-tools</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/OPENNLP</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.opennlp:opennlp-tools</id>
+            <version>1.9.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.opennlp:opennlp-tools</id>
+            <version>1.9.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>test-jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.opennlp:opennlp-uima</id>
+            <version>1.9.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.opennlp:opennlp-brat-annotator</id>
+            <version>1.9.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.opennlp:opennlp-morfologik-addon</id>
+            <version>1.9.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.opennlp</maven.groupid>
+        <maven.artifactid>opennlp-tools</maven.artifactid>
+    </properties>
+</extension>

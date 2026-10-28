@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jvnet.mimepull:mimepull</id>
+    <version>1.9.15</version>
+    <type>jar</type>
+    <name>MIME streaming extension</name>
+    <summary>Provides a streaming API to access attachments parts in a MIME message.</summary>
+    <website>https://github.com/eclipse-ee4j/metro-mimepull</website>
+    <authors>
+        <author>
+            <name>Roman Grigoriadi</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Distribution License - v 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/metro-mimepull</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/metro-mimepull.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/metro-mimepull.git</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/metro-mimepull</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/metro-mimepull/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jvnet.mimepull</maven.groupid>
+        <maven.artifactid>mimepull</maven.artifactid>
+    </properties>
+</extension>

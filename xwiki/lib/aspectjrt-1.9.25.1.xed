@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.aspectj:aspectjrt</id>
+    <version>1.9.25.1</version>
+    <type>jar</type>
+    <name>AspectJ Runtime</name>
+    <summary>The AspectJ runtime is a small library necessary to run Java programs enhanced by AspectJ aspects during a previous
+		compile-time or post-compile-time (binary weaving) build step.</summary>
+    <website>https://www.eclipse.org/aspectj/</website>
+    <authors>
+        <author>
+            <name>Andy Clement</name>
+        </author>
+        <author>
+            <name>Alexander Kriegisch</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Public License - v 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse/org.aspectj</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/eclipse/org.aspectj.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com:eclipse/org.aspectj.git</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse/org.aspectj</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.aspectj</maven.groupid>
+        <maven.artifactid>aspectjrt</maven.artifactid>
+    </properties>
+</extension>

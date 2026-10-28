@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.ws.rs:jakarta.ws.rs-api</id>
+    <version>3.1.0</version>
+    <type>jar</type>
+    <name>Jakarta RESTful WS API</name>
+    <summary>Jakarta RESTful Web Services</summary>
+    <website>https://github.com/eclipse-ee4j/jaxrs-api</website>
+    <authors>
+        <author>
+            <name>JAX-RS API Developers</name>
+            <url>https://github.com/eclipse-ee4j/jaxrs-api/graphs/contributors</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL-2.0</name>
+        </license>
+        <license>
+            <name>GPL-2.0-with-classpath-exception</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/jaxrs-api</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/eclipse-ee4j/jaxrs-api</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:eclipse-ee4j/ee4j.git/all/jakarta.ws.rs-api</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/jaxrs-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>Github</system>
+        <url>https://github.com/eclipse-ee4j/jaxrs-api/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.ws.rs</maven.groupid>
+        <maven.artifactid>jakarta.ws.rs-api</maven.artifactid>
+    </properties>
+</extension>

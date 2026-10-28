@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.sf.jclf:jclf-text</id>
+    <version>5.0.3</version>
+    <type>jar</type>
+    <summary>JCLF text module</summary>
+    <website>https://sourceforge.net/p/jclf/main/ci/master/tree/</website>
+    <licenses>
+        <license>
+            <name>BSD 3-clause license</name>
+        </license>
+    </licenses>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.sf.jclf</maven.groupid>
+        <maven.artifactid>jclf-text</maven.artifactid>
+    </properties>
+</extension>

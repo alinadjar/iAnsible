@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.ivy:ivy</id>
+    <version>2.6.0</version>
+    <type>jar</type>
+    <name>Apache Ivy</name>
+    <summary>The Apache Software Foundation provides support for the Apache community of open-source software projects.
+    The Apache projects are characterized by a collaborative, consensus based development process, an open and
+    pragmatic software license, and a desire to create high quality software that leads the way in its field.
+    We consider ourselves not simply a group of projects sharing a server, but rather a community of developers
+    and users.</summary>
+    <website>http://ant.apache.org/ivy/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitbox.apache.org/repos/asf?p=ant-ivy.git</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/ant-ivy.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/ant-ivy.git</path>
+        </developerconnection>
+        <tag>https://gitbox.apache.org/repos/asf?p=ant-ivy.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/IVY</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.ivy</maven.groupid>
+        <maven.artifactid>ivy</maven.artifactid>
+    </properties>
+</extension>

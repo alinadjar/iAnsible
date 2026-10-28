@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.rometools:rome</id>
+    <version>2.1.0</version>
+    <type>jar</type>
+    <name>rome</name>
+    <summary>All Roads Lead to ROME. ROME is a set of Atom/RSS Java utilities that make it
+        easy to work in Java with most syndication formats. Today it accepts all flavors of RSS
+        (0.90, 0.91, 0.92, 0.93, 0.94, 1.0 and 2.0), Atom 0.3 and Atom 1.0 feeds. Rome includes
+        a set of parsers and generators for the various flavors of feeds, as well as converters
+        to convert from one format to another. The parsers can give you back Java objects that
+        are either specific for the format you want to work with, or a generic normalized
+        SyndFeed object that lets you work on with the data without bothering about the
+        underlying format.</summary>
+    <website>http://rometools.com/rome</website>
+    <authors>
+        <author>
+            <name>Patrick Gotthard</name>
+        </author>
+        <author>
+            <name>David M. Johnson</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/rometools/rome/rome</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/rometools/rome.git/rome</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/rometools/rome.git/rome</path>
+        </developerconnection>
+        <tag>https://github.com/rometools/rome/rome</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>com.rometools:rome-utils</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jdom:jdom2</id>
+            <version>2.0.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>com.rometools:rome</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.rometools:rome-modules</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.rometools:rome-opml</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.rometools:rome-utils</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jdom:jdom2</id>
+            <version>2.0.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.logback:logback-classic</id>
+            <version>1.3.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xmlunit:xmlunit</id>
+            <version>1.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hamcrest:hamcrest-library</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.24.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.tomakehurst:wiremock</id>
+            <version>2.27.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.rometools</maven.groupid>
+        <maven.artifactid>rome</maven.artifactid>
+    </properties>
+</extension>

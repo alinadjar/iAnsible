@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.httpcomponents.core5:httpcore5</id>
+    <version>5.4.3</version>
+    <type>jar</type>
+    <name>Apache HttpComponents Core HTTP/1.1</name>
+    <summary>Apache HttpComponents HTTP/1.1 core components</summary>
+    <website>https://hc.apache.org/httpcomponents-core-5.4.x/5.4.3/httpcore5/</website>
+    <authors>
+        <author>
+            <name>Michael Osipov</name>
+        </author>
+        <author>
+            <name>Ortwin Glueck</name>
+            <url>http://www.odi.ch/</url>
+        </author>
+        <author>
+            <name>Oleg Kalnichevski</name>
+        </author>
+        <author>
+            <name>Asankha C. Perera</name>
+            <url>https://www.adroitlogic.com/</url>
+        </author>
+        <author>
+            <name>Sebastian Bazley</name>
+        </author>
+        <author>
+            <name>Erik Abele</name>
+            <url>http://www.codefaktor.de/</url>
+        </author>
+        <author>
+            <name>Ant Elder</name>
+        </author>
+        <author>
+            <name>Paul Fremantle</name>
+        </author>
+        <author>
+            <name>Roland Weber</name>
+        </author>
+        <author>
+            <name>Sam Berlin</name>
+        </author>
+        <author>
+            <name>Sean C. Sullivan</name>
+        </author>
+        <author>
+            <name>Jonathan Moore</name>
+        </author>
+        <author>
+            <name>Gary Gregory</name>
+        </author>
+        <author>
+            <name>William Speirs</name>
+        </author>
+        <author>
+            <name>Karl Wright</name>
+        </author>
+        <author>
+            <name>Francois-Xavier Bonnet</name>
+        </author>
+        <author>
+            <name>Ryan Schmitt</name>
+        </author>
+        <author>
+            <name>Arturo Bernal</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/apache/httpcomponents-core/tree/5.4.3/httpcore5</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/httpcomponents-core.git/httpcore5</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/httpcomponents-core.git/httpcore5</path>
+        </developerconnection>
+        <tag>https://github.com/apache/httpcomponents-core/tree/5.4.3/httpcore5</tag>
+    </scm>
+    <issuemanagement>
+        <system>Jira</system>
+        <url>https://issues.apache.org/jira/browse/HTTPCORE</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.apache.httpcomponents.core5:httpcore5</id>
+            <version>5.4.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents.core5:httpcore5-h2</id>
+            <version>5.4.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents.core5:httpcore5-reactive</id>
+            <version>5.4.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents.core5:httpcore5-testing</id>
+            <version>5.4.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents.core5:httpcore5:tests</id>
+            <version>5.4.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.conscrypt:conscrypt-openjdk-uber</id>
+            <version>2.5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hamcrest:hamcrest</id>
+            <version>3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>4.11.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.36</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-slf4j-impl</id>
+            <version>2.25.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-core</id>
+            <version>2.25.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.testcontainers:testcontainers</id>
+            <version>1.21.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.testcontainers:junit-jupiter</id>
+            <version>1.21.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.openjdk.jmh:jmh-core</id>
+            <version>1.37</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.openjdk.jmh:jmh-generator-annprocess</id>
+            <version>1.37</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.plugin-tools:maven-plugin-annotations</id>
+            <version>3.6.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-api</id>
+            <version>5.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-engine</id>
+            <version>5.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-migrationsupport</id>
+            <version>5.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-params</id>
+            <version>5.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-commons</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-console</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-engine</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-jfr</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-launcher</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-reporting</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-runner</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-api</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-commons</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-engine</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-testkit</id>
+            <version>1.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.vintage:junit-vintage-engine</id>
+            <version>5.13.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.httpcomponents.core5</maven.groupid>
+        <maven.artifactid>httpcore5</maven.artifactid>
+    </properties>
+</extension>

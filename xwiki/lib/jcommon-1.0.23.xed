@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jfree:jcommon</id>
+    <version>1.0.23</version>
+    <type>jar</type>
+    <name>JCommon</name>
+    <summary>JCommon is a free general purpose Java class library that is used in
+    several projects at www.jfree.org, including JFreeChart and
+    JFreeReport.</summary>
+    <website>http://www.jfree.org/jcommon/</website>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License 3</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://cvs.sourceforge.net/viewcvs.py/jfreechart/jcommon</url>
+        <connection>
+            <system>cvs</system>
+            <path>pserver:anonymous@cvs.sourceforge.net:/cvsroot/jfreechart:jcommon</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.sonatype.org/spice/trunk/oss/oss-parent-9/jcommon</path>
+        </developerconnection>
+        <tag>http://cvs.sourceforge.net/viewcvs.py/jfreechart/jcommon</tag>
+    </scm>
+    <issuemanagement>
+        <url>http://sourceforge.net/tracker/?group_id=15494</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jfree</maven.groupid>
+        <maven.artifactid>jcommon</maven.artifactid>
+    </properties>
+</extension>

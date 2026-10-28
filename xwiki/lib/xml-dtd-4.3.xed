@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.sf.carte:xml-dtd</id>
+    <version>4.3</version>
+    <type>jar</type>
+    <summary>XML DTD utility library</summary>
+    <website>https://css4j.github.io/resolver.html</website>
+    <licenses>
+        <license>
+            <name>BSD 3-clause license</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/css4j/xml-dtd</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/css4j/xml-dtd.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git://git@github.com:css4j/xml-dtd.git</path>
+        </developerconnection>
+        <tag>https://github.com/css4j/xml-dtd</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>io.sf.carte:carte-util</id>
+            <version>[3.4.0,)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.sf.carte</maven.groupid>
+        <maven.artifactid>xml-dtd</maven.artifactid>
+    </properties>
+</extension>

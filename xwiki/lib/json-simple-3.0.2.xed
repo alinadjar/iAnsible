@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.cliftonlabs:json-simple</id>
+    <version>3.0.2</version>
+    <type>jar</type>
+    <name>JSON.simple</name>
+    <summary>Java 7+ toolkit to quickly develop RFC 4627 JSON compatible applications.</summary>
+    <website>https://cliftonlabs.github.io/json-simple/</website>
+    <authors>
+        <author>
+            <name>Davin Loegering</name>
+        </author>
+        <author>
+            <name>Yidong Fang</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/cliftonlabs/json-simple.git</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/cliftonlabs/json-simple.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/cliftonlabs/json-simple.git</path>
+        </developerconnection>
+        <tag>https://github.com/cliftonlabs/json-simple.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.cliftonlabs</maven.groupid>
+        <maven.artifactid>json-simple</maven.artifactid>
+    </properties>
+</extension>

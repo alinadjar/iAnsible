@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jline:jline</id>
+    <version>2.14.6</version>
+    <type>jar</type>
+    <name>JLine</name>
+    <summary>Sonatype helps open source projects to set up Maven repositories on https://oss.sonatype.org/</summary>
+    <website>http://nexus.sonatype.org/oss-repository-hosting.html/jline</website>
+    <authors>
+        <author>
+            <name>Jason Dillon</name>
+        </author>
+        <author>
+            <name>Guillaume Nodet</name>
+        </author>
+        <author>
+            <name>Marc Prud'hommeaux</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/jline/jline2</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/jline/jline2.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/jline/jline2.git</path>
+        </developerconnection>
+        <tag>http://github.com/jline/jline2</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/jline/jline2/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jline</maven.groupid>
+        <maven.artifactid>jline</maven.artifactid>
+    </properties>
+</extension>

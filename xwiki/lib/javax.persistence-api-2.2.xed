@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>javax.persistence:javax.persistence-api</id>
+    <version>2.2</version>
+    <type>jar</type>
+    <summary>Java(TM) Persistence API</summary>
+    <website>https://github.com/javaee/jpa-spec</website>
+    <licenses>
+        <license>
+            <name>Eclipse Public License v1.0</name>
+        </license>
+        <license>
+            <name>Eclipse Distribution License v. 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/javaee/jpa-spec.git</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/javaee/jpa-spec.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:javaee/jpa-spec.git</path>
+        </developerconnection>
+        <tag>https://github.com/javaee/jpa-spec.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>IssueTracker</system>
+        <url>https://github.com/javaee/jpa-spec/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>jvnet-nexus-releases</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>javax.persistence</maven.groupid>
+        <maven.artifactid>javax.persistence-api</maven.artifactid>
+    </properties>
+</extension>

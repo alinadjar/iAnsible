@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars.npm:estree-walker</id>
+    <version>2.0.2</version>
+    <type>jar</type>
+    <name>estree-walker</name>
+    <summary>WebJar for estree-walker</summary>
+    <website>https://www.webjars.org</website>
+    <authors>
+        <author>
+            <name>webjars</name>
+            <url>https://www.webjars.org</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/Rich-Harris/estree-walker</url>
+        <connection>
+            <system>https</system>
+            <path>//github.com/Rich-Harris/estree-walker.git</path>
+        </connection>
+        <developerconnection>
+            <system>https</system>
+            <path>//github.com/Rich-Harris/estree-walker.git</path>
+        </developerconnection>
+        <tag>https://github.com/Rich-Harris/estree-walker</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://github.com/Rich-Harris/estree-walker/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars.npm</maven.groupid>
+        <maven.artifactid>estree-walker</maven.artifactid>
+    </properties>
+</extension>

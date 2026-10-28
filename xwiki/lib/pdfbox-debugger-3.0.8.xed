@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.pdfbox:pdfbox-debugger</id>
+    <version>3.0.8</version>
+    <type>jar</type>
+    <name>Apache PDFBox Debugger</name>
+    <summary>The Apache PDFBox library is an open source Java tool for working with PDF documents. 
+    This artefact contains the PDFDebugger.</summary>
+    <website>https://www.apache.org/pdfbox-parent/pdfbox-debugger/</website>
+    <authors>
+        <author>
+            <name>Andreas Lehmkühler</name>
+        </author>
+        <author>
+            <name>Adam Nichols</name>
+        </author>
+        <author>
+            <name>Ben Litchfield</name>
+        </author>
+        <author>
+            <name>Brian Carrier</name>
+        </author>
+        <author>
+            <name>Daniel Wilson</name>
+        </author>
+        <author>
+            <name>Guillaume Bailleul</name>
+        </author>
+        <author>
+            <name>Jörg Henne</name>
+        </author>
+        <author>
+            <name>Sebastian Holder</name>
+        </author>
+        <author>
+            <name>John Hewson</name>
+        </author>
+        <author>
+            <name>Jeremias Maerki</name>
+        </author>
+        <author>
+            <name>Kevin Jackson</name>
+        </author>
+        <author>
+            <name>Johannes Koch</name>
+        </author>
+        <author>
+            <name>Carolin Köhler</name>
+        </author>
+        <author>
+            <name>Matthäus Mayer</name>
+        </author>
+        <author>
+            <name>Maruan Sahyoun</name>
+        </author>
+        <author>
+            <name>Phillipp Koch</name>
+        </author>
+        <author>
+            <name>Tim Allison</name>
+        </author>
+        <author>
+            <name>Thomas Chojecki</name>
+        </author>
+        <author>
+            <name>Timo Boehme</name>
+        </author>
+        <author>
+            <name>Tilman Hausherr</name>
+        </author>
+        <author>
+            <name>Villu Ruusmann</name>
+        </author>
+        <author>
+            <name>Eric Leleu</name>
+        </author>
+        <author>
+            <name>Jukka Zitting</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://svn.apache.org/viewvc/pdfbox/tags/3.0.8/debugger</url>
+        <connection>
+            <system>svn</system>
+            <path>https://svn.apache.org/repos/asf/pdfbox/tags/3.0.8/debugger</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.apache.org/repos/asf/pdfbox/tags/3.0.8/debugger</path>
+        </developerconnection>
+        <tag>https://svn.apache.org/viewvc/pdfbox/tags/3.0.8/debugger</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/PDFBOX</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.pdfbox:pdfbox</id>
+            <version>3.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>info.picocli:picocli</id>
+            <version>4.7.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.bouncycastle:bcpkix-jdk18on</id>
+            <version>1.84</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.pdfbox</maven.groupid>
+        <maven.artifactid>pdfbox-debugger</maven.artifactid>
+    </properties>
+</extension>

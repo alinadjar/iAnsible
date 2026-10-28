@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.sf.jclf:jclf-linear3</id>
+    <version>1.0.0</version>
+    <type>jar</type>
+    <summary>Library of general utility classes for the Java programming language</summary>
+    <website>https://jclf.sourceforge.io/jclf-linear3/</website>
+    <licenses>
+        <license>
+            <name>BSD 3-clause license</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://sourceforge.net/p/jclf/main/ci/master/tree/jclf-linear3/</url>
+        <connection>
+            <system>git</system>
+            <path>git://git.code.sf.net/p/jclf/main/jclf-linear3</path>
+        </connection>
+        <tag>https://sourceforge.net/p/jclf/main/ci/master/tree/jclf-linear3/</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://sourceforge.net/p/jclf/tickets/</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.sf.jclf</maven.groupid>
+        <maven.artifactid>jclf-linear3</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.antlr:antlr</id>
+    <version>3.5.3</version>
+    <type>jar</type>
+    <name>ANTLR 3 Tool</name>
+    <summary>The ANTLR 3 tool.</summary>
+    <website>http://antlr.org/antlr</website>
+    <licenses>
+        <license>
+            <name>BSD licence</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/antlr/antlr3/tree/master/antlr</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/antlr/antlr3.git/antlr</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:antlr/antlr3.git/antlr</path>
+        </developerconnection>
+        <tag>https://github.com/antlr/antlr3/tree/master/antlr</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/antlr/antlr3/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.antlr:antlr-runtime</id>
+            <version>3.5.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.antlr:ST4</id>
+            <version>4.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>antlr:antlr</id>
+            <version>2.7.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.antlr:stringtemplate</id>
+            <version>3.2.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.antlr:ST4</id>
+            <version>4.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.antlr</maven.groupid>
+        <maven.artifactid>antlr</maven.artifactid>
+    </properties>
+</extension>

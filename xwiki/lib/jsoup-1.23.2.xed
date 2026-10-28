@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jsoup:jsoup</id>
+    <version>1.23.2</version>
+    <type>jar</type>
+    <name>jsoup Java HTML Parser</name>
+    <summary>jsoup is a Java library that simplifies working with real-world HTML and XML. It offers an easy-to-use API for URL fetching, data parsing, extraction, and manipulation using DOM API methods, CSS, and xpath selectors. jsoup implements the WHATWG HTML5 specification, and parses HTML to the same DOM as modern browsers.</summary>
+    <website>https://jsoup.org/</website>
+    <authors>
+        <author>
+            <name>Jonathan Hedley</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jhy/jsoup</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/jhy/jsoup.git</path>
+        </connection>
+        <tag>https://github.com/jhy/jsoup</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/jhy/jsoup/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>io.netty:netty-buffer</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-base</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-dns</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-haproxy</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-compression</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-http</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-http2</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-http3</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-memcache</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-mqtt</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-redis</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-smtp</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-socks</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-stomp</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-xml</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-protobuf</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-marshalling</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-common</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-dev-tools</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-handler</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-handler-proxy</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-handler-ssl-ocsp</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-resolver</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-resolver-dns</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-rxtx</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-sctp</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-udt</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-pkitesting</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-all</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-resolver-dns-classes-macos</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-resolver-dns-native-macos</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-resolver-dns-native-macos:osx-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-resolver-dns-native-macos:osx-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-unix-common</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-unix-common:linux-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-unix-common:linux-riscv64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-unix-common:linux-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-unix-common:osx-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-unix-common:osx-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-classes-epoll</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-epoll</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-epoll:linux-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-epoll:linux-riscv64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-epoll:linux-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-classes-io_uring</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-io_uring</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-io_uring:linux-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-io_uring:linux-riscv64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-io_uring:linux-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-classes-kqueue</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-kqueue</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-kqueue:osx-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-transport-native-kqueue:osx-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-classes-quic</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-native-quic</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-native-quic:linux-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-native-quic:linux-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-native-quic:osx-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-native-quic:osx-aarch_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-codec-native-quic:windows-x86_64</id>
+            <version>4.2.17.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-classes</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative:linux-x86_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative:linux-x86_64-fedora</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative:osx-x86_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative:osx-aarch_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:linux-x86_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:linux-aarch_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:osx-x86_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:osx-aarch_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:windows-x86_64</id>
+            <version>2.0.81.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jsoup</maven.groupid>
+        <maven.artifactid>jsoup</maven.artifactid>
+    </properties>
+</extension>

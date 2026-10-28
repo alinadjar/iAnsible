@@ -10,5 +10,13 @@ langfuse_compose_origin_file: docker-compose.yml.origin
 langfuse_env_template: langfuse.env.j2
 
 headroom_enabled: false
-headroom_deploy_path: /opt/sadgan/headroom
-headroom_service_port: 8080
+headroom_deploy_path: /opt/headroom-ai
+headroom_venv_name: venv-313
+headroom_proxy_host: 0.0.0.0
+headroom_proxy_port: 8787
+headroom_service_user: root
+headroom_service_group: root
+# pip package(s) installed into venv-313; pin version or index via headroom_pip_extra_args
+headroom_pip_packages:
+  - headroom-ai
+headroom_service_environment: []

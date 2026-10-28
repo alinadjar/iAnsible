@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.guava:guava</id>
+    <version>33.7.1-jre</version>
+    <type>jar</type>
+    <name>Guava: Google Core Libraries for Java</name>
+    <summary>Guava is a suite of core and expanded libraries that include
+    utility classes, Google's collections, I/O classes, and
+    much more.</summary>
+    <website>https://github.com/google/guava</website>
+    <authors>
+        <author>
+            <name>Chris Povirk</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/guava/guava</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/google/guava.git/guava</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:google/guava.git/guava</path>
+        </developerconnection>
+        <tag>https://github.com/google/guava/guava</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/google/guava/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.google.guava:failureaccess</id>
+            <version>1.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.guava:listenablefuture</id>
+            <version>9999.0-empty-to-avoid-conflict-with-guava</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jspecify:jspecify</id>
+            <version>1.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.errorprone:error_prone_annotations</id>
+            <version>2.50.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.j2objc:j2objc-annotations</id>
+            <version>3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.jspecify:jspecify</id>
+            <version>1.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.errorprone:error_prone_annotations</id>
+            <version>2.50.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.j2objc:j2objc-annotations</id>
+            <version>3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.guava</maven.groupid>
+        <maven.artifactid>guava</maven.artifactid>
+    </properties>
+</extension>

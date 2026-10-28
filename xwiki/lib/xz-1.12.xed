@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.tukaani:xz</id>
+    <version>1.12</version>
+    <type>jar</type>
+    <name>XZ for Java</name>
+    <summary>XZ data compression</summary>
+    <website>https://tukaani.org/xz/java.html</website>
+    <authors>
+        <author>
+            <name>Lasse Collin</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>0BSD</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/tukaani-project/xz-java</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/tukaani-project/xz-java</path>
+        </connection>
+        <tag>https://github.com/tukaani-project/xz-java</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.tukaani</maven.groupid>
+        <maven.artifactid>xz</maven.artifactid>
+    </properties>
+</extension>

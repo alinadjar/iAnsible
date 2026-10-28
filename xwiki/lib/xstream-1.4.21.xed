@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.thoughtworks.xstream:xstream</id>
+    <version>1.4.21</version>
+    <type>jar</type>
+    <name>XStream Core</name>
+    <summary>XStream is a serialization library from Java objects to XML and back.</summary>
+    <website>http://x-stream.github.io/xstream</website>
+    <authors>
+        <author>
+            <name>XStream Committers</name>
+            <url>http://x-stream.github.io/team.html</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD-3-Clause</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/x-stream/xstream/xstream</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/x-stream/xstream.git/xstream</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/x-stream/xstream.git/xstream</path>
+        </developerconnection>
+        <tag>http://github.com/x-stream/xstream/xstream</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/x-stream/xstream/issues/</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>io.github.x-stream:mxparser</id>
+            <version>1.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream:tests</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>test-jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream:javadoc</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream-hibernate</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream-hibernate:javadoc</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream-jmh</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream-jmh:javadoc</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream-benchmark</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.thoughtworks.xstream:xstream-benchmark:javadoc</id>
+            <version>1.4.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-cli:commons-cli</id>
+            <version>1.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-lang:commons-lang</id>
+            <version>2.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>cglib:cglib-nodep</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javassist:javassist</id>
+            <version>3.12.1.GA</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>dom4j:dom4j</id>
+            <version>1.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>xml-apis:xml-apis</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.jdom:jdom</id>
+            <version>1.1.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jdom:jdom2</id>
+            <version>2.0.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>joda-time:joda-time</id>
+            <version>1.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.megginson.sax:xml-writer</id>
+            <version>0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>xml-apis:xml-apis</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>stax:stax</id>
+            <version>1.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>stax:stax-api</id>
+            <version>1.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.woodstox:woodstox-core</id>
+            <version>5.4.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.codehaus.woodstox:wstx-asl</id>
+            <version>3.2.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xom:xom</id>
+            <version>1.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>xerces:xmlParserAPIs</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>xerces:xercesImpl</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>xalan:xalan</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>jaxen:jaxen</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>io.github.x-stream:mxparser</id>
+            <version>1.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xpp3:xpp3_min</id>
+            <version>1.1.4c</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.sf.kxml:kxml2-min</id>
+            <version>2.3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.sf.kxml:kxml2</id>
+            <version>2.3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xmlpull:xmlpull</id>
+            <version>1.1.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.json:json</id>
+            <version>20080701</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.codehaus.jettison:jettison</id>
+            <version>1.5.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xml-apis:xml-apis</id>
+            <version>1.3.04</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>xerces:xercesImpl</id>
+            <version>2.8.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.activation:activation</id>
+            <version>1.1.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.annotation:javax.annotation-api</id>
+            <version>1.3.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.xml.bind:jaxb-api</id>
+            <version>2.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.ws:jaxws-rt</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hibernate:hibernate-core</id>
+            <version>4.2.5.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hibernate:hibernate-envers</id>
+            <version>4.2.5.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>cglib:cglib</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.hsqldb:hsqldb</id>
+            <version>2.2.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-simple</id>
+            <version>1.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.openjdk.jmh:jmh-core</id>
+            <version>1.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.openjdk.jmh:jmh-generator-annprocess</id>
+            <version>1.21</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-codec:commons-codec</id>
+            <version>1.10</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.brsanthu:migbase64</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>3.8.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jmock:jmock</id>
+            <version>1.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.felix:org.apache.felix.framework</id>
+            <version>4.4.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.hk2.external:javax.inject</id>
+            <version>2.4.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-container-native</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-extender-service</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-inject</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-invoker-junit</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-junit4</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-link-assembly</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ops4j.pax.exam:pax-exam-link-mvn</id>
+            <version>3.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.thoughtworks.xstream</maven.groupid>
+        <maven.artifactid>xstream</maven.artifactid>
+    </properties>
+</extension>

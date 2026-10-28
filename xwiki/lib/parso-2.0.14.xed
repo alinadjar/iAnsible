@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.epam:parso</id>
+    <version>2.0.14</version>
+    <type>jar</type>
+    <name>parso</name>
+    <summary>Parso is a lightweight Java library designed to read SAS7BDAT datasets. The Parso interfaces
+        are analogous to libraries designed to read table-storing files, for example, CSVReader library.
+        Despite its small size, the Parso library is the only full-featured open-source solution to process SAS7BDAT
+        datasets, both uncompressed, CHAR-compressed and BIN-compressed. It is effective in processing clinical and
+        statistical data often stored in SAS7BDAT format. Parso allows converting data into CSV format.</summary>
+    <website>https://github.com/epam/parso</website>
+    <authors>
+        <author>
+            <name>Petr Tsurinov</name>
+        </author>
+        <author>
+            <name>Igor Printsev</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License v2</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:epam/parso.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:epam/parso.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:epam/parso.git</path>
+        </developerconnection>
+        <tag>git@github.com:epam/parso.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.epam</maven.groupid>
+        <maven.artifactid>parso</maven.artifactid>
+    </properties>
+</extension>

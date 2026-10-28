@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.fasterxml:classmate</id>
+    <version>1.5.1</version>
+    <type>jar</type>
+    <name>ClassMate</name>
+    <summary>Library for introspecting types with full generic information
+        including resolving of field and method types.</summary>
+    <website>https://github.com/FasterXML/java-classmate</website>
+    <authors>
+        <author>
+            <name>Tatu Saloranta</name>
+        </author>
+        <author>
+            <name>Brian Langel</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/FasterXML/java-classmate</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/java-classmate.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/java-classmate.git</path>
+        </developerconnection>
+        <tag>https://github.com/FasterXML/java-classmate</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issue Management</system>
+        <url>https://github.com/FasterXML/classmate/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.fasterxml</maven.groupid>
+        <maven.artifactid>classmate</maven.artifactid>
+    </properties>
+</extension>

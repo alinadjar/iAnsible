@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.ocpsoft.prettytime:prettytime</id>
+    <version>5.0.9.Final</version>
+    <type>jar</type>
+    <name>PrettyTime - Core</name>
+    <summary>Social style time-formatting utilities and web-framework integrations.</summary>
+    <website>http://ocpsoft.org/prettytime/prettytime/</website>
+    <authors>
+        <author>
+            <name>Lincoln Baxter, III</name>
+        </author>
+        <author>
+            <name>Thomas Weitzel</name>
+        </author>
+        <author>
+            <name>Isira Seneviratne</name>
+            <url>https://github.com/Isira-Seneviratne</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/ocpsoft/prettytime/prettytime</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/ocpsoft/prettytime.git/prettytime</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:ocpsoft/prettytime.git/prettytime</path>
+        </developerconnection>
+        <tag>http://github.com/ocpsoft/prettytime/prettytime</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/ocpsoft/prettytime/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.ocpsoft.prettytime:prettytime</id>
+            <version>5.0.9.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.ocpsoft.prettytime:prettytime-integration-jsf</id>
+            <version>5.0.9.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.faces:jsf-api</id>
+            <version>1.2_02</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.felix:maven-bundle-plugin</id>
+            <version>2.5.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.ocpsoft.prettytime</maven.groupid>
+        <maven.artifactid>prettytime</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars:scriptaculous</id>
+    <version>1.9.0</version>
+    <type>jar</type>
+    <name>Scriptaculous</name>
+    <summary>WebJar for scriptaculous_js</summary>
+    <website>http://webjars.org</website>
+    <authors>
+        <author>
+            <name>Thomas Fuchs</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/webjars/scriptaculous</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/webjars/scriptaculous.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/webjars/scriptaculous.git</path>
+        </developerconnection>
+        <tag>http://github.com/webjars/scriptaculous</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars</maven.groupid>
+        <maven.artifactid>scriptaculous</maven.artifactid>
+    </properties>
+</extension>

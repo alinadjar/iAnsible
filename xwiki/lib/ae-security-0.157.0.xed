@@ -1,0 +1,2009 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.metaeffekt.core:ae-security</id>
+    <version>0.157.0</version>
+    <type>jar</type>
+    <name>ae-security</name>
+    <summary>Core project with fundamental runtime and build support.</summary>
+    <website>https://github.com/org-metaeffekt/metaeffekt-core/ae-core-poms/ae-core-plugin-management-pom/ae-libraries/ae-security</website>
+    <authors>
+        <author/>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/org-metaeffekt/metaeffekt-core.git/ae-core-poms/ae-core-plugin-management-pom/ae-libraries/ae-security</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/org-metaeffekt/metaeffekt-core.git/ae-core-poms/ae-core-plugin-management-pom/ae-libraries/ae-security</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://github.com:org-metaeffekt/metaeffekt-core.git/ae-core-poms/ae-core-plugin-management-pom/ae-libraries/ae-security</path>
+        </developerconnection>
+        <tag>https://github.com/org-metaeffekt/metaeffekt-core.git/ae-core-poms/ae-core-plugin-management-pom/ae-libraries/ae-security</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.20.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:jcl-over-slf4j</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.json:json</id>
+            <version>20231013</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.ow2.asm:asm</id>
+            <version>5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-log4j12</id>
+            <version>2.0.18.evil</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:jcl-over-slf4j</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:log4j-over-slf4j</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.json:json</id>
+            <version>20231013</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.code.gson:gson</id>
+            <version>2.14.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-core</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-to-slf4j</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-slf4j2-impl</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-api</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-1.2-api</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-jul</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-jcl</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-web</id>
+            <version>2.25.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-jdk14</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-nop</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-jcl</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-simple</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:jul-to-slf4j</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.dom4j:dom4j</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>xml-apis:xml-apis</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant</id>
+            <version>1.10.17</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant-commons-logging</id>
+            <version>1.10.17</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>commons-logging:commons-logging-api</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant-launcher</id>
+            <version>1.10.17</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ant-contrib:ant-contrib</id>
+            <version>1.0b3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>ant:ant</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-aop</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>commons-logging:commons-logging</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-beans</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-context</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-core</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>commons-logging:commons-logging</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-orm</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-tx</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-expression</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-jdbc</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-test</id>
+            <version>7.0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>commons-logging:commons-logging</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.poi:poi</id>
+            <version>5.2.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.poi:poi-ooxml</id>
+            <version>5.2.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.code.findbugs:jsr305</id>
+            <version>3.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.jcraft:jsch</id>
+            <version>0.1.55</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-codec:commons-codec</id>
+            <version>1.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-collections4</id>
+            <version>4.5.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-collections:commons-collections</id>
+            <version>3.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jaxen:jaxen</id>
+            <version>1.1.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>xml-apis:xml-apis</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>xerces:xercesImpl</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>com.ibm.icu:icu4j</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>jdom:jdom</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>xom:xom</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>maven-plugins:maven-cobertura-plugin</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>maven-plugins:maven-findbugs-plugin</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.jdom:jdom</id>
+            <version>2.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-compress</id>
+            <version>1.28.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-exec</id>
+            <version>1.6.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.easymock:easymock</id>
+            <version>3.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.easymock:easymockclassextension</id>
+            <version>3.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hibernate:hibernate-core</id>
+            <version>${hibernate.core.version}</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>org.jboss:jandex</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.hibernate.javax.persistence:hibernate-jpa-2.1-api</id>
+            <version>${hibernate.jpa.version}</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.20.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-text</id>
+            <version>1.15.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents:httpclient</id>
+            <version>4.5.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>commons-logging:commons-logging</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents:httpcore</id>
+            <version>4.4.16</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.httpcomponents:httpmime</id>
+            <version>4.5.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.velocity:velocity-engine-core</id>
+            <version>2.4.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.geronimo.specs:geronimo-servlet_3.0_spec</id>
+            <version>1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.javassist:javassist</id>
+            <version>3.21.0-GA</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-core</id>
+            <version>3.9.15</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>org.apache.jackrabbit:jackrabbit-jcr-commons</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>org.apache.jackrabbit:jackrabbit-webdav</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>org.apache.maven.wagon:wagon-webdav-jackrabbit</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-artifact</id>
+            <version>3.9.15</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-model</id>
+            <version>3.9.15</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-plugin-api</id>
+            <version>3.9.15</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.codehaus.plexus:plexus-utils</id>
+            <version>3.6.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.plugin-testing:maven-plugin-testing-harness</id>
+            <version>2.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.27.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.tukaani:xz</id>
+            <version>1.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.luben:zstd-jni</id>
+            <version>1.5.5-11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.projectlombok:lombok</id>
+            <version>1.18.46</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.bouncycastle:bcprov-jdk18on</id>
+            <version>1.85</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.bouncycastle:bcpkix-jdk18on</id>
+            <version>1.85</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.docker-java:docker-java</id>
+            <version>3.3.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.docker-java:docker-java-transport-httpclient5</id>
+            <version>3.3.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.kubernetes:client-java</id>
+            <version>20.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-api</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-engine</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-migrationsupport</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-params</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-commons</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-console</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-engine</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-launcher</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-reporting</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-api</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-engine</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-testkit</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.vintage:junit-vintage-engine</id>
+            <version>6.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.core:jackson-annotations</id>
+            <version>2.22</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.core:jackson-core</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.core:jackson-databind</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-avro</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-cbor</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-csv</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-ion</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-properties</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-smile</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-toml</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-xml</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.dataformat:jackson-dataformat-yaml</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-eclipse-collections</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-guava</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate4</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate5</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate5-jakarta</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate6</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hibernate7</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-hppc</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jakarta-jsonp</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jaxrs</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-javax-money</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jdk8</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-joda</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-joda-money</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-json-org</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jsr310</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-jsr353</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-moneta</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.datatype:jackson-datatype-pcollections</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-base</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-cbor-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-smile-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-xml-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jaxrs:jackson-jaxrs-yaml-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-base</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-cbor-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-smile-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-xml-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-yaml-provider</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-all</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-annotation-support</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-extension-javatime</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-objects</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-retrofit2</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.jr:jackson-jr-stree</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-afterburner</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-android-record</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-blackbird</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-guice</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-guice7</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jaxb-annotations</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jsonSchema</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-jsonSchema-jakarta</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-kotlin</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-mrbean</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-no-ctor-deser</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-osgi</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-parameter-names</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-paranamer</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_2.11</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_2.12</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_2.13</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.fasterxml.jackson.module:jackson-module-scala_3</id>
+            <version>2.22.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.core:jackson-core</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.core:jackson-databind</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-avro</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-cbor</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-csv</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-ion</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-properties</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-protobuf</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-smile</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-toml</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-xml</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.dataformat:jackson-dataformat-yaml</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-eclipse-collections</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-guava</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-hibernate4</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-hibernate5</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-hibernate5-jakarta</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-hibernate6</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-hibernate7</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-hppc</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-javax-money</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-jakarta-jsonp</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-jaxrs</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-joda</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-joda-money</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-json-org</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-jsr353</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-moneta</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.datatype:jackson-datatype-pcollections</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jaxrs:jackson-jaxrs-base</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jaxrs:jackson-jaxrs-cbor-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jaxrs:jackson-jaxrs-json-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jaxrs:jackson-jaxrs-smile-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jaxrs:jackson-jaxrs-xml-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jaxrs:jackson-jaxrs-yaml-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jakarta.rs:jackson-jakarta-rs-base</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jakarta.rs:jackson-jakarta-rs-cbor-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jakarta.rs:jackson-jakarta-rs-json-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jakarta.rs:jackson-jakarta-rs-smile-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jakarta.rs:jackson-jakarta-rs-xml-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jakarta.rs:jackson-jakarta-rs-yaml-provider</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jr:jackson-jr-all</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jr:jackson-jr-annotation-support</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jr:jackson-jr-extension-javatime</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jr:jackson-jr-objects</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jr:jackson-jr-retrofit2</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.jr:jackson-jr-stree</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-afterburner</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-android-record</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-blackbird</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-guice</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-guice7</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-jaxb-annotations</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-jakarta-xmlbind-annotations</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-jsonSchema</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-jsonSchema-jakarta</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-kotlin</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-mrbean</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-no-ctor-deser</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-osgi</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-scala_2.12</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-scala_2.13</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>tools.jackson.module:jackson-module-scala_3</id>
+            <version>3.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.metaeffekt.core</maven.groupid>
+        <maven.artifactid>ae-security</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.glassfish.hk2:osgi-resource-locator</id>
+    <version>1.0.3</version>
+    <type>jar</type>
+    <name>OSGi resource locator</name>
+    <summary>Used by various API providers that rely on META-INF/services mechanism to locate providers.</summary>
+    <website>https://projects.eclipse.org/projects/ee4j/osgi-resource-locator</website>
+    <authors>
+        <author>
+            <name>Sahoo</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/glassfish-hk2-extra</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/eclipse-ee4j/glassfish-hk2-extra.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:eclipse-ee4j/glassfish-hk2-extra.git</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/glassfish-hk2-extra</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/eclipse-ee4j/ee4j/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.glassfish.hk2</maven.groupid>
+        <maven.artifactid>osgi-resource-locator</maven.artifactid>
+    </properties>
+</extension>

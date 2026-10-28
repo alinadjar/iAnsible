@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.carrot2:morfologik-polish</id>
+    <version>2.1.9</version>
+    <type>jar</type>
+    <name>Morfologik Stemming (Polish Dictionary)</name>
+    <summary>Morfologik Stemming (Polish Dictionary)</summary>
+    <website>http://morfologik.blogspot.com/morfologik-polish/</website>
+    <authors>
+        <author>
+            <name>Dawid Weiss</name>
+        </author>
+        <author>
+            <name>Marcin Miłkowski</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:morfologik/morfologik-stemming.git/morfologik-polish</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:morfologik/morfologik-stemming.git/morfologik-polish</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:morfologik/morfologik-stemming.git/morfologik-polish</path>
+        </developerconnection>
+        <tag>git@github.com:morfologik/morfologik-stemming.git/morfologik-polish</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.carrot2:morfologik-stemming</id>
+            <version>2.1.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>com.carrotsearch:hppc</id>
+            <version>0.7.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.carrot2</maven.groupid>
+        <maven.artifactid>morfologik-polish</maven.artifactid>
+    </properties>
+</extension>

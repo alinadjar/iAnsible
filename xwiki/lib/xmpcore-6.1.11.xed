@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.adobe.xmp:xmpcore</id>
+    <version>6.1.11</version>
+    <type>jar</type>
+    <name>Adobe XMPCore</name>
+    <summary>The Adobe XMP Core library</summary>
+    <website>https://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html</website>
+    <authors>
+        <author>
+            <name>Priyanka Gupta</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The BSD 3-Clause License (BSD3)</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://git.corp.adobe.com/coretech/xmp-java/tree/mvncentral/core</url>
+        <connection>
+            <system>git</system>
+            <path>git@git.corp.adobe.com:coretech/xmp-java.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@git.corp.adobe.com:coretech/xmp-java.git</path>
+        </developerconnection>
+        <tag>https://git.corp.adobe.com/coretech/xmp-java/tree/mvncentral/core</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.adobe.xmp</maven.groupid>
+        <maven.artifactid>xmpcore</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.dom4j:dom4j</id>
+    <version>2.2.0</version>
+    <type>jar</type>
+    <name>dom4j</name>
+    <summary>flexible XML framework for Java</summary>
+    <website>http://dom4j.github.io/</website>
+    <extensionfeatures>
+        <feature>
+            <feature>dom4j:dom4j</feature>
+            <version>2.2.0</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>dom4j:dom4j</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Filip Jirsák</name>
+            <url>https://github.com/FilipJirsak</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD 3-clause New License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:dom4j/dom4j.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:dom4j/dom4j.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:dom4j/dom4j.git</path>
+        </developerconnection>
+        <tag>git@github.com:dom4j/dom4j.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.dom4j</maven.groupid>
+        <maven.artifactid>dom4j</maven.artifactid>
+    </properties>
+</extension>

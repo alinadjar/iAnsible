@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.eclipse.parsson:parsson</id>
+    <version>1.1.9</version>
+    <type>jar</type>
+    <name>Eclipse Parsson</name>
+    <summary>Jakarta JSON Processing provider</summary>
+    <website>https://github.com/eclipse-ee4j/parsson/parsson</website>
+    <authors>
+        <author>
+            <name>Dmitry Kornilov</name>
+        </author>
+        <author>
+            <name>Lukas Jungmann</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Public License 2.0</name>
+        </license>
+        <license>
+            <name>GNU General Public License, version 2 with the GNU Classpath Exception</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/parsson/parsson</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/eclipse-ee4j/parsson.git/parsson</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:eclipse-ee4j/parsson.git/parsson</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/parsson/parsson</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/eclipse-ee4j/ee4j/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>jakarta.json:jakarta.json-api</id>
+            <version>2.1.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>jakarta.ws.rs:jakarta.ws.rs-api</id>
+            <version>3.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.annotation:jakarta.annotation-api</id>
+            <version>3.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.json:jakarta.json-api</id>
+            <version>2.1.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.parsson:parsson</id>
+            <version>1.1.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.parsson:jakarta.json</id>
+            <version>1.1.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.parsson:parsson-media</id>
+            <version>1.1.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.xml.bind:jakarta.xml.bind-api</id>
+            <version>4.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.10.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.hamcrest:hamcrest-core</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.servlet:jakarta.servlet-api</id>
+            <version>5.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-impl</id>
+            <version>4.0.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.eclipse.parsson</maven.groupid>
+        <maven.artifactid>parsson</maven.artifactid>
+    </properties>
+</extension>

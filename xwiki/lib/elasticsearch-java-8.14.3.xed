@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>co.elastic.clients:elasticsearch-java</id>
+    <version>8.14.3</version>
+    <type>jar</type>
+    <name>Elasticsearch Java API Client</name>
+    <summary>Elasticsearch Java API Client</summary>
+    <website>https://github.com/elastic/elasticsearch-java/</website>
+    <authors>
+        <author>
+            <name>Elastic</name>
+            <url>https://www.elastic.co</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/elastic/elasticsearch-java/</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/elastic/elasticsearch-java.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com:elastic/elasticsearch-java.git</path>
+        </developerconnection>
+        <tag>https://github.com/elastic/elasticsearch-java/</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.elasticsearch.client:elasticsearch-rest-client</id>
+            <version>8.14.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.code.findbugs:jsr305</id>
+            <version>3.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.json:jakarta.json-api</id>
+            <version>2.0.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.parsson:parsson</id>
+            <version>1.0.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.opentelemetry:opentelemetry-api</id>
+            <version>1.29.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>co.elastic.clients</maven.groupid>
+        <maven.artifactid>elasticsearch-java</maven.artifactid>
+    </properties>
+</extension>

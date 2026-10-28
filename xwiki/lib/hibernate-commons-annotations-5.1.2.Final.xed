@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.hibernate.common:hibernate-commons-annotations</id>
+    <version>5.1.2.Final</version>
+    <type>jar</type>
+    <name>Hibernate Commons Annotations</name>
+    <summary>Common reflection code used in support of annotation processing</summary>
+    <website>http://hibernate.org</website>
+    <authors>
+        <author>
+            <name>The Hibernate Development Team</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>GNU Library General Public License v2.1 or later</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/hibernate/hibernate-commons-annotations</url>
+        <connection>
+            <system>git</system>
+            <path>http://github.com/hibernate/hibernate-commons-annotations.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:hibernate/hibernate-commons-annotations.git</path>
+        </developerconnection>
+        <tag>http://github.com/hibernate/hibernate-commons-annotations</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://hibernate.atlassian.net/browse/HCANN</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.jboss.logging:jboss-logging</id>
+            <version>3.3.2.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.hibernate.common</maven.groupid>
+        <maven.artifactid>hibernate-commons-annotations</maven.artifactid>
+    </properties>
+</extension>

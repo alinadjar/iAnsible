@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>javax.servlet:javax.servlet-api</id>
+    <version>3.1.0</version>
+    <type>jar</type>
+    <name>Java Servlet API</name>
+    <summary>Java.net - The Source for Java Technology Collaboration</summary>
+    <website>http://servlet-spec.java.net</website>
+    <authors>
+        <author>
+            <name>Rajiv Mordani</name>
+            <url>http://weblogs.java.net/blog/mode</url>
+        </author>
+        <author>
+            <name>Shing Wai Chan</name>
+            <url>http://weblogs.java.net/blog/swchan2</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>CDDL + GPLv2 with classpath exception</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://java.net/projects/glassfish/sources/svn/show/tags/javax.servlet-api-3.1.0</url>
+        <connection>
+            <system>svn</system>
+            <path>https://svn.java.net/svn/glassfish~svn/tags/javax.servlet-api-3.1.0</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.java.net/svn/glassfish~svn/tags/javax.servlet-api-3.1.0</path>
+        </developerconnection>
+        <tag>http://java.net/projects/glassfish/sources/svn/show/tags/javax.servlet-api-3.1.0</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>http://java.net/jira/browse/SERVLET_SPEC</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>glassfish-repository</id>
+            <type>maven</type>
+            <properties>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>jvnet-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>javax.servlet</maven.groupid>
+        <maven.artifactid>javax.servlet-api</maven.artifactid>
+    </properties>
+</extension>

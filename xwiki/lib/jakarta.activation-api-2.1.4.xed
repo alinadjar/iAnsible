@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.activation:jakarta.activation-api</id>
+    <version>2.1.4</version>
+    <type>jar</type>
+    <name>Jakarta Activation API</name>
+    <summary>Jakarta Activation API 2.1 Specification</summary>
+    <website>https://github.com/jakartaee/jaf-api</website>
+    <authors>
+        <author>
+            <name>Bill Shannon</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EDL 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jakartaee/jaf-api</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/jakartaee/jaf-api.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/jakartaee/jaf-api.git</path>
+        </developerconnection>
+        <tag>https://github.com/jakartaee/jaf-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/jakartaee/jaf-api/issues/</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.activation</maven.groupid>
+        <maven.artifactid>jakarta.activation-api</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.guava:failureaccess</id>
+    <version>1.0.3</version>
+    <type>jar</type>
+    <name>Guava InternalFutureFailureAccess and InternalFutures</name>
+    <summary>Contains
+    com.google.common.util.concurrent.internal.InternalFutureFailureAccess and
+    InternalFutures. Most users will never need to use this artifact. Its
+    classes are conceptually a part of Guava, but they're in this separate
+    artifact so that Android libraries can use them without pulling in all of
+    Guava (just as they can use ListenableFuture by depending on the
+    listenablefuture artifact).</summary>
+    <website>https://github.com/google/guava/failureaccess</website>
+    <authors>
+        <author>
+            <name>Kevin Bourrillion</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/guava/failureaccess</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/google/guava.git/failureaccess</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:google/guava.git/failureaccess</path>
+        </developerconnection>
+        <tag>https://github.com/google/guava/failureaccess</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/google/guava/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>com.google.code.findbugs:jsr305</id>
+            <version>3.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.checkerframework:checker-qual</id>
+            <version>3.43.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.errorprone:error_prone_annotations</id>
+            <version>2.36.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.j2objc:j2objc-annotations</id>
+            <version>3.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.guava</maven.groupid>
+        <maven.artifactid>failureaccess</maven.artifactid>
+    </properties>
+</extension>

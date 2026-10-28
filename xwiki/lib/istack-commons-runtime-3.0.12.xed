@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.sun.istack:istack-commons-runtime</id>
+    <version>3.0.12</version>
+    <type>jar</type>
+    <name>istack common utility code runtime</name>
+    <summary>istack common utility code</summary>
+    <website>https://projects.eclipse.org/projects/ee4j/istack-commons/istack-commons-runtime</website>
+    <authors>
+        <author>
+            <name>Lukas Jungmann</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Distribution License - v 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/jaxb-istack-commons/istack-commons-runtime</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/jaxb-istack-commons.git/istack-commons-runtime</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/jaxb-istack-commons.git/istack-commons-runtime</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/jaxb-istack-commons/istack-commons-runtime</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/jaxb-istack-commons/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>1.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant</id>
+            <version>1.10.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant-junit</id>
+            <version>1.10.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:codemodel</id>
+            <version>2.3.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-plugin-api</id>
+            <version>3.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-core</id>
+            <version>3.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-artifact</id>
+            <version>3.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-model</id>
+            <version>3.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.codehaus.plexus:plexus-utils</id>
+            <version>3.3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.plugin-tools:maven-plugin-annotations</id>
+            <version>3.6.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.testng:testng</id>
+            <version>6.14.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven:maven-settings</id>
+            <version>3.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-api</id>
+            <version>1.4.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.maven.resolver:maven-resolver-impl</id>
+            <version>1.4.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern/>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>args4j:args4j</id>
+            <version>2.33</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.sun.istack</maven.groupid>
+        <maven.artifactid>istack-commons-runtime</maven.artifactid>
+    </properties>
+</extension>

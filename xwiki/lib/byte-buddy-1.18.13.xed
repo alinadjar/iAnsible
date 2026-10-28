@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>net.bytebuddy:byte-buddy</id>
+    <version>1.18.13</version>
+    <type>jar</type>
+    <name>Byte Buddy (without dependencies)</name>
+    <summary>Byte Buddy is a Java library for creating Java classes at run time.
+        This artifact is a build of Byte Buddy with all ASM dependencies repackaged into its own name space.</summary>
+    <website>https://bytebuddy.net/byte-buddy</website>
+    <authors>
+        <author>
+            <name>Rafael Winterhalter</name>
+            <url>https://rafael.codes</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/raphw/byte-buddy/byte-buddy</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:raphw/byte-buddy.git/byte-buddy</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:raphw/byte-buddy.git/byte-buddy</path>
+        </developerconnection>
+        <tag>https://github.com/raphw/byte-buddy/byte-buddy</tag>
+    </scm>
+    <issuemanagement>
+        <system>github.com</system>
+        <url>https://github.com/raphw/byte-buddy/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy-dep</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy-agent</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy-benchmark</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy-android</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy-maven-plugin</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy-gradle-plugin</id>
+            <version>1.18.13</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>net.bytebuddy</maven.groupid>
+        <maven.artifactid>byte-buddy</maven.artifactid>
+    </properties>
+</extension>

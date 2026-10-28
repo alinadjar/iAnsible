@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.xmlgraphics:xmlgraphics-commons</id>
+    <version>2.11</version>
+    <type>jar</type>
+    <name>Apache XML Graphics Commons</name>
+    <summary>XML Graphics Common Support</summary>
+    <website>http://xmlgraphics.apache.org/commons/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>scm:git:https://gitbox.apache.org/repos/asf/xmlgraphics-commons.git</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/xmlgraphics-commons.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path/>
+        </developerconnection>
+        <tag>scm:git:https://gitbox.apache.org/repos/asf/xmlgraphics-commons.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>commons-io:commons-io</id>
+            <version>2.17.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-logging:commons-logging</id>
+            <version>1.3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.xmlgraphics</maven.groupid>
+        <maven.artifactid>xmlgraphics-commons</maven.artifactid>
+    </properties>
+</extension>

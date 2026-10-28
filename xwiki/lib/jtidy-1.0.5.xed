@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.jtidy:jtidy</id>
+    <version>1.0.5</version>
+    <type>jar</type>
+    <name>JTidy</name>
+    <summary>JTidy is a Java port of HTML Tidy, a HTML syntax checker and pretty printer. Like its non-Java cousin, JTidy can be
+        used as a tool for cleaning up malformed and faulty HTML. In addition, JTidy provides a DOM interface to the
+        document that is being processed, which effectively makes you able to use JTidy as a DOM parser for real-world HTML.</summary>
+    <website>https://github.com/jtidy/jtidy</website>
+    <authors>
+        <author>
+            <name>JTidy Authors</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Java HTML Tidy License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jtidy/jtidy</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/jtidy/jtidy.git</path>
+        </connection>
+        <tag>https://github.com/jtidy/jtidy</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://github.com/jtidy/jtidy/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.jtidy</maven.groupid>
+        <maven.artifactid>jtidy</maven.artifactid>
+    </properties>
+</extension>

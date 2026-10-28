@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.incava:java-diff</id>
+    <version>1.1.2</version>
+    <type>jar</type>
+    <name>java-diff</name>
+    <summary>Longest common subsequences implementation</summary>
+    <website>https://github.com/jpace/java-diff</website>
+    <authors>
+        <author>
+            <name>Jeff Pace</name>
+            <url>https://github.com/jpace</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jpace/java-diff</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/jpace/java-diff.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git://github.com/jpace/java-diff.git</path>
+        </developerconnection>
+        <tag>https://github.com/jpace/java-diff</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.incava</maven.groupid>
+        <maven.artifactid>java-diff</maven.artifactid>
+    </properties>
+</extension>

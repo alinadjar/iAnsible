@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>net.sf.saxon:Saxon-HE</id>
+    <version>13.0</version>
+    <type>jar</type>
+    <name>Saxon-HE</name>
+    <summary>The XSLT and XQuery Processor</summary>
+    <website>http://www.saxonica.com/</website>
+    <authors>
+        <author>
+            <name>Michael Kay</name>
+        </author>
+        <author>
+            <name>O’Neil Delpratt</name>
+        </author>
+        <author>
+            <name>Debbie Lockett</name>
+        </author>
+        <author>
+            <name>Norman Walsh</name>
+        </author>
+        <author>
+            <name>Matt Patterson</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Mozilla Public License Version 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://saxonica.plan.io/projects/saxonmirrorhe/repository</url>
+        <connection>
+            <system>git</system>
+            <path>https://saxonica.plan.io/projects/saxonmirrorhe/repository</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://saxonica.plan.io/projects/saxonmirrorhe/repository</path>
+        </developerconnection>
+        <tag>https://saxonica.plan.io/projects/saxonmirrorhe/repository</tag>
+    </scm>
+    <issuemanagement>
+        <system>Saxon Community</system>
+        <url>https://saxonica.plan.io/projects/saxon</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.xmlresolver:xmlresolver</id>
+            <version>6.0.23</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.xmlresolver:xmlresolver:data</id>
+            <version>6.0.23</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>net.sf.saxon</maven.groupid>
+        <maven.artifactid>Saxon-HE</maven.artifactid>
+    </properties>
+</extension>

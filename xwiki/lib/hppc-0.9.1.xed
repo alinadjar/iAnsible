@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.carrotsearch:hppc</id>
+    <version>0.9.1</version>
+    <type>jar</type>
+    <name>High Performance Primitive Collections</name>
+    <summary>High Performance Primitive Collections: data structures (maps, sets, lists, stacks, queues) generated for combinations of object and primitive types to conserve JVM memory and speed up execution.</summary>
+    <website>https://github.com/carrotsearch/hppc</website>
+    <authors>
+        <author>
+            <name>Stanisław Osiński</name>
+        </author>
+        <author>
+            <name>Dawid Weiss</name>
+        </author>
+        <author>
+            <name>Bruno Roustant</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/carrotsearch/hppc</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:carrotsearch/hppc.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:carrotsearch/hppc.git</path>
+        </developerconnection>
+        <tag>https://github.com/carrotsearch/hppc</tag>
+    </scm>
+    <manageddependencies>
+        <dependency>
+            <id>com.carrotsearch.console:launcher</id>
+            <version>1.0.6</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.carrotsearch.progresso:progresso</id>
+            <version>1.7.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.carrotsearch.progresso:progresso-consolewidth-unixish</id>
+            <version>1.7.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.carrotsearch.progresso:progresso-log4j2</id>
+            <version>1.7.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.antlr:antlr4-runtime</id>
+            <version>4.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-api</id>
+            <version>2.15.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-core</id>
+            <version>2.15.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.logging.log4j:log4j-slf4j18-impl</id>
+            <version>2.15.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.velocity:velocity-engine-core</id>
+            <version>2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.8.0-beta4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.carrotsearch</maven.groupid>
+        <maven.artifactid>hppc</maven.artifactid>
+    </properties>
+</extension>

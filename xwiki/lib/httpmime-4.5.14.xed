@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.httpcomponents:httpmime</id>
+    <version>4.5.14</version>
+    <type>jar</type>
+    <name>Apache HttpClient Mime</name>
+    <summary>Apache HttpComponents HttpClient - MIME coded entities</summary>
+    <website>http://hc.apache.org/httpcomponents-client-ga</website>
+    <authors>
+        <author>
+            <name>Ortwin Glueck</name>
+            <url>http://www.odi.ch/</url>
+        </author>
+        <author>
+            <name>Oleg Kalnichevski</name>
+        </author>
+        <author>
+            <name>Asankha C. Perera</name>
+            <url>https://www.adroitlogic.com/</url>
+        </author>
+        <author>
+            <name>Sebastian Bazley</name>
+        </author>
+        <author>
+            <name>Erik Abele</name>
+            <url>http://www.codefaktor.de/</url>
+        </author>
+        <author>
+            <name>Ant Elder</name>
+        </author>
+        <author>
+            <name>Paul Fremantle</name>
+        </author>
+        <author>
+            <name>Roland Weber</name>
+        </author>
+        <author>
+            <name>Sam Berlin</name>
+        </author>
+        <author>
+            <name>Sean C. Sullivan</name>
+        </author>
+        <author>
+            <name>Jonathan Moore</name>
+        </author>
+        <author>
+            <name>Gary Gregory</name>
+        </author>
+        <author>
+            <name>William Speirs</name>
+        </author>
+        <author>
+            <name>Karl Wright</name>
+        </author>
+        <author>
+            <name>Francois-Xavier Bonnet</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/apache/httpcomponents-client/tree/4.5.14/httpmime</url>
+        <connection>
+            <system>git</system>
+            <path>https://git-wip-us.apache.org/repos/asf/httpcomponents-client.git/httpmime</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://git-wip-us.apache.org/repos/asf/httpcomponents-client.git/httpmime</path>
+        </developerconnection>
+        <tag>https://github.com/apache/httpcomponents-client/tree/4.5.14/httpmime</tag>
+    </scm>
+    <issuemanagement>
+        <system>Jira</system>
+        <url>http://issues.apache.org/jira/browse/HTTPCLIENT</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.httpcomponents:httpclient</id>
+            <version>4.5.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.apache.httpcomponents:httpcore</id>
+            <version>4.4.16</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-logging:commons-logging</id>
+            <version>1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-codec:commons-codec</id>
+            <version>1.11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.sf.ehcache:ehcache-core</id>
+            <version>2.6.11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-jcl</id>
+            <version>1.7.25</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.spy:spymemcached</id>
+            <version>2.12.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.java.dev.jna:jna</id>
+            <version>4.5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.java.dev.jna:jna-platform</id>
+            <version>4.5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>1.10.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.easymock:easymock</id>
+            <version>2.5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.easymock:easymockclassextension</id>
+            <version>2.5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.httpcomponents</maven.groupid>
+        <maven.artifactid>httpmime</maven.artifactid>
+    </properties>
+</extension>

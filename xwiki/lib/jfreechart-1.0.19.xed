@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jfree:jfreechart</id>
+    <version>1.0.19</version>
+    <type>jar</type>
+    <name>JFreeChart</name>
+    <summary>JFreeChart is a class library, written in Java, for generating charts. 
+    Utilising the Java2D APIs, it currently supports bar charts, pie charts, 
+    line charts, XY-plots and time series plots.</summary>
+    <website>http://www.jfree.org/jfreechart/</website>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License 3</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://jfreechart.svn.sourceforge.net/viewvc/jfreechart/</url>
+        <connection>
+            <system>svn</system>
+            <path>https://jfreechart.svn.sourceforge.net/svnroot/jfreechart jfreechart</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.sonatype.org/spice/trunk/oss/oss-parent-9/jfreechart</path>
+        </developerconnection>
+        <tag>http://jfreechart.svn.sourceforge.net/viewvc/jfreechart/</tag>
+    </scm>
+    <issuemanagement>
+        <url>http://sourceforge.net/tracker/?group_id=15494</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.jfree:jcommon</id>
+            <version>1.0.23</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jfree</maven.groupid>
+        <maven.artifactid>jfreechart</maven.artifactid>
+    </properties>
+</extension>

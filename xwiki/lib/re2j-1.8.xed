@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.re2j:re2j</id>
+    <version>1.8</version>
+    <type>jar</type>
+    <name>RE2/J</name>
+    <summary>Linear time regular expressions for Java</summary>
+    <website>http://github.com/google/re2j</website>
+    <authors>
+        <author>
+            <name>The RE2/J Contributors</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Go License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/re2j.git</url>
+        <tag>https://github.com/google/re2j.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.re2j</maven.groupid>
+        <maven.artifactid>re2j</maven.artifactid>
+    </properties>
+</extension>

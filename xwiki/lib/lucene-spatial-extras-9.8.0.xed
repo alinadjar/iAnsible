@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.lucene:lucene-spatial-extras</id>
+    <version>9.8.0</version>
+    <type>jar</type>
+    <name>Apache Lucene (module: spatial-extras)</name>
+    <summary>Apache Lucene (module: spatial-extras)</summary>
+    <website>https://lucene.apache.org/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitbox.apache.org/repos/asf?p=lucene.git</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/lucene.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/lucene.git</path>
+        </developerconnection>
+        <tag>https://gitbox.apache.org/repos/asf?p=lucene.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://issues.apache.org/jira/browse/LUCENE</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.lucene:lucene-core</id>
+            <version>9.8.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.lucene:lucene-spatial3d</id>
+            <version>9.8.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.locationtech.spatial4j:spatial4j</id>
+            <version>0.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.sgr:s2-geometry-library-java</id>
+            <version>1.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.lucene</maven.groupid>
+        <maven.artifactid>lucene-spatial-extras</maven.artifactid>
+    </properties>
+</extension>

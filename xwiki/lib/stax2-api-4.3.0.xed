@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.codehaus.woodstox:stax2-api</id>
+    <version>4.3.0</version>
+    <type>jar</type>
+    <name>Stax2 API</name>
+    <summary>Stax2 API is an extension to basic Stax 1.0 API that adds significant new functionality, such as full-featured bi-direction validation interface and high-performance Typed Access API.</summary>
+    <website>http://github.com/FasterXML/stax2-api</website>
+    <authors>
+        <author>
+            <name>Tatu Saloranta</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The BSD 2-Clause License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/FasterXML/stax2-api</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/stax2-api.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:FasterXML/stax2-api.git</path>
+        </developerconnection>
+        <tag>http://github.com/FasterXML/stax2-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issue Management</system>
+        <url>https://github.com/FasterXML/stax2-api/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.codehaus.woodstox</maven.groupid>
+        <maven.artifactid>stax2-api</maven.artifactid>
+    </properties>
+</extension>

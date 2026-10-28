@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jspecify:jspecify</id>
+    <version>1.0.1</version>
+    <type>jar</type>
+    <name>JSpecify annotations</name>
+    <summary>An artifact of well-named and well-specified annotations to power static analysis checks</summary>
+    <website>https://jspecify.dev/</website>
+    <authors>
+        <author>
+            <name>Kevin Bourrillion</name>
+        </author>
+        <author>
+            <name>David P. Baker</name>
+        </author>
+        <author>
+            <name>Chris Povirk</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jspecify/jspecify/</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jspecify/jspecify.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jspecify/jspecify.git</path>
+        </developerconnection>
+        <tag>https://github.com/jspecify/jspecify/</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jspecify</maven.groupid>
+        <maven.artifactid>jspecify</maven.artifactid>
+    </properties>
+</extension>

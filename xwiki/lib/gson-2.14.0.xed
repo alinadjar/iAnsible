@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.code.gson:gson</id>
+    <version>2.14.0</version>
+    <type>jar</type>
+    <name>Gson</name>
+    <summary>Gson JSON library</summary>
+    <website>https://github.com/google/gson</website>
+    <authors>
+        <author>
+            <name>google</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/gson/</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/google/gson.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:google/gson.git</path>
+        </developerconnection>
+        <tag>https://github.com/google/gson/</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/google/gson/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.google.errorprone:error_prone_annotations</id>
+            <version>2.48.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.truth:truth</id>
+            <version>1.4.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.code.gson</maven.groupid>
+        <maven.artifactid>gson</maven.artifactid>
+    </properties>
+</extension>

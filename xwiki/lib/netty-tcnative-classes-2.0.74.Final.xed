@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.netty:netty-tcnative-classes</id>
+    <version>2.0.74.Final</version>
+    <type>jar</type>
+    <name>Netty/TomcatNative [OpenSSL - Classes]</name>
+    <summary>A Mavenized fork of Tomcat Native which incorporates various patches. This artifact is dynamically linked
+    to OpenSSL and Apache APR.</summary>
+    <website>https://github.com/netty/netty-tcnative/netty-tcnative-classes/</website>
+    <authors>
+        <author>
+            <name>The Netty Project Contributors</name>
+            <url>https://netty.io/</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/netty/netty-tcnative/netty-tcnative-classes</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/netty/netty-tcnative.git/netty-tcnative-classes</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/netty/netty-tcnative.git/netty-tcnative-classes</path>
+        </developerconnection>
+        <tag>https://github.com/netty/netty-tcnative/netty-tcnative-classes</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.netty</maven.groupid>
+        <maven.artifactid>netty-tcnative-classes</maven.artifactid>
+    </properties>
+</extension>

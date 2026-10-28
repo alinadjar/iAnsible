@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.jnr:jnr-posix</id>
+    <version>3.2.2</version>
+    <type>jar</type>
+    <name>jnr-posix</name>
+    <summary>Common cross-project/cross-platform POSIX APIs</summary>
+    <website>http://github.com/jnr/jnr-posix</website>
+    <authors>
+        <author>
+            <name>Thomas E Enebo</name>
+        </author>
+        <author>
+            <name>Wayne Meissner</name>
+        </author>
+        <author>
+            <name>Charles Oliver Nutter</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Public License - v 2.0</name>
+        </license>
+        <license>
+            <name>GNU General Public License 2</name>
+        </license>
+        <license>
+            <name>GNU Lesser General Public License 2.1</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:jnr/jnr-posix.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jnr/jnr-posix.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jnr/jnr-posix.git</path>
+        </developerconnection>
+        <tag>git@github.com:jnr/jnr-posix.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>http://github.com/jnr/jnr-posix/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.github.jnr:jnr-ffi</id>
+            <version>2.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.jnr:jnr-constants</id>
+            <version>0.11.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>central-portal-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.jnr</maven.groupid>
+        <maven.artifactid>jnr-posix</maven.artifactid>
+    </properties>
+</extension>

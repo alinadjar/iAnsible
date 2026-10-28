@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.jnr:jnr-constants</id>
+    <version>0.11.0</version>
+    <type>jar</type>
+    <name>jnr-constants</name>
+    <summary>A set of platform constants (e.g. errno values)</summary>
+    <website>http://github.com/jnr/jnr-constants</website>
+    <authors>
+        <author>
+            <name>Wayne Meissner</name>
+        </author>
+        <author>
+            <name>Charles Oliver Nutter</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:jnr/jnr-constants.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jnr/jnr-constants.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jnr/jnr-constants.git</path>
+        </developerconnection>
+        <tag>git@github.com:jnr/jnr-constants.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>central-portal-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.jnr</maven.groupid>
+        <maven.artifactid>jnr-constants</maven.artifactid>
+    </properties>
+</extension>

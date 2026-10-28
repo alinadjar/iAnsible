@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.j256.simplemagic:simplemagic</id>
+    <version>1.17</version>
+    <type>jar</type>
+    <name>Simple Magic</name>
+    <summary>Simple Magic number package which allows content-type (mime-type) determination from files
+	and byte arrays.</summary>
+    <website>https://256stuff.com/sources/simplemagic/</website>
+    <authors>
+        <author>
+            <name>Gray Watson</name>
+            <url>https://256stuff.com/gray/</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>ISC License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/j256/simplemagic</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/j256/simplemagic.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/j256/simplemagic.git</path>
+        </developerconnection>
+        <tag>https://github.com/j256/simplemagic</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.j256.simplemagic</maven.groupid>
+        <maven.artifactid>simplemagic</maven.artifactid>
+    </properties>
+</extension>

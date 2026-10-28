@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.xerial.snappy:snappy-java</id>
+    <version>1.1.10.8</version>
+    <type>jar</type>
+    <name>snappy-java</name>
+    <summary>snappy-java: A fast compression/decompression library</summary>
+    <website>https://github.com/xerial/snappy-java</website>
+    <authors>
+        <author>
+            <name>Taro L. Saito</name>
+            <url>http://xerial.org/leo</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/xerial/snappy-java</url>
+        <connection>
+            <system>git@github.com</system>
+            <path>xerial/snappy-java.git</path>
+        </connection>
+        <tag>https://github.com/xerial/snappy-java</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.xerial.snappy</maven.groupid>
+        <maven.artifactid>snappy-java</maven.artifactid>
+    </properties>
+</extension>

@@ -204,7 +204,7 @@ flowchart TD
   C -->|yes| L1[langfuse: sync + copy compose origin + .env + compose up]
   C -->|no| L0[langfuse tasks skipped]
   B --> D{headroom_enabled?}
-  D -->|yes| H1[headroom: create dir + debug placeholder]
+  D -->|yes| H1[headroom: python3.13 venv + pip + systemd on :8787]
   D -->|no| H0[headroom tasks skipped]
 ```
 

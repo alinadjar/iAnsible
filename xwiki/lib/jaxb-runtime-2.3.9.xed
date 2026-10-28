@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.glassfish.jaxb:jaxb-runtime</id>
+    <version>2.3.9</version>
+    <type>jar</type>
+    <name>JAXB Runtime</name>
+    <summary>JAXB (JSR 222) Reference Implementation</summary>
+    <website>https://eclipse-ee4j.github.io/jaxb-ri/</website>
+    <extensionfeatures>
+        <feature>
+            <feature>com.sun.xml.bind:jaxb-impl</feature>
+            <version>2.3.9</version>
+        </feature>
+        <feature>
+            <feature>org.glassfish.jaxb:jaxb-core</feature>
+            <version>2.3.9</version>
+        </feature>
+        <feature>
+            <feature>com.sun.xml.bind:jaxb-core</feature>
+            <version>2.3.9</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>com.sun.xml.bind:jaxb-impl</feature>
+        <feature>org.glassfish.jaxb:jaxb-core</feature>
+        <feature>com.sun.xml.bind:jaxb-core</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Roman Grigoriadi</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Distribution License - v 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-runtime-parent/jaxb-runtime</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/jaxb-ri/jaxb-runtime-parent/jaxb-runtime</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse-ee4j/jaxb-ri.git/jaxb-runtime-parent/jaxb-runtime</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-runtime-parent/jaxb-runtime</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>jakarta.xml.bind:jakarta.xml.bind-api</id>
+            <version>2.3.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>jakarta.activation:jakarta.activation-api</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:txw2</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.istack:istack-commons-runtime</id>
+            <version>3.0.12</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.activation:jakarta.activation</id>
+            <version>1.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.jmockit:jmockit</id>
+            <version>1.34</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.org.apache.xml.internal:resolver</id>
+            <version>20050927</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.checkerframework:compiler</id>
+            <version>2.4.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind.external:rngom</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:xsom</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.dtd-parser:dtd-parser</id>
+            <version>1.4.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.istack:istack-commons-tools</id>
+            <version>3.0.12</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:codemodel</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:txw2</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant</id>
+            <version>1.10.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind.external:relaxng-datatype</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:jaxb-runtime:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:jaxb-xjc:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:jaxb-jxc:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:codemodel:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:txw2:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:xsom:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-impl:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-xjc:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-jxc:sources</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.xml.bind:jakarta.xml.bind-api:sources</id>
+            <version>2.3.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jvnet.staxex:stax-ex:sources</id>
+            <version>1.8.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.fastinfoset:FastInfoset:sources</id>
+            <version>1.2.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:jaxb-runtime</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:jaxb-xjc</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.glassfish.jaxb:jaxb-jxc</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-impl</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-xjc</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-jxc</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.bind:jaxb-osgi</id>
+            <version>2.3.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.xml.bind:jakarta.xml.bind-api</id>
+            <version>2.3.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>jakarta.activation:jakarta.activation-api</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>com.sun.istack:istack-commons-runtime</id>
+            <version>3.0.12</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.xml.fastinfoset:FastInfoset</id>
+            <version>1.2.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jvnet.staxex:stax-ex</id>
+            <version>1.8.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>1.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.sun.activation:jakarta.activation</id>
+            <version>1.2.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.glassfish.jaxb</maven.groupid>
+        <maven.artifactid>jaxb-runtime</maven.artifactid>
+    </properties>
+</extension>

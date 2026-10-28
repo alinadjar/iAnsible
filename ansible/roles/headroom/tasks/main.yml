@@ -1,17 +1,81 @@
 ---
-# Headroom has no compose file in this monorepo yet — placeholder for a systemd + venv install.
+- name: Install Python for Headroom venv
+  ansible.builtin.apt:
+    name: "{{ headroom_python_packages }}"
+    state: present
+    update_cache: true
+  when:
+    - headroom_enabled
+    - ansible_os_family == "Debian"
+
 - name: Ensure Headroom deploy directory exists
-  when: headroom_enabled
   ansible.builtin.file:
     path: "{{ headroom_deploy_path }}"
     state: directory
-    owner: "{{ deploy_user }}"
-    group: "{{ deploy_group }}"
+    owner: "{{ headroom_service_user }}"
+    group: "{{ headroom_service_group }}"
     mode: "0755"
-
-- name: Headroom deployment placeholder
   when: headroom_enabled
-  ansible.builtin.debug:
-    msg: >-
-      Add headroom-ai package source and a systemd unit here.
-      Point Dify/ERP OTLP or proxy settings to {{ platform_integration.headroom_public_url }}.
+
+- name: Sync Headroom project files from monorepo (optional)
+  ansible.posix.synchronize:
+    src: "{{ repo_root }}/{{ headroom_stack_subpath }}/"
+    dest: "{{ headroom_service_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ headroom_deploy_path }}/"
+    delete: false
+    rsync_opts:
+      - "--exclude=venv"
+      - "--exclude=venv-313"
+      - "--exclude=venv-*"
+      - "--exclude=.git"
+  delegate_to: localhost
+  when:
+    - headroom_enabled
+    - headroom_sync_from_repo
+    - stack_source | default('local') == 'local'
+
+- name: Create Headroom virtualenv
+  ansible.builtin.command:
+    cmd: python3.13 -m venv {{ headroom_venv_path }}
+    creates: "{{ headroom_venv_path }}/pyvenv.cfg"
+  when: headroom_enabled
+
+- name: Install Headroom Python packages into venv
+  ansible.builtin.pip:
+    name: "{{ headroom_pip_packages }}"
+    virtualenv: "{{ headroom_venv_path }}"
+    virtualenv_command: python3.13 -m venv
+    extra_args: "{{ headroom_pip_extra_args }}"
+  when: headroom_enabled
+  notify: Restart headroom
+
+- name: Install Headroom from local tree (editable)
+  ansible.builtin.pip:
+    name: "{{ headroom_deploy_path }}"
+    editable: true
+    virtualenv: "{{ headroom_venv_path }}"
+    extra_args: "{{ headroom_pip_extra_args }}"
+  when:
+    - headroom_enabled
+    - headroom_sync_from_repo
+    - headroom_editable_install | default(false)
+  notify: Restart headroom
+
+- name: Install systemd unit for Headroom
+  ansible.builtin.template:
+    src: headroom.service.j2
+    dest: "/etc/systemd/system/{{ headroom_systemd_unit }}"
+    owner: root
+    group: root
+    mode: "0644"
+  when: headroom_enabled
+  notify:
+    - Reload systemd
+    - Restart headroom
+
+- name: Enable and start Headroom proxy
+  ansible.builtin.systemd:
+    name: "{{ headroom_systemd_unit }}"
+    enabled: true
+    state: started
+    daemon_reload: true
+  when: headroom_enabled

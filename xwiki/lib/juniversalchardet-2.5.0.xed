@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.albfernandez:juniversalchardet</id>
+    <version>2.5.0</version>
+    <type>jar</type>
+    <name>juniversalchardet</name>
+    <summary>JUniversalChardet is a Java encoding detector library</summary>
+    <website>https://github.com/albfernandez/juniversalchardet</website>
+    <authors>
+        <author>
+            <name>Alberto Fernández</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Mozilla Public License Version 1.1</name>
+        </license>
+        <license>
+            <name>GENERAL PUBLIC LICENSE, version 3 (GPL-3.0)</name>
+        </license>
+        <license>
+            <name>GNU LESSER GENERAL PUBLIC LICENSE, version 3 (LGPL-3.0)</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:albfernandez/juniversalchardet.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:albfernandez/juniversalchardet.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:albfernandez/juniversalchardet.git</path>
+        </developerconnection>
+        <tag>git@github.com:albfernandez/juniversalchardet.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/albfernandez/juniversalchardet/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.albfernandez</maven.groupid>
+        <maven.artifactid>juniversalchardet</maven.artifactid>
+    </properties>
+</extension>

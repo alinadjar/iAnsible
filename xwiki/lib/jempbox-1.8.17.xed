@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.pdfbox:jempbox</id>
+    <version>1.8.17</version>
+    <type>jar</type>
+    <name>Apache JempBox</name>
+    <summary>The Apache JempBox library is an open source Java tool that implements Adobe's XMP(TM)
+    specification. JempBox is a subproject of Apache PDFBox.</summary>
+    <website>http://www.apache.org/pdfbox-parent/jempbox/</website>
+    <authors>
+        <author>
+            <name>Andreas Lehmkühler</name>
+        </author>
+        <author>
+            <name>Adam Nichols</name>
+        </author>
+        <author>
+            <name>Ben Litchfield</name>
+        </author>
+        <author>
+            <name>Brian Carrier</name>
+        </author>
+        <author>
+            <name>Daniel Wilson</name>
+        </author>
+        <author>
+            <name>Eric Leleu</name>
+        </author>
+        <author>
+            <name>Guillaume Bailleul</name>
+        </author>
+        <author>
+            <name>Jeremias Maerki</name>
+        </author>
+        <author>
+            <name>Johannes Koch</name>
+        </author>
+        <author>
+            <name>Jukka Zitting</name>
+        </author>
+        <author>
+            <name>Kevin Jackson</name>
+        </author>
+        <author>
+            <name>Maruan Sayhoun</name>
+        </author>
+        <author>
+            <name>Phillipp Koch</name>
+        </author>
+        <author>
+            <name>Thomas Chojecki</name>
+        </author>
+        <author>
+            <name>Timo Boehme</name>
+        </author>
+        <author>
+            <name>Villu Ruusmann</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://svn.apache.org/viewvc/maven/pom/tags/1.8.17/pdfbox-parent/jempbox</url>
+        <connection>
+            <system>svn</system>
+            <path>http://svn.apache.org/repos/asf/maven/pom/tags/1.8.17/pdfbox-parent/jempbox</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.apache.org/repos/asf/maven/pom/tags/1.8.17/pdfbox-parent/jempbox</path>
+        </developerconnection>
+        <tag>http://svn.apache.org/viewvc/maven/pom/tags/1.8.17/pdfbox-parent/jempbox</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/PDFBOX</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.bouncycastle:bcprov-jdk15</id>
+            <version>1.44</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.bouncycastle:bcmail-jdk15</id>
+            <version>1.44</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.ibm.icu:icu4j</id>
+            <version>62.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.pdfbox</maven.groupid>
+        <maven.artifactid>jempbox</maven.artifactid>
+    </properties>
+</extension>

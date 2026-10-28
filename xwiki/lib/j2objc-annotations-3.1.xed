@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.j2objc:j2objc-annotations</id>
+    <version>3.1</version>
+    <type>jar</type>
+    <name>J2ObjC Annotations</name>
+    <summary>A set of annotations that provide additional information to the J2ObjC
+    translator to modify the result of translation.</summary>
+    <website>https://github.com/google/j2objc/</website>
+    <authors>
+        <author>
+            <name>Tom Ball</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/google/j2objc</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/google/j2objc.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/google/j2objc.git</path>
+        </developerconnection>
+        <tag>http://github.com/google/j2objc</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.j2objc</maven.groupid>
+        <maven.artifactid>j2objc-annotations</maven.artifactid>
+    </properties>
+</extension>

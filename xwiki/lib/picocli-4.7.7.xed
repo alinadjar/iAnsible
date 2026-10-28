@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>info.picocli:picocli</id>
+    <version>4.7.7</version>
+    <type>jar</type>
+    <name>picocli</name>
+    <summary>Java command line parser with both an annotations API and a programmatic API. Usage help with ANSI styles and colors. Autocomplete. Nested subcommands. Easily included as source to avoid adding a dependency.</summary>
+    <website>https://picocli.info</website>
+    <authors>
+        <author>
+            <name>Remko Popma</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/remkop/picocli/tree/master</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/remkop/picocli.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://github.com:remkop/picocli.git</path>
+        </developerconnection>
+        <tag>https://github.com/remkop/picocli/tree/master</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>info.picocli</maven.groupid>
+        <maven.artifactid>picocli</maven.artifactid>
+    </properties>
+</extension>

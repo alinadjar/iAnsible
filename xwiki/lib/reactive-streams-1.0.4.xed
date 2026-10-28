@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.reactivestreams:reactive-streams</id>
+    <version>1.0.4</version>
+    <type>jar</type>
+    <name>reactive-streams</name>
+    <summary>A Protocol for Asynchronous Non-Blocking Data Sequence</summary>
+    <website>http://www.reactive-streams.org/</website>
+    <authors>
+        <author>
+            <name>Reactive Streams SIG</name>
+            <url>http://www.reactive-streams.org/</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>MIT-0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:reactive-streams/reactive-streams.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:reactive-streams/reactive-streams.git</path>
+        </connection>
+        <tag>git@github.com:reactive-streams/reactive-streams.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.reactivestreams</maven.groupid>
+        <maven.artifactid>reactive-streams</maven.artifactid>
+    </properties>
+</extension>

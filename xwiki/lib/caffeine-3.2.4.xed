@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.ben-manes.caffeine:caffeine</id>
+    <version>3.2.4</version>
+    <type>jar</type>
+    <name>Caffeine cache</name>
+    <summary>A high performance caching library</summary>
+    <website>https://github.com/ben-manes/caffeine</website>
+    <authors>
+        <author>
+            <name>Ben Manes</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/ben-manes/caffeine</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/ben-manes/caffeine.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/ben-manes/caffeine.git</path>
+        </developerconnection>
+        <tag>https://github.com/ben-manes/caffeine</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.jspecify:jspecify</id>
+            <version>1.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.errorprone:error_prone_annotations</id>
+            <version>2.49.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.ben-manes.caffeine</maven.groupid>
+        <maven.artifactid>caffeine</maven.artifactid>
+    </properties>
+</extension>

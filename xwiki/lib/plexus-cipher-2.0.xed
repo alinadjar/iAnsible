@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.codehaus.plexus:plexus-cipher</id>
+    <version>2.0</version>
+    <type>jar</type>
+    <name>Plexus Cipher: encryption/decryption Component</name>
+    <summary>The Plexus project provides a full software stack for creating and executing software projects.</summary>
+    <website>https://codehaus-plexus.github.io/plexus-cipher/</website>
+    <authors>
+        <author>
+            <name>Jason van Zyl</name>
+        </author>
+        <author>
+            <name>Pete Kazmier</name>
+        </author>
+        <author>
+            <name>James Taylor</name>
+        </author>
+        <author>
+            <name>Dan Diephouse</name>
+        </author>
+        <author>
+            <name>Kasper Nielsen</name>
+        </author>
+        <author>
+            <name>Ben Walding</name>
+        </author>
+        <author>
+            <name>Mark Wilkinson</name>
+        </author>
+        <author>
+            <name>Michal Maczka</name>
+        </author>
+        <author>
+            <name>Emmanuel Venisse</name>
+        </author>
+        <author>
+            <name>Trygve Laugstøl</name>
+        </author>
+        <author>
+            <name>Kenney Westerhof</name>
+        </author>
+        <author>
+            <name>Carlos Sanchez</name>
+        </author>
+        <author>
+            <name>Brett Porter</name>
+        </author>
+        <author>
+            <name>John Casey</name>
+        </author>
+        <author>
+            <name>Andrew Williams</name>
+        </author>
+        <author>
+            <name>Rahul Thakur</name>
+        </author>
+        <author>
+            <name>Joakim Erdfelt</name>
+        </author>
+        <author>
+            <name>Olivier Lamy</name>
+        </author>
+        <author>
+            <name>Hervé Boutemy</name>
+        </author>
+        <author>
+            <name>Oleg Gusakov</name>
+        </author>
+        <author>
+            <name>Vincent Siveton</name>
+        </author>
+        <author>
+            <name>Kristian Rosenvold</name>
+        </author>
+        <author>
+            <name>Andreas Gudian</name>
+        </author>
+        <author>
+            <name>Karl Heinz Marbaise</name>
+        </author>
+        <author>
+            <name>Michael Osipov</name>
+        </author>
+        <author>
+            <name>Gabriel Belingueres</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/codehaus-plexus/plexus-cipher</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/codehaus-plexus/plexus-cipher.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/codehaus-plexus/plexus-cipher.git</path>
+        </developerconnection>
+        <tag>http://github.com/codehaus-plexus/plexus-cipher</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://github.com/codehaus-plexus/plexus-cipher/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>javax.inject:javax.inject</id>
+            <version>1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.codehaus.plexus:plexus-component-annotations</id>
+            <version>2.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.codehaus.plexus</maven.groupid>
+        <maven.artifactid>plexus-cipher</maven.artifactid>
+    </properties>
+</extension>

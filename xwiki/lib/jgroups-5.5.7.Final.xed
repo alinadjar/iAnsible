@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.jgroups:jgroups</id>
+    <version>5.5.7.Final</version>
+    <type>jar</type>
+    <name>JGroups</name>
+    <summary>Reliable cluster communication toolkit</summary>
+    <website>http://www.jgroups.org</website>
+    <authors>
+        <author>
+            <name>Bela Ban</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/belaban/JGroups</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/belaban/JGroups.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/belaban/JGroups.git</path>
+        </developerconnection>
+        <tag>https://github.com/belaban/JGroups</tag>
+    </scm>
+    <issuemanagement>
+        <system>Jira</system>
+        <url>https://issues.redhat.com/browse/JGRP</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.jgroups</maven.groupid>
+        <maven.artifactid>jgroups</maven.artifactid>
+    </properties>
+</extension>

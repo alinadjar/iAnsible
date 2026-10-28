@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.javascript:closure-compiler-unshaded</id>
+    <version>v20251216</version>
+    <type>jar</type>
+    <name>Closure Compiler Unshaded</name>
+    <summary>Closure Compiler is a JavaScript optimizing compiler. It parses your
+    JavaScript, analyzes it, removes dead code and rewrites and minimizes
+    what's left. It also checks syntax, variable references, and types, and
+    warns about common JavaScript pitfalls. It is used in many of Google's
+    JavaScript apps, including Gmail, Google Web Search, Google Maps, and
+    Google Docs.</summary>
+    <website>https://developers.google.com/closure/compiler/</website>
+    <extensionfeatures>
+        <feature>
+            <feature>com.google.javascript:closure-compiler</feature>
+            <version>v20251216</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>com.google.javascript:closure-compiler</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Closure Compiler Authors</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/closure-compiler/closure-compiler-main/closure-compiler-unshaded</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/google/closure-compiler.git/closure-compiler-main/closure-compiler-unshaded</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:google/closure-compiler.git/closure-compiler-main/closure-compiler-unshaded</path>
+        </developerconnection>
+        <tag>https://github.com/google/closure-compiler/closure-compiler-main/closure-compiler-unshaded</tag>
+    </scm>
+    <issuemanagement>
+        <system>code.google.com</system>
+        <url>http://github.com/google/closure-compiler/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>args4j:args4j</id>
+            <version>2.33</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.code.gson:gson</id>
+            <version>2.9.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.errorprone:error_prone_annotations</id>
+            <version>2.36.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.guava:failureaccess</id>
+            <version>1.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.guava:guava</id>
+            <version>33.4.6-jre</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.protobuf:protobuf-java</id>
+            <version>4.30.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.re2j:re2j</id>
+            <version>1.8</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.ant:ant</id>
+            <version>1.10.11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jspecify:jspecify</id>
+            <version>1.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.javascript</maven.groupid>
+        <maven.artifactid>closure-compiler-unshaded</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.httpcomponents:httpcore</id>
+    <version>4.4.16</version>
+    <type>jar</type>
+    <name>Apache HttpCore</name>
+    <summary>Apache HttpComponents Core (blocking I/O)</summary>
+    <website>http://hc.apache.org/httpcomponents-core-ga</website>
+    <authors>
+        <author>
+            <name>Ortwin Glueck</name>
+            <url>http://www.odi.ch/</url>
+        </author>
+        <author>
+            <name>Oleg Kalnichevski</name>
+        </author>
+        <author>
+            <name>Asankha C. Perera</name>
+            <url>https://www.adroitlogic.com/</url>
+        </author>
+        <author>
+            <name>Sebastian Bazley</name>
+        </author>
+        <author>
+            <name>Erik Abele</name>
+            <url>http://www.codefaktor.de/</url>
+        </author>
+        <author>
+            <name>Ant Elder</name>
+        </author>
+        <author>
+            <name>Paul Fremantle</name>
+        </author>
+        <author>
+            <name>Roland Weber</name>
+        </author>
+        <author>
+            <name>Sam Berlin</name>
+        </author>
+        <author>
+            <name>Sean C. Sullivan</name>
+        </author>
+        <author>
+            <name>Jonathan Moore</name>
+        </author>
+        <author>
+            <name>Gary Gregory</name>
+        </author>
+        <author>
+            <name>William Speirs</name>
+        </author>
+        <author>
+            <name>Karl Wright</name>
+        </author>
+        <author>
+            <name>Francois-Xavier Bonnet</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/apache/httpcomponents-core/tree/4.4.16/httpcore</url>
+        <connection>
+            <system>git</system>
+            <path>https://git-wip-us.apache.org/repos/asf/httpcomponents-core.git/httpcore</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://git-wip-us.apache.org/repos/asf/httpcomponents-core.git/httpcore</path>
+        </developerconnection>
+        <tag>https://github.com/apache/httpcomponents-core/tree/4.4.16/httpcore</tag>
+    </scm>
+    <issuemanagement>
+        <system>Jira</system>
+        <url>http://issues.apache.org/jira/browse/HTTPCORE</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.conscrypt:conscrypt-openjdk-uber</id>
+            <version>2.2.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.12</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>1.10.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-logging:commons-logging</id>
+            <version>1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.httpcomponents</maven.groupid>
+        <maven.artifactid>httpcore</maven.artifactid>
+    </properties>
+</extension>

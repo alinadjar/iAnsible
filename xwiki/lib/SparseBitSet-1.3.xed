@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.zaxxer:SparseBitSet</id>
+    <version>1.3</version>
+    <type>jar</type>
+    <name>SparseBitSet</name>
+    <summary>An efficient sparse bitset implementation for Java</summary>
+    <website>https://github.com/brettwooldridge/SparseBitSet</website>
+    <authors>
+        <author>
+            <name>Brett Wooldridge</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/brettwooldridge/SparseBitSet.git</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/brettwooldridge/SparseBitSet.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/brettwooldridge/SparseBitSet.git</path>
+        </developerconnection>
+        <tag>https://github.com/brettwooldridge/SparseBitSet.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.zaxxer</maven.groupid>
+        <maven.artifactid>SparseBitSet</maven.artifactid>
+    </properties>
+</extension>

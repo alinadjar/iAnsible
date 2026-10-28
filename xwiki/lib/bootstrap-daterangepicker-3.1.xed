@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars:bootstrap-daterangepicker</id>
+    <version>3.1</version>
+    <type>jar</type>
+    <name>Bootstrap Date Range Picker</name>
+    <summary>A JavaScript component for choosing date ranges. Designed to work with the Bootstrap CSS framework.</summary>
+    <website>https://webjars.org</website>
+    <authors>
+        <author>
+            <name>Michael Grubb</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/webjars/bootstrap-daterangepicker</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/webjars/bootstrap-daterangepicker.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/webjars/bootstrap-daterangepicker.git</path>
+        </developerconnection>
+        <tag>http://github.com/webjars/bootstrap-daterangepicker</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.webjars:bootstrap</id>
+            <version>[3.0.0,)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.webjars:momentjs</id>
+            <version>[2.9.0,)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars</maven.groupid>
+        <maven.artifactid>bootstrap-daterangepicker</maven.artifactid>
+    </properties>
+</extension>

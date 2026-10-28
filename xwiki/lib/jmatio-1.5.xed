@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.tallison:jmatio</id>
+    <version>1.5</version>
+    <type>jar</type>
+    <name>JMatIO</name>
+    <summary>Matlab's MAT-file I/O API in JAVA. Supports Matlab 5 MAT-flie format reading and writing. Written in pure JAVA.</summary>
+    <website>https://github.com/tballison/jmatio</website>
+    <authors>
+        <author>
+            <name>Wojciech Gradkowski</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/tballison/jmatio/trunk</url>
+        <connection>
+            <system>svn</system>
+            <path>https://github.com/tballison/jmatio/trunk</path>
+        </connection>
+        <tag>https://github.com/tballison/jmatio/trunk</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.25</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.tallison</maven.groupid>
+        <maven.artifactid>jmatio</maven.artifactid>
+    </properties>
+</extension>

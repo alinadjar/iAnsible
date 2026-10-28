@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.mail:jakarta.mail-api</id>
+    <version>2.1.5</version>
+    <type>jar</type>
+    <name>Jakarta Mail API</name>
+    <summary>Jakarta Mail API 2.1 Specification API</summary>
+    <website>https://projects.eclipse.org/projects/ee4j/jakarta.mail-api</website>
+    <authors>
+        <author>
+            <name>Eclipse EE4J Developers</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+        <license>
+            <name>EDL 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jakartaee/mail-api</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/jakartaee/mail-api.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/jakartaee/mail-api.git</path>
+        </developerconnection>
+        <tag>https://github.com/jakartaee/mail-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/jakartaee/mail-api/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.angus:angus-activation</id>
+            <version>2.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.mail</maven.groupid>
+        <maven.artifactid>jakarta.mail-api</maven.artifactid>
+    </properties>
+</extension>

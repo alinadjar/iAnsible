@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.reflections:reflections</id>
+    <version>0.10.2</version>
+    <type>jar</type>
+    <name>Reflections</name>
+    <summary>Reflections - Java runtime metadata analysis</summary>
+    <website>http://github.com/ronmamo/reflections</website>
+    <authors>
+        <author/>
+    </authors>
+    <licenses>
+        <license>
+            <name>Do What The Fuck You Want To Public License 2</name>
+        </license>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/ronmamo/reflections/issues</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/ronmamo/reflections.git</path>
+        </connection>
+        <tag>https://github.com/ronmamo/reflections/issues</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/ronmamo/reflections/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.javassist:javassist</id>
+            <version>3.28.0-GA</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.code.findbugs:jsr305</id>
+            <version>3.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.32</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.reflections</maven.groupid>
+        <maven.artifactid>reflections</maven.artifactid>
+    </properties>
+</extension>

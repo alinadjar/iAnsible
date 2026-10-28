@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.commons:commons-math3</id>
+    <version>3.6.1</version>
+    <type>jar</type>
+    <name>Apache Commons Math</name>
+    <summary>The Apache Commons Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.</summary>
+    <website>http://commons.apache.org/proper/commons-math/</website>
+    <authors>
+        <author>
+            <name>Mikkel Meyer Andersen</name>
+        </author>
+        <author>
+            <name>Bill Barker</name>
+        </author>
+        <author>
+            <name>Sébastien Brisard</name>
+        </author>
+        <author>
+            <name>Albert Davidson Chou</name>
+        </author>
+        <author>
+            <name>Mark Diggory</name>
+        </author>
+        <author>
+            <name>Robert Burrell Donkin</name>
+        </author>
+        <author>
+            <name>Otmar Ertl</name>
+        </author>
+        <author>
+            <name>Luc Maisonobe</name>
+        </author>
+        <author>
+            <name>Tim O'Brien</name>
+        </author>
+        <author>
+            <name>J. Pietschmann</name>
+        </author>
+        <author>
+            <name>Dimitri Pourbaix</name>
+        </author>
+        <author>
+            <name>Gilles Sadowski</name>
+        </author>
+        <author>
+            <name>Greg Sterijevski</name>
+        </author>
+        <author>
+            <name>Brent Worden</name>
+        </author>
+        <author>
+            <name>Thomas Neidhart</name>
+        </author>
+        <author>
+            <name>Evan Ward</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://git-wip-us.apache.org/repos/asf?p=commons-math.git</url>
+        <connection>
+            <system>git</system>
+            <path>http://git-wip-us.apache.org/repos/asf/commons-math.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://git-wip-us.apache.org/repos/asf/commons-math.git</path>
+        </developerconnection>
+        <tag>https://git-wip-us.apache.org/repos/asf?p=commons-math.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>http://issues.apache.org/jira/browse/MATH</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.commons</maven.groupid>
+        <maven.artifactid>commons-math3</maven.artifactid>
+    </properties>
+</extension>

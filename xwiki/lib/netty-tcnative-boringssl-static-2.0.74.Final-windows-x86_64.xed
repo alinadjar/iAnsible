@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.netty:netty-tcnative-boringssl-static:windows-x86_64</id>
+    <version>2.0.74.Final</version>
+    <type>jar</type>
+    <name>Netty/TomcatNative [BoringSSL - Static]</name>
+    <summary>A Mavenized fork of Tomcat Native which incorporates various patches. This artifact is statically linked
+    to BoringSSL and Apache APR.</summary>
+    <website>https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static/</website>
+    <authors>
+        <author>
+            <name>The Netty Project Contributors</name>
+            <url>https://netty.io/</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/netty/netty-tcnative.git/netty-tcnative-boringssl-static</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/netty/netty-tcnative.git/netty-tcnative-boringssl-static</path>
+        </developerconnection>
+        <tag>https://github.com/netty/netty-tcnative/netty-tcnative-boringssl-static</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>io.netty:netty-tcnative-classes</id>
+            <version>2.0.74.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>io.netty:netty-jni-util</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:linux-x86_64</id>
+            <version>2.0.74.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:linux-aarch_64</id>
+            <version>2.0.74.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:osx-x86_64</id>
+            <version>2.0.74.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:osx-aarch_64</id>
+            <version>2.0.74.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.netty:netty-tcnative-boringssl-static:windows-x86_64</id>
+            <version>2.0.74.Final</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.netty</maven.groupid>
+        <maven.artifactid>netty-tcnative-boringssl-static</maven.artifactid>
+        <maven.classifier>windows-x86_64</maven.classifier>
+    </properties>
+</extension>

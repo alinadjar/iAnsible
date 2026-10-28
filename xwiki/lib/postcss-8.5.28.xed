@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars.npm:postcss</id>
+    <version>8.5.28</version>
+    <type>jar</type>
+    <name>postcss</name>
+    <summary>WebJar for postcss</summary>
+    <website>https://www.webjars.org</website>
+    <authors>
+        <author>
+            <name>webjars</name>
+            <url>https://www.webjars.org</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/postcss/postcss</url>
+        <connection>
+            <system>https</system>
+            <path>//github.com/postcss/postcss.git</path>
+        </connection>
+        <developerconnection>
+            <system>https</system>
+            <path>//github.com/postcss/postcss.git</path>
+        </developerconnection>
+        <tag>https://github.com/postcss/postcss</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://github.com/postcss/postcss/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.webjars.npm:nanoid</id>
+            <version>[3.3.18,4.0.0-0)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.webjars.npm:picocolors</id>
+            <version>[1.1.1,2.0.0-0)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.webjars.npm:source-map-js</id>
+            <version>[1.2.1,2.0.0-0)</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars.npm</maven.groupid>
+        <maven.artifactid>postcss</maven.artifactid>
+    </properties>
+</extension>

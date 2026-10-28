@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.junrar:junrar</id>
+    <version>8.1.1</version>
+    <type>jar</type>
+    <name>Java Unrar</name>
+    <summary>property 'description'</summary>
+    <website>https://github.com/junrar/junrar</website>
+    <authors>
+        <author>
+            <name>Gauthier Roebroeck</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>UnRar License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/junrar/junrar.git</url>
+        <tag>https://github.com/junrar/junrar.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.17</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.junrar</maven.groupid>
+        <maven.artifactid>junrar</maven.artifactid>
+    </properties>
+</extension>

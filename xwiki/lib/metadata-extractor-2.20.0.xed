@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.drewnoakes:metadata-extractor</id>
+    <version>2.20.0</version>
+    <type>jar</type>
+    <name>com.drewnoakes:metadata-extractor</name>
+    <summary>Java library for extracting EXIF, IPTC, XMP, ICC and other metadata from image and video files.</summary>
+    <website>https://drewnoakes.com/code/exif/</website>
+    <authors>
+        <author>
+            <name>Drew Noakes</name>
+            <url>https://drewnoakes.com</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/drewnoakes/metadata-extractor</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/drewnoakes/metadata-extractor.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:drewnoakes/metadata-extractor.git</path>
+        </developerconnection>
+        <tag>https://github.com/drewnoakes/metadata-extractor</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/drewnoakes/metadata-extractor/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.adobe.xmp:xmpcore</id>
+            <version>6.1.11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.drewnoakes</maven.groupid>
+        <maven.artifactid>metadata-extractor</maven.artifactid>
+    </properties>
+</extension>

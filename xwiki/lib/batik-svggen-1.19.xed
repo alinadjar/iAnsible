@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.xmlgraphics:batik-svggen</id>
+    <version>1.19</version>
+    <type>jar</type>
+    <name>org.apache.xmlgraphics:batik-svggen</name>
+    <summary>Batik Java2D SVG generator</summary>
+    <website>http://xmlgraphics.apache.org/batik/batik-svggen/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>scm:svn:https://svn.apache.org/repos/asf/xmlgraphics/batik/trunk/batik-svggen/</url>
+        <connection>
+            <system>svn</system>
+            <path>https://svn.apache.org/repos/asf/xmlgraphics/batik/trunk/batik-svggen/</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path/>
+        </developerconnection>
+        <tag>scm:svn:https://svn.apache.org/repos/asf/xmlgraphics/batik/trunk/batik-svggen/</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.apache.xmlgraphics:batik-awt-util</id>
+            <version>1.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.xmlgraphics:batik-shared-resources</id>
+            <version>1.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.xmlgraphics:batik-util</id>
+            <version>1.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots.https</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.xmlgraphics</maven.groupid>
+        <maven.artifactid>batik-svggen</maven.artifactid>
+    </properties>
+</extension>

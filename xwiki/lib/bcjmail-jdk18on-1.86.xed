@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.bouncycastle:bcjmail-jdk18on</id>
+    <version>1.86</version>
+    <type>jar</type>
+    <name>Bouncy Castle JavaMail Jakarta S/MIME APIs</name>
+    <summary>The  Bouncy Castle Java APIs for doing S/MIME with the Jakarta Mail APIs. The APIs are designed primarily to be used in conjunction with the BC Java provider for Java 1.8 and later.</summary>
+    <website>https://www.bouncycastle.org/download/bouncy-castle-java/</website>
+    <extensionfeatures>
+        <feature>
+            <feature>org.bouncycastle:bcjmail-jdk15on</feature>
+            <version>1.86</version>
+        </feature>
+        <feature>
+            <feature>org.bouncycastle:bcjmail-jdk15to18</feature>
+            <version>1.86</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>org.bouncycastle:bcjmail-jdk15on</feature>
+        <feature>org.bouncycastle:bcjmail-jdk15to18</feature>
+    </features>
+    <authors>
+        <author>
+            <name>The Legion of the Bouncy Castle Inc.</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Bouncy Castle Licence</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/bcgit/bc-java</url>
+        <tag>https://github.com/bcgit/bc-java</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/bcgit/bc-java/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.bouncycastle:bcpkix-jdk18on</id>
+            <version>1.86</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.bouncycastle</maven.groupid>
+        <maven.artifactid>bcjmail-jdk18on</maven.artifactid>
+    </properties>
+</extension>

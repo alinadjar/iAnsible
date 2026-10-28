@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars.npm:jridgewell__sourcemap-codec</id>
+    <version>1.6.0</version>
+    <type>jar</type>
+    <name>@jridgewell/sourcemap-codec</name>
+    <summary>WebJar for @jridgewell/sourcemap-codec</summary>
+    <website>https://www.webjars.org</website>
+    <authors>
+        <author>
+            <name>webjars</name>
+            <url>https://www.webjars.org</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jridgewell/sourcemaps</url>
+        <connection>
+            <system>https</system>
+            <path>//github.com/jridgewell/sourcemaps.git</path>
+        </connection>
+        <developerconnection>
+            <system>https</system>
+            <path>//github.com/jridgewell/sourcemaps.git</path>
+        </developerconnection>
+        <tag>https://github.com/jridgewell/sourcemaps</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://github.com/jridgewell/sourcemaps/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars.npm</maven.groupid>
+        <maven.artifactid>jridgewell__sourcemap-codec</maven.artifactid>
+    </properties>
+</extension>

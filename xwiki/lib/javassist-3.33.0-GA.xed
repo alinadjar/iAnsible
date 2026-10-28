@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.javassist:javassist</id>
+    <version>3.33.0-GA</version>
+    <type>jar</type>
+    <name>Javassist</name>
+    <summary>Javassist (JAVA programming ASSISTant) makes Java bytecode manipulation
+    simple. It is a class library for editing bytecodes in Java.</summary>
+    <website>https://www.javassist.org/</website>
+    <authors>
+        <author>
+            <name>Shigeru Chiba</name>
+        </author>
+        <author>
+            <name>Andrew Dinn</name>
+        </author>
+        <author>
+            <name>Kabir Khan</name>
+        </author>
+        <author>
+            <name>Scott Marlow</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Mozilla Public License 1.1</name>
+        </license>
+        <license>
+            <name>GNU Lesser General Public License 2.1</name>
+        </license>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>scm:git:git@github.com:jboss-javassist/javassist.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jboss-javassist/javassist.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jboss-javassist/javassist.git</path>
+        </developerconnection>
+        <tag>scm:git:git@github.com:jboss-javassist/javassist.git</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://jira.jboss.org/jira/browse/JASSIST/</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.javassist</maven.groupid>
+        <maven.artifactid>javassist</maven.artifactid>
+    </properties>
+</extension>

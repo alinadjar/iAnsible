@@ -1,0 +1,26 @@
+---
+headroom_deploy_path: /opt/headroom-ai
+headroom_venv_name: venv-313
+headroom_venv_path: "{{ headroom_deploy_path }}/{{ headroom_venv_name }}"
+
+headroom_python_packages:
+  - python3.13
+  - python3.13-venv
+
+headroom_pip_packages:
+  - headroom-ai
+
+headroom_pip_extra_args: ""
+
+headroom_proxy_host: 0.0.0.0
+headroom_proxy_port: 8787
+
+headroom_service_user: root
+headroom_service_group: root
+headroom_systemd_unit: headroom.service
+headroom_systemd_description: Headroom LLM Proxy
+
+headroom_sync_from_repo: false
+headroom_stack_subpath: headroom-ai
+headroom_editable_install: false
+headroom_service_environment: []

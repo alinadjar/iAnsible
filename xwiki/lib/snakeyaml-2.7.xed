@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.yaml:snakeyaml</id>
+    <version>2.7</version>
+    <type>jar</type>
+    <name>SnakeYAML</name>
+    <summary>YAML 1.1 parser and emitter for Java</summary>
+    <website>https://codeberg.org/snakeyaml/snakeyaml</website>
+    <authors>
+        <author>
+            <name>Andrey Somov</name>
+        </author>
+        <author>
+            <name>Alexander Maslov</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://codeberg.org/snakeyaml/snakeyaml/src</url>
+        <connection>
+            <system>git</system>
+            <path>https://codeberg.org/snakeyaml/snakeyaml</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@codeberg.org/snakeyaml/snakeyaml</path>
+        </developerconnection>
+        <tag>https://codeberg.org/snakeyaml/snakeyaml/src</tag>
+    </scm>
+    <issuemanagement>
+        <system>codeberg</system>
+        <url>https://codeberg.org/snakeyaml/snakeyaml/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.yaml</maven.groupid>
+        <maven.artifactid>snakeyaml</maven.artifactid>
+    </properties>
+</extension>

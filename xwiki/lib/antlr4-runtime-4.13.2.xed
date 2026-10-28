@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.antlr:antlr4-runtime</id>
+    <version>4.13.2</version>
+    <type>jar</type>
+    <name>ANTLR 4 Runtime</name>
+    <summary>The ANTLR 4 Runtime</summary>
+    <website>https://www.antlr.org/antlr4-runtime/</website>
+    <authors>
+        <author>
+            <name>Terence Parr</name>
+            <url>https://github.com/parrt</url>
+        </author>
+        <author>
+            <name>Sam Harwell</name>
+            <url>http://tunnelvisionlabs.com</url>
+        </author>
+        <author>
+            <name>Eric Vergnaud</name>
+        </author>
+        <author>
+            <name>Peter Boyer</name>
+        </author>
+        <author>
+            <name>Jim Idle</name>
+            <url>https://www.linkedin.com/in/jimidle/</url>
+        </author>
+        <author>
+            <name>Mike Lischke</name>
+        </author>
+        <author>
+            <name>Tom Everett</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD-3-Clause</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/antlr/antlr4/tree/master/antlr4-runtime</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/antlr/antlr4.git/antlr4-runtime</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:antlr/antlr4.git/antlr4-runtime</path>
+        </developerconnection>
+        <tag>https://github.com/antlr/antlr4/tree/master/antlr4-runtime</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/antlr/antlr4/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.antlr</maven.groupid>
+        <maven.artifactid>antlr4-runtime</maven.artifactid>
+    </properties>
+</extension>

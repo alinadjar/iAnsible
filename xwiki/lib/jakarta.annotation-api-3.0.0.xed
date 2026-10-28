@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.annotation:jakarta.annotation-api</id>
+    <version>3.0.0</version>
+    <type>jar</type>
+    <name>Jakarta Annotations API</name>
+    <summary>Jakarta Annotations API</summary>
+    <website>https://projects.eclipse.org/projects/ee4j.ca</website>
+    <extensionfeatures>
+        <feature>
+            <feature>javax.annotation:jsr250-api</feature>
+            <version>3.0.0</version>
+        </feature>
+        <feature>
+            <feature>javax.annotation:javax.annotation-api</feature>
+            <version>3.0.0</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>javax.annotation:jsr250-api</feature>
+        <feature>javax.annotation:javax.annotation-api</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Linda De Michiel</name>
+        </author>
+        <author>
+            <name>Dmitry Kornilov</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL 2.0</name>
+        </license>
+        <license>
+            <name>GPL2 w/ CPE</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jakartaee/common-annotations-api</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/jakartaee/common-annotations-api.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jakartaee/common-annotations-api.git</path>
+        </developerconnection>
+        <tag>https://github.com/jakartaee/common-annotations-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/jakartaee/common-annotations-api/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.annotation</maven.groupid>
+        <maven.artifactid>jakarta.annotation-api</maven.artifactid>
+    </properties>
+</extension>

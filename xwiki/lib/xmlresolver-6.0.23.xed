@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.xmlresolver:xmlresolver</id>
+    <version>6.0.23</version>
+    <type>jar</type>
+    <name>XML Resolver</name>
+    <summary>An XML entity/uri resolver</summary>
+    <website>https://github.com/xmlresolver/xmlresolver</website>
+    <authors>
+        <author>
+            <name>Norm Tovey-Walsh</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License version 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>scm:git@codeberg.org:XmlResolver/xmlresolver.git</url>
+        <connection>
+            <system>git@codeberg.org</system>
+            <path>XmlResolver/xmlresolver.git</path>
+        </connection>
+        <developerconnection>
+            <system>git@codeberg.org</system>
+            <path>XmlResolver/xmlresolver.git</path>
+        </developerconnection>
+        <tag>scm:git@codeberg.org:XmlResolver/xmlresolver.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.xmlresolver</maven.groupid>
+        <maven.artifactid>xmlresolver</maven.artifactid>
+    </properties>
+</extension>

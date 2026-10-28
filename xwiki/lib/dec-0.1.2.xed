@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.brotli:dec</id>
+    <version>0.1.2</version>
+    <type>jar</type>
+    <name>org.brotli:dec</name>
+    <summary>Brotli is a generic-purpose lossless compression algorithm.</summary>
+    <website>http://brotli.org/dec</website>
+    <authors>
+        <author/>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/google/brotli/dec</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/google/brotli.git/dec</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/google/brotli.git/dec</path>
+        </developerconnection>
+        <tag>https://github.com/google/brotli/dec</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.brotli</maven.groupid>
+        <maven.artifactid>dec</maven.artifactid>
+    </properties>
+</extension>

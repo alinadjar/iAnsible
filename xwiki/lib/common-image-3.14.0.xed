@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.twelvemonkeys.common:common-image</id>
+    <version>3.14.0</version>
+    <type>jar</type>
+    <name>TwelveMonkeys » Common » Image</name>
+    <summary>TwelveMonkeys Common image support classes.</summary>
+    <website>https://github.com/haraldk/TwelveMonkeys/common/common-image</website>
+    <authors>
+        <author>
+            <name>Harald Kuhr</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/haraldk/TwelveMonkeys/common/common-image</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/haraldk/TwelveMonkeys/common/common-image</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/haraldk/TwelveMonkeys/common/common-image</path>
+        </developerconnection>
+        <tag>https://github.com/haraldk/TwelveMonkeys/common/common-image</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/haraldk/TwelveMonkeys/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.twelvemonkeys.common:common-lang</id>
+            <version>3.14.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.twelvemonkeys.common:common-io</id>
+            <version>3.14.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>com.twelvemonkeys.common:common-lang</id>
+            <version>3.14.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.twelvemonkeys.common:common-lang</id>
+            <version>3.14.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>test-jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.twelvemonkeys.common:common-io</id>
+            <version>3.14.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.twelvemonkeys.common</maven.groupid>
+        <maven.artifactid>common-image</maven.artifactid>
+    </properties>
+</extension>

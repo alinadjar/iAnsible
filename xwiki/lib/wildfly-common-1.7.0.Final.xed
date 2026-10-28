@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.wildfly.common:wildfly-common</id>
+    <version>1.7.0.Final</version>
+    <type>jar</type>
+    <summary>Provides, via submodules, a base configuration for JBoss project builds, as well as a derived configuration supporting multi-release JARs</summary>
+    <website>http://www.jboss.org</website>
+    <authors>
+        <author>
+            <name>JBoss.org Community</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/wildfly/wildfly-common/</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:wildfly/wildfly-common.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:wildfly/wildfly-common.git</path>
+        </developerconnection>
+        <tag>https://github.com/wildfly/wildfly-common/</tag>
+    </scm>
+    <issuemanagement>
+        <system>JIRA</system>
+        <url>https://issues.redhat.com/</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.jboss:jdk-misc</id>
+            <version>${version.jdk-misc}</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>provided</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.wildfly.common</maven.groupid>
+        <maven.artifactid>wildfly-common</maven.artifactid>
+    </properties>
+</extension>

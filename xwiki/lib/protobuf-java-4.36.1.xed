@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.google.protobuf:protobuf-java</id>
+    <version>4.36.1</version>
+    <type>jar</type>
+    <name>Protocol Buffers [Core]</name>
+    <summary>Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an
+    efficient yet extensible format.</summary>
+    <website>https://developers.google.com/protocol-buffers/protobuf-java/</website>
+    <authors>
+        <author>
+            <name>Protocol Buffers</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD-3-Clause</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/protocolbuffers/protobuf/protobuf-java</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/protocolbuffers/protobuf.git/protobuf-java</path>
+        </connection>
+        <tag>https://github.com/protocolbuffers/protobuf/protobuf-java</tag>
+    </scm>
+    <manageddependencies>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>4.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.guava:guava</id>
+            <version>32.0.1-android</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.guava:guava-testlib</id>
+            <version>32.0.1-android</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.truth:truth</id>
+            <version>1.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>test</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.protobuf:protobuf-java</id>
+            <version>4.36.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.protobuf:protobuf-java-util</id>
+            <version>4.36.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.google.protobuf:protobuf-kotlin</id>
+            <version>4.36.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.google.protobuf</maven.groupid>
+        <maven.artifactid>protobuf-java</maven.artifactid>
+    </properties>
+</extension>

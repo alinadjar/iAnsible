@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>commons-digester:commons-digester</id>
+    <version>2.1</version>
+    <type>jar</type>
+    <name>Commons Digester</name>
+    <summary>The Digester package lets you configure an XML to Java object mapping module
+    which triggers certain actions called rules whenever a particular 
+    pattern of nested XML elements is recognized.</summary>
+    <website>http://commons.apache.org/digester/</website>
+    <authors>
+        <author>
+            <name>Craig McClanahan</name>
+        </author>
+        <author>
+            <name>Robert Burrell Donkin</name>
+        </author>
+        <author>
+            <name>Scott Sanders</name>
+        </author>
+        <author>
+            <name>James Strachan</name>
+        </author>
+        <author>
+            <name>Jason van Zyl</name>
+        </author>
+        <author>
+            <name>Tim OBrien</name>
+        </author>
+        <author>
+            <name>Jean-Francois Arcand</name>
+        </author>
+        <author>
+            <name>Simon Kitching</name>
+        </author>
+        <author>
+            <name>Rahul Akolkar</name>
+        </author>
+        <author>
+            <name>Simone Tripodi</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://svn.apache.org/viewvc/commons/proper/digester/tags/DIGESTER_2_1_RC2</url>
+        <connection>
+            <system>svn</system>
+            <path>http://svn.apache.org/repos/asf/commons/proper/digester/tags/DIGESTER_2_1_RC2</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.apache.org/repos/asf/commons/proper/digester/tags/DIGESTER_2_1_RC2</path>
+        </developerconnection>
+        <tag>http://svn.apache.org/viewvc/commons/proper/digester/tags/DIGESTER_2_1_RC2</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>http://issues.apache.org/jira/browse/DIGESTER</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>commons-beanutils:commons-beanutils</id>
+            <version>1.8.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-logging:commons-logging</id>
+            <version>1.1.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>commons-digester</maven.groupid>
+        <maven.artifactid>commons-digester</maven.artifactid>
+    </properties>
+</extension>

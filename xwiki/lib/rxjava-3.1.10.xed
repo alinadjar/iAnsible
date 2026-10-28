@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.reactivex.rxjava3:rxjava</id>
+    <version>3.1.10</version>
+    <type>jar</type>
+    <name>RxJava</name>
+    <summary>Reactive Extensions for Java</summary>
+    <website>https://github.com/ReactiveX/RxJava</website>
+    <authors>
+        <author>
+            <name>David Karnok</name>
+            <url>https://github.com/akarnokd/</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/ReactiveX/RxJava</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/ReactiveX/RxJava.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/ReactiveX/RxJava.git</path>
+        </developerconnection>
+        <tag>https://github.com/ReactiveX/RxJava</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.reactivestreams:reactive-streams</id>
+            <version>1.0.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.reactivex.rxjava3</maven.groupid>
+        <maven.artifactid>rxjava</maven.artifactid>
+    </properties>
+</extension>

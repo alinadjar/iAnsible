@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.ow2.asm:asm</id>
+    <version>9.10.1</version>
+    <type>jar</type>
+    <name>asm</name>
+    <summary>ASM, a very small and fast Java bytecode manipulation framework</summary>
+    <website>http://asm.ow2.io/</website>
+    <extensionfeatures>
+        <feature>
+            <feature>asm:asm</feature>
+            <version>9.10.1</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>asm:asm</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Eric Bruneton</name>
+        </author>
+        <author>
+            <name>Eugene Kuleshov</name>
+        </author>
+        <author>
+            <name>Remi Forax</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>BSD-3-Clause</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitlab.ow2.org/asm/asm/</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitlab.ow2.org/asm/asm/</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitlab.ow2.org/asm/asm/</path>
+        </developerconnection>
+        <tag>https://gitlab.ow2.org/asm/asm/</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://gitlab.ow2.org/asm/asm/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>ow2-snapshot</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.ow2.asm</maven.groupid>
+        <maven.artifactid>asm</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.ant:ant</id>
+    <version>1.10.11</version>
+    <type>jar</type>
+    <name>Apache Ant Core</name>
+    <summary>master POM</summary>
+    <website>https://ant.apache.org/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitbox.apache.org/repos/asf/ant.git/ant</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/ant.git/ant</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/ant.git/ant</path>
+        </developerconnection>
+        <tag>https://gitbox.apache.org/repos/asf/ant.git/ant</tag>
+    </scm>
+    <issuemanagement>
+        <system>bugzilla</system>
+        <url>https://issues.apache.org/bugzilla/</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.ant:ant-launcher</id>
+            <version>1.10.11</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.ant</maven.groupid>
+        <maven.artifactid>ant</maven.artifactid>
+    </properties>
+</extension>

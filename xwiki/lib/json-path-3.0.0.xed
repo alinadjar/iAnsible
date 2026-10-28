@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.jayway.jsonpath:json-path</id>
+    <version>3.0.0</version>
+    <type>jar</type>
+    <name>json-path</name>
+    <summary>A library to query and verify JSON</summary>
+    <website>https://github.com/jayway/JsonPath</website>
+    <authors>
+        <author>
+            <name>Kalle Stenflo</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>scm:git:git://github.com/jayway/JsonPath.git</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/jayway/JsonPath.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git://github.com/jayway/JsonPath.git</path>
+        </developerconnection>
+        <tag>scm:git:git://github.com/jayway/JsonPath.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>net.minidev:json-smart</id>
+            <version>2.6.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.17</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>runtime</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.jayway.jsonpath</maven.groupid>
+        <maven.artifactid>json-path</maven.artifactid>
+    </properties>
+</extension>

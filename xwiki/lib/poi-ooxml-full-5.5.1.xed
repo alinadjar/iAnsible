@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.poi:poi-ooxml-full</id>
+    <version>5.5.1</version>
+    <type>jar</type>
+    <name>Apache POI - OOXML schemas (full)</name>
+    <summary>XmlBeans generated from the Ecma supplied xsds (since POI 5.0.0, the 5th edition is used):
+    https://www.ecma-international.org/publications/standards/Ecma-376.htm</summary>
+    <website>https://poi.apache.org/</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <dependencies>
+        <dependency>
+            <id>org.apache.xmlbeans:xmlbeans</id>
+            <version>5.3.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>org.apache.logging.log4j:log4j-api</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>org.apache.maven:maven-plugin-api</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>org.apache.maven:maven-model</id>
+                </extensionpattern>
+                <extensionpattern>
+                    <id>org.apache.maven.plugin-tools:maven-plugin-annotations</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.poi</maven.groupid>
+        <maven.artifactid>poi-ooxml-full</maven.artifactid>
+    </properties>
+</extension>

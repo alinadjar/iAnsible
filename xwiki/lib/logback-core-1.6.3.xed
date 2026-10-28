@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>ch.qos.logback:logback-core</id>
+    <version>1.6.3</version>
+    <type>jar</type>
+    <name>Logback Core Module</name>
+    <summary>logback-core module</summary>
+    <website>http://logback.qos.ch/logback-core</website>
+    <authors>
+        <author>
+            <name>Ceki Gulcu</name>
+        </author>
+        <author>
+            <name>Joern Huxhorn</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EPL-2.0</name>
+        </license>
+        <license>
+            <name>LGPL-2.1-only</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/qos-ch/logback/logback-core</url>
+        <connection>
+            <system>git@github.com</system>
+            <path>qos-ch/logback.git/logback-core</path>
+        </connection>
+        <tag>https://github.com/qos-ch/logback/logback-core</tag>
+    </scm>
+    <manageddependencies>
+        <dependency>
+            <id>ch.qos.logback:logback-core</id>
+            <version>1.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.logback:logback-classic</id>
+            <version>1.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.logback:logback-classic-misc</id>
+            <version>1.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>2.0.18</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.logback:logback-access</id>
+            <version>1.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>ch.qos.logback:logback-core</id>
+            <version>1.6.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>test-jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.tukaani:xz</id>
+            <version>1.10</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.fusesource.jansi:jansi</id>
+            <version>2.4.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.jline:jansi-core</id>
+            <version>4.3.1</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.mail:jakarta.mail-api</id>
+            <version>2.1.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.angus:angus-mail</id>
+            <version>2.0.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>jakarta.servlet:jakarta.servlet-api</id>
+            <version>5.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.icegreen:greenmail</id>
+            <version>2.1.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.dom4j:dom4j</id>
+            <version>2.2.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-core</id>
+            <version>4.8.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>net.bytebuddy:byte-buddy</id>
+            <version>1.12.14</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>ch.qos.logback</maven.groupid>
+        <maven.artifactid>logback-core</maven.artifactid>
+    </properties>
+</extension>

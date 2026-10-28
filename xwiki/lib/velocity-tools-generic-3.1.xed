@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.apache.velocity.tools:velocity-tools-generic</id>
+    <version>3.1</version>
+    <type>jar</type>
+    <name>Apache Velocity Tools - Generic tools</name>
+    <summary>Generic tools that can be used in any context.</summary>
+    <website>https://velocity.apache.org/tools/devel/velocity-tools-generic/</website>
+    <authors>
+        <author>
+            <name>Claude Brisson</name>
+            <url>http://claude.brisson.info</url>
+        </author>
+        <author>
+            <name>Nathan Bubna</name>
+        </author>
+        <author>
+            <name>Will Glass-Husain</name>
+        </author>
+        <author>
+            <name>Marinó A. Jónsson</name>
+        </author>
+        <author>
+            <name>Geir Magnusson Jr.</name>
+        </author>
+        <author>
+            <name>Daniel Rall</name>
+        </author>
+        <author>
+            <name>Henning P. Schmiedehausen</name>
+        </author>
+        <author>
+            <name>Jon S. Stevens</name>
+        </author>
+        <author>
+            <name>Jason van Zyl</name>
+        </author>
+        <author>
+            <name>Christopher Schultz</name>
+        </author>
+        <author>
+            <name>Sergiu Dumitriu</name>
+            <url>http://purl.org/net/sergiu</url>
+        </author>
+        <author>
+            <name>Dishara Wijewardana</name>
+        </author>
+        <author>
+            <name>Mike Kienenberger</name>
+        </author>
+        <author>
+            <name>Michael Osipov</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://gitbox.apache.org/repos/asf?p=velocity-tools.git/velocity-tools-generic</url>
+        <connection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/velocity-tools.git/velocity-tools-generic</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://gitbox.apache.org/repos/asf/velocity-tools.git/velocity-tools-generic</path>
+        </developerconnection>
+        <tag>https://gitbox.apache.org/repos/asf?p=velocity-tools.git/velocity-tools-generic</tag>
+    </scm>
+    <issuemanagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/VELTOOLS</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.velocity:velocity-engine-core</id>
+            <version>2.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-beanutils:commons-beanutils</id>
+            <version>1.9.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-digester3</id>
+            <version>3.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>cglib:cglib</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.10</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.30</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>com.github.cliftonlabs:json-simple</id>
+            <version>3.0.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>org.apache.velocity:velocity-engine-core</id>
+            <version>2.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.10</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.apache.commons:commons-digester3</id>
+            <version>3.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+            <exclusions>
+                <extensionpattern>
+                    <id>cglib:cglib</id>
+                </extensionpattern>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-api</id>
+            <version>1.7.30</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.slf4j:slf4j-simple</id>
+            <version>1.7.30</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.servlet:javax.servlet-api</id>
+            <version>3.1.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.servlet.jsp:javax.servlet.jsp-api</id>
+            <version>2.3.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>javax.el:javax.el-api</id>
+            <version>3.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.13.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.easymock:easymock</id>
+            <version>4.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.apache.velocity.tools</maven.groupid>
+        <maven.artifactid>velocity-tools-generic</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.opentelemetry:opentelemetry-api</id>
+    <version>1.65.0</version>
+    <type>jar</type>
+    <name>OpenTelemetry Java</name>
+    <summary>OpenTelemetry API</summary>
+    <website>https://github.com/open-telemetry/opentelemetry-java</website>
+    <authors>
+        <author>
+            <name>OpenTelemetry</name>
+            <url>https://github.com/open-telemetry/community</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:open-telemetry/opentelemetry-java.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:open-telemetry/opentelemetry-java.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:open-telemetry/opentelemetry-java.git</path>
+        </developerconnection>
+        <tag>git@github.com:open-telemetry/opentelemetry-java.git</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>io.opentelemetry:opentelemetry-context</id>
+            <version>1.65.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.opentelemetry</maven.groupid>
+        <maven.artifactid>opentelemetry-api</maven.artifactid>
+    </properties>
+</extension>

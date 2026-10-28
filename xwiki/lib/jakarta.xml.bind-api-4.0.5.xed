@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>jakarta.xml.bind:jakarta.xml.bind-api</id>
+    <version>4.0.5</version>
+    <type>jar</type>
+    <name>Jakarta XML Binding API</name>
+    <summary>Jakarta XML Binding API</summary>
+    <website>https://github.com/jakartaee/jaxb-api/jakarta.xml.bind-api</website>
+    <authors>
+        <author>
+            <name>Roman Grigoriadi</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Eclipse Distribution License - v 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jakartaee/jaxb-api.git/jakarta.xml.bind-api</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/jakartaee/jaxb-api.git/jakarta.xml.bind-api</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jakartaee/jaxb-api.git/jakarta.xml.bind-api</path>
+        </developerconnection>
+        <tag>https://github.com/jakartaee/jaxb-api.git/jakarta.xml.bind-api</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/jakartaee/jaxb-api/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>jakarta.xml.bind</maven.groupid>
+        <maven.artifactid>jakarta.xml.bind-api</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars:Keypress</id>
+    <version>2.1.5</version>
+    <type>jar</type>
+    <name>Keypress</name>
+    <summary>WebJar for Keypress</summary>
+    <website>http://webjars.org</website>
+    <authors>
+        <author>
+            <name>James Ward</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/webjars/Keypress</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/webjars/Keypress.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/webjars/Keypress.git</path>
+        </developerconnection>
+        <tag>http://github.com/webjars/Keypress</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars</maven.groupid>
+        <maven.artifactid>Keypress</maven.artifactid>
+    </properties>
+</extension>

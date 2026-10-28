@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.codehaus.plexus:plexus-interpolation</id>
+    <version>1.30.0</version>
+    <type>jar</type>
+    <name>Plexus Interpolation API</name>
+    <summary>A component that resolves expressions in strings against stackable value sources, as used for
+    POM interpolation.</summary>
+    <website>https://codehaus-plexus.github.io/plexus-pom/plexus-interpolation/</website>
+    <authors>
+        <author>
+            <name>Jason van Zyl</name>
+        </author>
+        <author>
+            <name>Pete Kazmier</name>
+        </author>
+        <author>
+            <name>James Taylor</name>
+        </author>
+        <author>
+            <name>Dan Diephouse</name>
+        </author>
+        <author>
+            <name>Kasper Nielsen</name>
+        </author>
+        <author>
+            <name>Ben Walding</name>
+        </author>
+        <author>
+            <name>Mark Wilkinson</name>
+        </author>
+        <author>
+            <name>Michal Maczka</name>
+        </author>
+        <author>
+            <name>Emmanuel Venisse</name>
+        </author>
+        <author>
+            <name>Trygve Laugstøl</name>
+        </author>
+        <author>
+            <name>Kenney Westerhof</name>
+        </author>
+        <author>
+            <name>Carlos Sanchez</name>
+        </author>
+        <author>
+            <name>Brett Porter</name>
+        </author>
+        <author>
+            <name>John Casey</name>
+        </author>
+        <author>
+            <name>Andrew Williams</name>
+        </author>
+        <author>
+            <name>Rahul Thakur</name>
+        </author>
+        <author>
+            <name>Joakim Erdfelt</name>
+        </author>
+        <author>
+            <name>Olivier Lamy</name>
+        </author>
+        <author>
+            <name>Hervé Boutemy</name>
+        </author>
+        <author>
+            <name>Oleg Gusakov</name>
+        </author>
+        <author>
+            <name>Vincent Siveton</name>
+        </author>
+        <author>
+            <name>Kristian Rosenvold</name>
+        </author>
+        <author>
+            <name>Andreas Gudian</name>
+        </author>
+        <author>
+            <name>Karl Heinz Marbaise</name>
+        </author>
+        <author>
+            <name>Michael Osipov</name>
+        </author>
+        <author>
+            <name>Gabriel Belingueres</name>
+        </author>
+        <author>
+            <name>Konrad Windszus</name>
+        </author>
+        <author>
+            <name>Slawomir Jaranowski</name>
+        </author>
+        <author>
+            <name>Sylwester Lachiewicz</name>
+        </author>
+        <author>
+            <name>Guillaume Nodet</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/codehaus-plexus/plexus-interpolation/tree/plexus-interpolation-1.30.0/</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/codehaus-plexus/plexus-interpolation.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/codehaus-plexus/plexus-interpolation.git</path>
+        </developerconnection>
+        <tag>http://github.com/codehaus-plexus/plexus-interpolation/tree/plexus-interpolation-1.30.0/</tag>
+    </scm>
+    <issuemanagement>
+        <system>Github</system>
+        <url>https://github.com/codehaus-plexus/plexus-interpolation/issues</url>
+    </issuemanagement>
+    <manageddependencies>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-api</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-engine</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-migrationsupport</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.jupiter:junit-jupiter-params</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-commons</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-console</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-engine</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-jfr</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-launcher</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-reporting</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-runner</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-api</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-commons</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-suite-engine</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.platform:junit-platform-testkit</id>
+            <version>1.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.junit.vintage:junit-vintage-engine</id>
+            <version>5.14.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.codehaus.plexus</maven.groupid>
+        <maven.artifactid>plexus-interpolation</maven.artifactid>
+    </properties>
+</extension>

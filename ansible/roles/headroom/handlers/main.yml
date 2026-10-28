@@ -1,0 +1,9 @@
+---
+- name: Reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Restart headroom
+  ansible.builtin.systemd:
+    name: "{{ headroom_systemd_unit }}"
+    state: restarted

@@ -1,0 +1,20 @@
+[Unit]
+Description={{ headroom_systemd_description }}
+After=network.target
+
+[Service]
+Type=simple
+User={{ headroom_service_user }}
+Group={{ headroom_service_group }}
+WorkingDirectory={{ headroom_deploy_path }}
+ExecStart={{ headroom_venv_path }}/bin/headroom proxy --host {{ headroom_proxy_host }} --port {{ headroom_proxy_port }}
+Restart=on-failure
+RestartSec=5
+{% if headroom_service_environment | default([]) | length > 0 %}
+{% for item in headroom_service_environment %}
+Environment={{ item }}
+{% endfor %}
+{% endif %}
+
+[Install]
+WantedBy=multi-user.target

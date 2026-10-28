@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.healthmarketscience.jackcess:jackcess-encrypt</id>
+    <version>4.0.3</version>
+    <type>jar</type>
+    <name>Jackcess Encrypt</name>
+    <summary>An add-on to the Jackcess library for handling encryption in MS Access files.</summary>
+    <website>http://jackcessencrypt.sf.net</website>
+    <authors>
+        <author>
+            <name>James Ahlborn</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://svn.code.sf.net/p/jackcessencrypt/code/tags/jackcess-encrypt-4.0.3</url>
+        <connection>
+            <system>svn</system>
+            <path>svn://svn.code.sf.net/p/jackcessencrypt/code/tags/jackcess-encrypt-4.0.3</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>svn+ssh://svn.code.sf.net/p/jackcessencrypt/code/tags/jackcess-encrypt-4.0.3</path>
+        </developerconnection>
+        <tag>http://svn.code.sf.net/p/jackcessencrypt/code/tags/jackcess-encrypt-4.0.3</tag>
+    </scm>
+    <issuemanagement>
+        <system>SourceForge2</system>
+        <url>https://sourceforge.net/p/jackcessencrypt/bugs/</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>com.healthmarketscience.jackcess:jackcess</id>
+            <version>4.0.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.bouncycastle:bcprov-jdk18on</id>
+            <version>1.78</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.healthmarketscience.jackcess</maven.groupid>
+        <maven.artifactid>jackcess-encrypt</maven.artifactid>
+    </properties>
+</extension>

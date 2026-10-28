@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.healthmarketscience.jackcess:jackcess</id>
+    <version>4.0.11</version>
+    <type>jar</type>
+    <name>Jackcess</name>
+    <summary>A pure Java library for reading from and writing to MS Access databases.</summary>
+    <website>https://jackcess.sourceforge.io</website>
+    <authors>
+        <author>
+            <name>Tim McCune</name>
+        </author>
+        <author>
+            <name>James Ahlborn</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://svn.code.sf.net/p/jackcess/code/jackcess/tags/jackcess-4.0.11</url>
+        <connection>
+            <system>svn</system>
+            <path>svn://svn.code.sf.net/p/jackcess/code/jackcess/tags/jackcess-4.0.11</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>svn+ssh://svn.code.sf.net/p/jackcess/code/jackcess/tags/jackcess-4.0.11</path>
+        </developerconnection>
+        <tag>http://svn.code.sf.net/p/jackcess/code/jackcess/tags/jackcess-4.0.11</tag>
+    </scm>
+    <issuemanagement>
+        <system>SourceForge2</system>
+        <url>https://sourceforge.net/p/jackcess/bugs/</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.apache.commons:commons-lang3</id>
+            <version>3.18.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>commons-logging:commons-logging</id>
+            <version>1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.healthmarketscience.jackcess</maven.groupid>
+        <maven.artifactid>jackcess</maven.artifactid>
+    </properties>
+</extension>

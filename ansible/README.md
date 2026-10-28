@@ -63,7 +63,7 @@ Do **not** commit `erp/.env`; secrets are rendered from Ansible Vault into `.env
 ## Phase 2: Langfuse & Headroom
 
 - Set `langfuse_enabled: true` in `group_vars/observability.yml` and fill vault secrets.
-- `headroom-ai/` in the monorepo is not deployment-ready yet; the `headroom` role is a stub until you add a compose or systemd unit.
+- Set `headroom_enabled: true` to install **Headroom LLM Proxy** as `headroom.service` under `/opt/headroom-ai` (Python 3.13 venv `venv-313`, port **8787** by default). Override `headroom_pip_packages` / `headroom_pip_extra_args` if you use a private PyPI index or version pin.
 
 ## ERP prerequisites on the server
 

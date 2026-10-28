@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.carrotsearch:java-sizeof</id>
+    <version>0.0.5</version>
+    <type>jar</type>
+    <name>java-sizeof</name>
+    <summary>Java Objects size estimation.</summary>
+    <website>http://nexus.sonatype.org/oss-repository-hosting.html/java-sizeof</website>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://svn.sonatype.org/spice/tags/oss-parent-7/java-sizeof</url>
+        <connection>
+            <system>svn</system>
+            <path>http://svn.sonatype.org/spice/tags/oss-parent-7/java-sizeof</path>
+        </connection>
+        <developerconnection>
+            <system>svn</system>
+            <path>https://svn.sonatype.org/spice/tags/oss-parent-7/java-sizeof</path>
+        </developerconnection>
+        <tag>http://svn.sonatype.org/spice/tags/oss-parent-7/java-sizeof</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.carrotsearch</maven.groupid>
+        <maven.artifactid>java-sizeof</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.eclipse.angus:angus-activation</id>
+    <version>2.0.3</version>
+    <type>jar</type>
+    <name>Angus Activation Registries</name>
+    <summary>Angus Activation Registries Implementation</summary>
+    <website>https://github.com/eclipse-ee4j/angus-activation/angus-activation</website>
+    <authors>
+        <author>
+            <name>Bill Shannon</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>EDL 1.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/eclipse-ee4j/angus-activation/angus-activation</url>
+        <connection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse/angus-activation.git/angus-activation</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/eclipse/angus-activation.git/angus-activation</path>
+        </developerconnection>
+        <tag>https://github.com/eclipse-ee4j/angus-activation/angus-activation</tag>
+    </scm>
+    <issuemanagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/angus-activation/issues/</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>jakarta.activation:jakarta.activation-api</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.eclipse.angus:angus-activation</id>
+            <version>2.0.3</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.graalvm.sdk:graal-sdk</id>
+            <version>23.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.graalvm.polyglot:polyglot</id>
+            <version>23.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.graalvm.sdk:nativeimage</id>
+            <version>23.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.graalvm.sdk:word</id>
+            <version>23.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.graalvm.sdk:collections</id>
+            <version>23.1.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.eclipse.angus</maven.groupid>
+        <maven.artifactid>angus-activation</maven.artifactid>
+    </properties>
+</extension>

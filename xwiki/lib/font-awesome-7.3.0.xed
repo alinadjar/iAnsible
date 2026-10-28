@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars:font-awesome</id>
+    <version>7.3.0</version>
+    <type>jar</type>
+    <name>Font Awesome</name>
+    <summary>WebJar for Font Awesome</summary>
+    <website>https://www.webjars.org</website>
+    <authors>
+        <author>
+            <name>webjars</name>
+            <url>https://www.webjars.org</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>(CC-BY-4.0 AND OFL-1.1 AND MIT)</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/FortAwesome/Font-Awesome</url>
+        <connection>
+            <system>https</system>
+            <path>//github.com/FortAwesome/Font-Awesome.git</path>
+        </connection>
+        <developerconnection>
+            <system>https</system>
+            <path>//github.com/FortAwesome/Font-Awesome.git</path>
+        </developerconnection>
+        <tag>https://github.com/FortAwesome/Font-Awesome</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://github.com/FortAwesome/Font-Awesome/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars</maven.groupid>
+        <maven.artifactid>font-awesome</maven.artifactid>
+    </properties>
+</extension>

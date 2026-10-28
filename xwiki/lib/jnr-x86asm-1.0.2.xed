@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>com.github.jnr:jnr-x86asm</id>
+    <version>1.0.2</version>
+    <type>jar</type>
+    <name>jnr-x86asm</name>
+    <summary>A pure-java X86 and X86_64 assembler</summary>
+    <website>http://github.com/jnr/jnr-x86asm</website>
+    <authors>
+        <author>
+            <name>Wayne Meissner</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:jnr/jnr-x86asm.git</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com:jnr/jnr-x86asm.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:jnr/jnr-x86asm.git</path>
+        </developerconnection>
+        <tag>git@github.com:jnr/jnr-x86asm.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>com.github.jnr</maven.groupid>
+        <maven.artifactid>jnr-x86asm</maven.artifactid>
+    </properties>
+</extension>

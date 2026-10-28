@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.json:json</id>
+    <version>20250517</version>
+    <type>jar</type>
+    <name>JSON in Java</name>
+    <summary>JSON is a light-weight, language independent, data interchange format.
+        See http://www.JSON.org/
+
+        The files in this package implement JSON encoders/decoders in Java.
+        It also includes the capability to convert between JSON and XML, HTTP
+        headers, Cookies, and CDL.
+
+        This is a reference implementation. There are a large number of JSON packages
+        in Java. Perhaps someday the Java community will standardize on one. Until
+        then, choose carefully.</summary>
+    <website>https://github.com/douglascrockford/JSON-java</website>
+    <extensionfeatures>
+        <feature>
+            <feature>com.tdunning:json</feature>
+            <version>20250517</version>
+        </feature>
+    </extensionfeatures>
+    <features>
+        <feature>com.tdunning:json</feature>
+    </features>
+    <authors>
+        <author>
+            <name>Douglas Crockford</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Public Domain</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/douglascrockford/JSON-java.git</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/douglascrockford/JSON-java.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:douglascrockford/JSON-java.git</path>
+        </developerconnection>
+        <tag>https://github.com/douglascrockford/JSON-java.git</tag>
+    </scm>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.json</maven.groupid>
+        <maven.artifactid>json</maven.artifactid>
+    </properties>
+</extension>

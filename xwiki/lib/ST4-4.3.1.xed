@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.antlr:ST4</id>
+    <version>4.3.1</version>
+    <type>jar</type>
+    <name>StringTemplate 4</name>
+    <summary>StringTemplate is a java template engine for generating source code,
+		web pages, emails, or any other formatted text output.
+
+		StringTemplate is particularly good at multi-targeted code generators,
+		multiple site skins, and internationalization/localization.
+
+		It evolved over years of effort developing jGuru.com.
+
+		StringTemplate also powers the ANTLR 3 and 4 code generator. Its distinguishing characteristic
+		is that unlike other engines, it strictly enforces model-view separation.
+
+		Strict separation makes websites and code generators more flexible
+		and maintainable; it also provides an excellent defense against malicious
+		template authors.</summary>
+    <website>http://nexus.sonatype.org/oss-repository-hosting.html/ST4</website>
+    <scm>
+        <url>https://github.com/antlr/stringtemplate4/tree/master</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/antlr/stringtemplate4.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git@github.com:antlr/stringtemplate4.git</path>
+        </developerconnection>
+        <tag>https://github.com/antlr/stringtemplate4/tree/master</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.antlr:antlr-runtime</id>
+            <version>3.5.2</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.antlr</maven.groupid>
+        <maven.artifactid>ST4</maven.artifactid>
+    </properties>
+</extension>

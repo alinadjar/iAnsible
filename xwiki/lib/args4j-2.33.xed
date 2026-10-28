@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>args4j:args4j</id>
+    <version>2.33</version>
+    <type>jar</type>
+    <name>args4j</name>
+    <summary>args4j : Java command line arguments parser</summary>
+    <website>http://args4j.kohsuke.org/args4j/</website>
+    <authors>
+        <author>
+            <name>Kohsuke Kawaguchi</name>
+        </author>
+        <author>
+            <name>Jan Materne</name>
+        </author>
+        <author>
+            <name>Mark Sinke</name>
+        </author>
+        <author>
+            <name>Jerome Lacoste</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://args4j.kohsuke.org/args4j/</url>
+        <connection>
+            <system>git</system>
+            <path>git@github.com/kohsuke/args4j.git/args4j</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>ssh://git@github.com/kohsuke/args4j.git/args4j</path>
+        </developerconnection>
+        <tag>http://args4j.kohsuke.org/args4j/</tag>
+    </scm>
+    <issuemanagement>
+        <url>https://args4j.dev.java.net/issues</url>
+    </issuemanagement>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>args4j</maven.groupid>
+        <maven.artifactid>args4j</maven.artifactid>
+    </properties>
+</extension>

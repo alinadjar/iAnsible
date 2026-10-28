@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>io.opentracing:opentracing-util</id>
+    <version>0.33.0</version>
+    <type>jar</type>
+    <name>OpenTracing-util</name>
+    <summary>OpenTracing utilities</summary>
+    <website>https://github.com/opentracing/opentracing-java/opentracing-util</website>
+    <authors>
+        <author>
+            <name>OpenTracing Gitter</name>
+            <url>https://gitter.im/opentracing/public</url>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/opentracing/opentracing-java/opentracing-util</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/opentracing/opentracing-java.git/opentracing-util</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/opentracing/opentracing-java.git/opentracing-util</path>
+        </developerconnection>
+        <tag>https://github.com/opentracing/opentracing-java/opentracing-util</tag>
+    </scm>
+    <issuemanagement>
+        <system>Github</system>
+        <url>https://github.com/opentracing/opentracing-java/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>io.opentracing:opentracing-api</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.opentracing:opentracing-noop</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <manageddependencies>
+        <dependency>
+            <id>io.opentracing:opentracing-api</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.opentracing:opentracing-noop</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.opentracing:opentracing-util</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.opentracing:opentracing-mock</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.opentracing:opentracing-testbed</id>
+            <version>0.33.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>junit:junit</id>
+            <version>4.12</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.assertj:assertj-core</id>
+            <version>3.8.0</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.mockito:mockito-all</id>
+            <version>1.10.19</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </manageddependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>io.opentracing</maven.groupid>
+        <maven.artifactid>opentracing-util</maven.artifactid>
+    </properties>
+</extension>

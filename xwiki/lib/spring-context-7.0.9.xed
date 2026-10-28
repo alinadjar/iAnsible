@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.springframework:spring-context</id>
+    <version>7.0.9</version>
+    <type>jar</type>
+    <name>Spring Context</name>
+    <summary>Spring Context</summary>
+    <website>https://github.com/spring-projects/spring-framework</website>
+    <authors>
+        <author>
+            <name>Juergen Hoeller</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/spring-projects/spring-framework</url>
+        <connection>
+            <system>git</system>
+            <path>git://github.com/spring-projects/spring-framework</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>git://github.com/spring-projects/spring-framework</path>
+        </developerconnection>
+        <tag>https://github.com/spring-projects/spring-framework</tag>
+    </scm>
+    <issuemanagement>
+        <system>GitHub</system>
+        <url>https://github.com/spring-projects/spring-framework/issues</url>
+    </issuemanagement>
+    <dependencies>
+        <dependency>
+            <id>org.springframework:spring-aop</id>
+            <version>7.0.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-beans</id>
+            <version>7.0.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-core</id>
+            <version>7.0.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.springframework:spring-expression</id>
+            <version>7.0.9</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>io.micrometer:micrometer-observation</id>
+            <version>1.16.7</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.springframework</maven.groupid>
+        <maven.artifactid>spring-context</maven.artifactid>
+    </properties>
+</extension>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension>
+    <id>org.webjars:bootstrap-switch</id>
+    <version>3.3.4</version>
+    <type>jar</type>
+    <name>Bootstrap-switch</name>
+    <summary>WebJar for Bootstrap-switch</summary>
+    <website>http://webjars.org</website>
+    <authors>
+        <author>
+            <name>James Ward</name>
+        </author>
+    </authors>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://github.com/webjars/bootstrap-switch</url>
+        <connection>
+            <system>git</system>
+            <path>https://github.com/webjars/bootstrap-switch.git</path>
+        </connection>
+        <developerconnection>
+            <system>git</system>
+            <path>https://github.com/webjars/bootstrap-switch.git</path>
+        </developerconnection>
+        <tag>http://github.com/webjars/bootstrap-switch</tag>
+    </scm>
+    <dependencies>
+        <dependency>
+            <id>org.webjars:jquery</id>
+            <version>2.1.4</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+        <dependency>
+            <id>org.webjars:bootstrap</id>
+            <version>3.3.5</version>
+            <optional type="boolean">false</optional>
+            <properties>
+                <maven.dependency.scope>compile</maven.dependency.scope>
+                <maven.dependency.type>jar</maven.dependency.type>
+            </properties>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>xwiki-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public-proxy</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>xwiki-public</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>true</maven.release>
+                <maven.snapshot>false</maven.snapshot>
+            </properties>
+        </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <type>maven</type>
+            <properties>
+                <maven.release>false</maven.release>
+                <maven.snapshot>true</maven.snapshot>
+            </properties>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.groupid>org.webjars</maven.groupid>
+        <maven.artifactid>bootstrap-switch</maven.artifactid>
+    </properties>
+</extension>
