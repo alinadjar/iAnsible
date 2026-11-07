@@ -16,6 +16,10 @@ stack_git_version: main
 deploy_user: devops
 deploy_group: devops
 
+# Playbooks load secrets/vault.yml only (--ask-vault-pass). Not inventory/production/vault.yml.
+platform_secrets_required: true
+# platform_secrets_file: "{{ playbook_dir }}/../inventory/production/vault.yml"
+
 docker_packages_state: present
 docker_users:
   - "{{ deploy_user }}"

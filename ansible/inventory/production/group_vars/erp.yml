@@ -1,5 +1,11 @@
 ---
 erp_enabled: true
+
+# Fails deploy-erp if vault did not decrypt (see tasks/validate-platform-secrets.yml).
+platform_vault_required_vars:
+  - vault_erp_postgres_password
+  - vault_erp_redis_password
+
 erp_deploy_path: /opt/sadgan/erp
 erp_compose_project_name: fx_demo
 

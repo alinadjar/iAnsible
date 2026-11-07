@@ -1,10 +1,12 @@
 ---
-# Loaded from playbooks only — never put vault.yml under inventory/production/.
+# Loaded from playbooks only — never put vault.yml under inventory/production/ for inventory parsing.
+# Decrypt target: secrets/vault.yml (override with platform_secrets_file in group_vars).
 - name: Resolve platform secrets file path
   ansible.builtin.set_fact:
     _platform_secrets_file: >-
       {{ platform_secrets_file
          | default(playbook_dir ~ '/../secrets/vault.yml') }}
+    _legacy_inventory_vault: "{{ playbook_dir }}/../inventory/production/vault.yml"
   run_once: true
   delegate_to: localhost
   become: false
@@ -17,8 +19,42 @@
   delegate_to: localhost
   become: false
 
+- name: Check for legacy vault file under inventory (ignored by default)
+  ansible.builtin.stat:
+    path: "{{ _legacy_inventory_vault }}"
+  register: platform_legacy_vault_file
+  run_once: true
+  delegate_to: localhost
+  become: false
+  when: not platform_vault_file.stat.exists
+
+- name: Fail when secrets are required but vault file is missing
+  ansible.builtin.fail:
+    msg: >-
+      Platform secrets are required (platform_secrets_required=true) but
+      {{ _platform_secrets_file }} was not found.
+      {% if platform_legacy_vault_file.stat.exists | default(false) %}
+      Legacy file exists at inventory/production/vault.yml — playbooks do not load it automatically.
+      Move it: mkdir -p secrets && ansible-vault decrypt inventory/production/vault.yml
+      && mv inventory/production/vault.yml secrets/vault.yml && ansible-vault encrypt secrets/vault.yml
+      Or set platform_secrets_file: "{{ playbook_dir }}/../inventory/production/vault.yml" in group_vars/all.yml
+      (keep the file out of directory inventory).
+      {% else %}
+      Create secrets from docs/vault.yml.example, encrypt, and run with --ask-vault-pass.
+      {% endif %}
+  when:
+    - platform_secrets_required | default(true)
+    - not platform_vault_file.stat.exists
+  run_once: true
+
+# Load on each play host (no run_once) so vault_* vars are in hostvars for templates and asserts.
 - name: Load platform vault secrets
   ansible.builtin.include_vars:
     file: "{{ _platform_secrets_file }}"
   when: platform_vault_file.stat.exists
   no_log: true
+
+- name: Record that vault secrets were loaded
+  ansible.builtin.set_fact:
+    platform_vault_loaded: true
+  when: platform_vault_file.stat.exists
