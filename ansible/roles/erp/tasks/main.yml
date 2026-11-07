@@ -15,7 +15,7 @@
     stack_compose_project_name: "{{ erp_compose_project_name }}"
     stack_compose_files:
       - "{{ erp_compose_file }}"
-    stack_skip_compose: true
+    stack_skip_compose: false
 
 - name: Render ERP environment file
   ansible.builtin.template:
@@ -36,3 +36,4 @@
     stack_compose_files:
       - "{{ erp_compose_file }}"
     stack_skip_sync: true
+    stack_require_env_file: .env

@@ -1,4 +1,6 @@
 ---
 # Applied to every host in the `platform` group (bootstrap.yml targets platform).
-deploy_user: ansible
-deploy_group: ansible
+deploy_user: devops
+deploy_group: devops
+
+...

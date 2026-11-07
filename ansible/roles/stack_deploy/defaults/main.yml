@@ -1,0 +1,13 @@
+---
+# Defaults when group_vars/all.yml is missing or incomplete on the control node.
+stack_source: local
+stack_git_url: ""
+stack_git_version: main
+repo_root: "{{ playbook_dir }}/../.."
+
+stack_rsync_opts: []
+stack_skip_sync: false
+stack_skip_compose: false
+stack_compose_pull_images: true
+stack_compose_recreate: auto
+...

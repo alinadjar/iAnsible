@@ -1,9 +1,6 @@
 ---
-# DEPRECATED LOCATION — use inventory/production/vault.yml.example instead.
-# vault.yml must NOT live under group_vars/all/ (breaks ad-hoc ping without vault password).
-#
-# Copy to: inventory/production/vault.yml
-#   ansible-vault encrypt inventory/production/vault.yml
+# Copy to vault.yml and encrypt: ansible-vault encrypt inventory/production/group_vars/all/vault.yml
+# Never commit real vault.yml.
 
 vault_erp_postgres_password: "CHANGE_ME"
 vault_erp_postgres_ro_password: "CHANGE_ME"

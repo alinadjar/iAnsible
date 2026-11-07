@@ -17,14 +17,14 @@
     update: true
   become_user: "{{ deploy_user }}"
   when:
-    - stack_source == "git"
+    - stack_source | default('local') == 'git'
     - not (stack_skip_sync | default(false))
 
 - name: Set stack content path for git source
   ansible.builtin.set_fact:
     stack_content_src: "{{ stack_git_dest | default(stack_deploy_path + '/repo') }}/{{ stack_subpath }}"
   when:
-    - stack_source == "git"
+    - stack_source | default('local') == 'git'
     - not (stack_skip_sync | default(false))
 
 - name: Copy stack from cloned monorepo (git source)
@@ -36,13 +36,13 @@
     group: "{{ deploy_group }}"
     mode: preserve
   when:
-    - stack_source == "git"
+    - stack_source | default('local') == 'git'
     - not (stack_skip_sync | default(false))
 
 - name: Set stack content path for local source
   ansible.builtin.set_fact:
-    stack_content_src: "{{ repo_root }}/{{ stack_subpath }}"
-  when: stack_source == "local"
+    stack_content_src: "{{ repo_root | default(playbook_dir + '/../..') }}/{{ stack_subpath }}"
+  when: stack_source | default('local') == 'local'
 
 - name: Sync stack files to deploy path (local source)
   ansible.posix.synchronize:
@@ -52,8 +52,28 @@
     rsync_opts: "{{ stack_rsync_opts | default([]) + ['--exclude=.env', '--exclude=docker/.env', '--exclude=.git', '--exclude=venv', '--exclude=venv-313', '--exclude=node_modules'] }}"
   delegate_to: localhost
   when:
-    - stack_source == "local"
+    - stack_source | default('local') == 'local'
     - not (stack_skip_sync | default(false))
+
+- name: Check required env file exists before compose
+  ansible.builtin.stat:
+    path: "{{ stack_deploy_path }}/{{ stack_require_env_file }}"
+  register: stack_env_file_stat
+  when:
+    - not (stack_skip_compose | default(false))
+    - stack_require_env_file | default('') | length > 0
+
+- name: Fail when env file is missing before Docker Compose
+  ansible.builtin.fail:
+    msg: >-
+      {{ stack_deploy_path }}/{{ stack_require_env_file }} is missing.
+      erp/compose.yaml declares env_file: .env — render secrets first (erp role:
+      sync with stack_skip_compose=true, template erp.env.j2, then compose with stack_skip_sync=true).
+      Do not set stack_skip_compose=false on the sync pass.
+  when:
+    - not (stack_skip_compose | default(false))
+    - stack_require_env_file | default('') | length > 0
+    - not stack_env_file_stat.stat.exists | default(false)
 
 - name: Pull container images
   community.docker.docker_compose_v2:
@@ -79,3 +99,4 @@
   become_user: "{{ deploy_user }}"
   register: stack_compose_up
   when: not (stack_skip_compose | default(false))
+

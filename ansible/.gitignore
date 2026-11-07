@@ -1,5 +1,4 @@
 inventory/**/vault.yml
 inventory/**/vault.yaml
-.vault_pass
 *.retry
 collections/
