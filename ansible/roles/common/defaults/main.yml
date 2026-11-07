@@ -1,0 +1,8 @@
+---
+# auto: install only when docker or compose plugin is missing
+# always: run the Debian Docker CE install path even when binaries exist (apt stays idempotent)
+# never: never run the install block
+common_install_docker: auto
+
+# Still start/enable docker when the daemon is present (set false only if you manage service elsewhere)
+common_ensure_docker_service: true
