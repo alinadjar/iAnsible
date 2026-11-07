@@ -1,11 +1,14 @@
 ---
+# Vars for inventory group "all" — top-level keys only (do NOT wrap in a YAML key `all:`).
+ansible_user: devops
+ansible_ssh_private_key_file: /root/.ssh/id_ed25519_ansible
 
 # Monorepo location on the Ansible control node (this workspace).
 repo_root: "{{ playbook_dir }}/../.."
 
 # How stack files reach targets: local (rsync from control) or git (clone on target).
 stack_source: local
-stack_git_url: "" # e.g. git@github.com:org/ansibleeeeeeeeeeee.git
+stack_git_url: ""
 stack_git_version: main
 
 deploy_user: devops
@@ -15,13 +18,11 @@ docker_packages_state: present
 docker_users:
   - "{{ deploy_user }}"
 
-# Private registries used by ERP / internal images.
 docker_registries: []
 #  - registry_url: nexus.sadgan.int
 #    username: "{{ vault_nexus_user }}"
 #    password: "{{ vault_nexus_password }}"
 
-# Public URLs used for cross-service configuration (ERP ↔ Dify ↔ Superset).
 platform_integration:
   erp_public_api_url: "https://alpha.api.fx.sadgan.int"
   erp_public_app_url: "https://alpha.fx.sadgan.int"

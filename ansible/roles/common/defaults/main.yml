@@ -1,4 +1,7 @@
 ---
+deploy_user: devops
+deploy_group: devops
+
 # auto: install only when docker or compose plugin is missing
 # always: run the Debian Docker CE install path even when binaries exist (apt stays idempotent)
 # never: never run the install block
