@@ -2,6 +2,8 @@
 - name: Deploy Superset stack
   hosts: superset
   gather_facts: true
+  pre_tasks:
+    - ansible.builtin.import_tasks: "{{ playbook_dir }}/../tasks/load-vault.yml"
   roles:
     - role: common
       tags: [common, bootstrap]

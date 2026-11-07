@@ -2,6 +2,8 @@
 - name: Deploy XWiki stack
   hosts: xwiki
   gather_facts: true
+  pre_tasks:
+    - ansible.builtin.import_tasks: "{{ playbook_dir }}/../tasks/load-vault.yml"
   roles:
     - role: common
       tags: [common, bootstrap]

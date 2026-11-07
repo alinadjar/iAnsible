@@ -1,0 +1,23 @@
+---
+# Copy to vault.yml beside this file (inventory/production/vault.yml), then encrypt:
+#   ansible-vault encrypt inventory/production/vault.yml
+# Do NOT put vault.yml under group_vars/all/ — Ansible loads that on every command (including ping).
+# Playbooks load inventory/production/vault.yml via tasks/load-vault.yml (optional file).
+
+vault_erp_postgres_password: "CHANGE_ME"
+vault_erp_postgres_ro_password: "CHANGE_ME"
+vault_erp_postgres_bi_password: "CHANGE_ME"
+vault_erp_redis_password: "CHANGE_ME"
+vault_erp_pg_bi_user: ro
+vault_erp_postgres_db: SADGAN
+
+vault_dify_secret_key: "CHANGE_ME"
+vault_dify_db_password: "CHANGE_ME"
+
+vault_superset_secret_key: "CHANGE_ME"
+vault_superset_admin_password: "CHANGE_ME"
+
+vault_xwiki_db_password: "CHANGE_ME"
+
+vault_langfuse_salt: "CHANGE_ME"
+vault_langfuse_encryption_key: "CHANGE_ME"

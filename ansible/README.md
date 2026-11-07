@@ -16,15 +16,32 @@ Deploy **ERP**, **Dify**, and **Superset** from this monorepo with **one host pe
 
 Cross-service URLs live in `inventory/production/group_vars/all.yml` under `platform_integration`.
 
+## Test connectivity (no vault password)
+
+Ad-hoc commands do **not** load `inventory/production/vault.yml`. If you see *Attempting to decrypt but no vault secrets found*, you likely have an encrypted file at the old path `group_vars/all/vault.yml` — remove or move it to `inventory/production/vault.yml`.
+
+```bash
+cd ansible
+ansible all -m ping
+```
+
+**SSH vars:** put `ansible_user` and `ansible_ssh_private_key_file` at the **top level** of `group_vars/all.yml` (not nested under a YAML key `all:` — that only works in `hosts.yml`). Verify with:
+
+```bash
+ansible-inventory --host erp-01 | grep ansible_user
+# should show devops, not root
+```
+
+Use `--ask-vault-pass` only for **playbooks** that template secrets (after `vault.yml` exists).
+
 ## Quick start
 
 ```bash
 cd ansible
 ansible-galaxy collection install -r requirements.yml
 
-cp inventory/production/group_vars/all/vault.yml.example \
-   inventory/production/group_vars/all/vault.yml
-ansible-vault encrypt inventory/production/group_vars/all/vault.yml
+cp inventory/production/vault.yml.example inventory/production/vault.yml
+ansible-vault encrypt inventory/production/vault.yml
 
 # Edit hosts, secrets, and URLs
 vim inventory/production/hosts.yml

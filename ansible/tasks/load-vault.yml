@@ -1,0 +1,14 @@
+---
+- name: Check for platform vault file
+  ansible.builtin.stat:
+    path: "{{ inventory_dir }}/vault.yml"
+  register: platform_vault_file
+  run_once: true
+  delegate_to: localhost
+  become: false
+
+- name: Load platform vault secrets
+  ansible.builtin.include_vars:
+    file: "{{ inventory_dir }}/vault.yml"
+  when: platform_vault_file.stat.exists
+  no_log: true

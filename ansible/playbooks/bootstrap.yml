@@ -2,6 +2,8 @@
 - name: Bootstrap Docker hosts
   hosts: platform
   gather_facts: true
+  pre_tasks:
+    - ansible.builtin.import_tasks: "{{ playbook_dir }}/../tasks/load-vault.yml"
   roles:
     - common
 

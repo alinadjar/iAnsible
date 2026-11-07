@@ -1,4 +1,5 @@
 ---
+
 # Monorepo location on the Ansible control node (this workspace).
 repo_root: "{{ playbook_dir }}/../.."
 
@@ -7,8 +8,8 @@ stack_source: local
 stack_git_url: "" # e.g. git@github.com:org/ansibleeeeeeeeeeee.git
 stack_git_version: main
 
-deploy_user: ansible
-deploy_group: ansible
+deploy_user: devops
+deploy_group: devops
 
 docker_packages_state: present
 docker_users:
