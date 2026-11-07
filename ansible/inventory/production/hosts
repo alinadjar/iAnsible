@@ -1,0 +1,21 @@
+[erp]
+erp-01 ansible_host=192.168.10.244
+
+[dify]
+dify-01 ansible_host=192.168.10.245
+
+[superset]
+superset-01 ansible_host=192.168.10.246
+
+[observability]
+obs-01 ansible_host=192.168.10.247
+
+[xwiki]
+xwiki-01 ansible_host=192.168.10.248
+
+[platform:children]
+erp
+dify
+superset
+observability
+xwiki

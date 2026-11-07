@@ -16,3 +16,5 @@
 
 - name: Deploy observability (optional)
   ansible.builtin.import_playbook: deploy-observability.yml
+
+...

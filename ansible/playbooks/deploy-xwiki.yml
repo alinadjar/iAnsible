@@ -8,3 +8,5 @@
     - role: xwiki
       tags: [xwiki]
       when: xwiki_enabled | default(true)
+
+...
