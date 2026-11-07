@@ -1,0 +1,30 @@
+---
+erp_enabled: true
+erp_env_file: .env
+
+erp_deploy_path: /opt/sadgan/erp
+erp_stack_subpath: erp
+erp_compose_file: compose.yaml
+erp_compose_project_name: fx_alpha
+erp_env_template: erp.env.j2
+
+erp_registry_url: registry.sadgan.int
+erp_version: v1.20.0
+erp_license_server: https://api-license-alpha.sadgan.com
+
+erp_nginx_port_front: 7076
+erp_nginx_port_back: 5056
+erp_replica_port_lb: 5401
+erp_instance_id: ERP01
+
+erp_external_networks:
+  - net_fx_alpha
+  - redis_insight
+
+erp_external_volumes:
+  - pg-csv-exports-demo
+
+# Used when group_vars/all.yml platform_integration is missing (fix all.yml on control node).
+platform_integration:
+  erp_public_api_url: https://localhost:8000
+  erp_public_app_url: https://localhost

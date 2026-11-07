@@ -1,7 +1,17 @@
 ---
+# Loaded from playbooks only — never put vault.yml under inventory/production/.
+- name: Resolve platform secrets file path
+  ansible.builtin.set_fact:
+    _platform_secrets_file: >-
+      {{ platform_secrets_file
+         | default(playbook_dir ~ '/../secrets/vault.yml') }}
+  run_once: true
+  delegate_to: localhost
+  become: false
+
 - name: Check for platform vault file
   ansible.builtin.stat:
-    path: "{{ inventory_dir }}/vault.yml"
+    path: "{{ _platform_secrets_file }}"
   register: platform_vault_file
   run_once: true
   delegate_to: localhost
@@ -9,6 +19,6 @@
 
 - name: Load platform vault secrets
   ansible.builtin.include_vars:
-    file: "{{ inventory_dir }}/vault.yml"
+    file: "{{ _platform_secrets_file }}"
   when: platform_vault_file.stat.exists
   no_log: true

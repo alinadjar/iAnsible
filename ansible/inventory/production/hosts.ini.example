@@ -1,0 +1,6 @@
+# Legacy INI inventory example — the project uses hosts.yml.
+# Rename or remove any file named "hosts" in this directory; with directory
+# inventory Ansible would treat it as a second inventory source.
+
+[erp]
+erp-01 ansible_host=192.168.10.244

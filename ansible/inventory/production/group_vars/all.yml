@@ -4,8 +4,9 @@
 ansible_user: devops
 ansible_ssh_private_key_file: /root/.ssh/id_ed25519_ansible
 
-# Monorepo location on the Ansible control node (this workspace).
-repo_root: "{{ playbook_dir }}/../.."
+# Monorepo root (parent of ansible/). Uses inventory_dir so ad-hoc/ping work without playbook_dir.
+ansible_project_dir: "{{ inventory_dir }}/../.."
+repo_root: "{{ ansible_project_dir }}/.."
 
 # How stack files reach targets: local (rsync from control) or git (clone on target).
 stack_source: local
@@ -25,16 +26,7 @@ docker_registries: []
 #    username: "{{ vault_nexus_user }}"
 #    password: "{{ vault_nexus_password }}"
 
-# Public URLs used for cross-service configuration (ERP ↔ Dify ↔ Superset).
-platform_integration:
-  erp_public_api_url: "https://api.demo.sadgan.int"
-  erp_public_app_url: "https://panel.demo.sadgan.int"
-  dify_public_url: "https://dify.demo.sadgan.int"
-  dify_internal_api_url: "http://dify-01:80"
-  superset_public_url: "https://superset.demo.sadgan.int"
-  xwiki_public_url: "http://xwiki.demo.sadgan.int:8080"
-  langfuse_public_url: ""
-  headroom_public_url: ""
+# platform_integration lives in group_vars/platform.yml (group `platform` in hosts.yml).
 
 timezone: Asia/Tehran
 

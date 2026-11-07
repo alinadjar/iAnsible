@@ -15,13 +15,17 @@ erp_external_networks:
   - redis_insight
 
 erp_external_volumes:
-  - pg-csv-exports-demo
+  - pg-csv-exports-demo-demo
 
 # Rendered on the server; do not copy erp/.env from the repo (contains secrets).
 erp_env_template: erp.env.j2
 
-erp_registry_url: nexus.sadgan.int
-erp_version: v1.20.0-alpha.2
+erp_registry_url: registry.sadgan.int
+erp_version: v1.20.0
+
+# Optional if group_vars/all.yml does not load (normally use platform_integration there)
+# erp_self_url: "https://api.demo.sadgan.int"
+# erp_app_url: "https://panel.demo.sadgan.int"
 
 erp_nginx_port_front: 7076
 erp_nginx_port_back: 5056

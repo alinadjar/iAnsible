@@ -9,6 +9,7 @@
     stack_compose_project_name: "{{ langfuse_compose_project_name }}"
     stack_compose_files:
       - "{{ langfuse_compose_file }}"
+    stack_skip_sync: false
     stack_skip_compose: true
 
 - name: Install Langfuse compose file from upstream origin
@@ -44,3 +45,6 @@
     stack_compose_files:
       - "{{ langfuse_compose_file }}"
     stack_skip_sync: true
+    stack_skip_compose: false
+    stack_env_guard: true
+    stack_require_env_file: .env

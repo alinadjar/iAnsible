@@ -1,4 +1,9 @@
 inventory/**/vault.yml
 inventory/**/vault.yaml
+inventory/production/group_vars/all/vault.yml
+inventory/production/vault.yml
+inventory/production/vault.yml.example
+secrets/vault.yml
+secrets/vault.yaml
 *.retry
 collections/

@@ -140,7 +140,7 @@ Default paths (override in `group_vars/erp.yml`):
 Created **before** compose so `erp/compose.yaml` can attach to external resources:
 
 - Networks: `net_fx_alpha`, `redis_insight`
-- Volume: `pg-csv-exports-alpha`
+- Volume: `pg-csv-exports-demo`
 
 After compose, ERP exposes application ports via nginx (see `erp_nginx_port_*` in group vars) and Postgres read traffic via HAProxy port **5401** for BI tools such as Superset.
 
@@ -252,15 +252,15 @@ Secrets are **never** copied from the monorepo’s committed `.env` files; they 
 
 Ansible merges variables roughly as follows for each host:
 
-1. `group_vars/all.yml` — global deploy settings, `platform_integration` URLs
+1. `group_vars/all.yml` — global deploy settings; `group_vars/platform.yml` — `platform_integration` URLs
 2. `group_vars/<group>.yml` — per-stack paths, compose names, feature flags
-3. `group_vars/all/vault.yml` — encrypted secrets (when using `--ask-vault-pass` or a vault password file)
+3. `secrets/vault.yml` — encrypted secrets (loaded in playbook `pre_tasks` via `tasks/load-vault.yml` with `--ask-vault-pass`)
 
 ```mermaid
 flowchart LR
   V1[all.yml] --> MERGE[Merged vars per host]
   V2[erp.yml / dify.yml / ...] --> MERGE
-  V3[vault.yml] --> MERGE
+  V3[secrets/vault.yml] --> MERGE
   MERGE --> TPL[Jinja templates erp.env.j2 / dify.env.j2 / ...]
   TPL --> ENV[On-server .env files]
 ```

@@ -6,8 +6,10 @@ stack_git_version: main
 repo_root: "{{ playbook_dir }}/../.."
 
 stack_rsync_opts: []
+# Prefer explicit flags on each include_role call — do not rely on these defaults in app roles.
 stack_skip_sync: false
-stack_skip_compose: false
+stack_skip_compose: true
+stack_env_guard: false
 stack_compose_pull_images: true
 stack_compose_recreate: auto
 ...

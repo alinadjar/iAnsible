@@ -1,8 +1,9 @@
 ---
-# Copy to vault.yml beside this file (inventory/production/vault.yml), then encrypt:
-#   ansible-vault encrypt inventory/production/vault.yml
-# Do NOT put vault.yml under group_vars/all/ — Ansible loads that on every command (including ping).
-# Playbooks load inventory/production/vault.yml via tasks/load-vault.yml (optional file).
+# Copy to: ansible/secrets/vault.yml then encrypt:
+#   ansible-vault encrypt secrets/vault.yml
+#
+# Never place vault.yml under inventory/production/ (directory inventory parses every file).
+# Template only — keep this path as docs/vault.yml.example (not in inventory/).
 
 vault_erp_postgres_password: "CHANGE_ME"
 vault_erp_postgres_ro_password: "CHANGE_ME"

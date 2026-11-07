@@ -22,7 +22,7 @@
 # unique random secure passwords and SECRET_KEY.
 # -----------------------------------------------------------------------
 # x-superset-image: &superset-image apachesuperset.docker.scarf.sh/apache/superset:${TAG:-latest-dev}
-# x-superset-image: &superset-image registry.sadgan.com/common/superset:6.1.0-custom.2
+# x-superset-image: &superset-image registry.sadgan.int/common/superset:6.1.0-custom.2
 x-superset-image: &superset-image nexus.sadgan.int/superset:${TAG}
 x-superset-volumes:
   &superset-volumes # /app/pythonpath_docker will be appended to the PYTHONPATH in the final container

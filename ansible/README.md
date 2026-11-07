@@ -14,7 +14,7 @@ Deploy **ERP**, **Dify**, and **Superset** from this monorepo with **one host pe
 | `xwiki`           | `deploy-xwiki.yml`       | `xwiki/`        | `/opt/sadgan/xwiki`   |
 | `observability`   | `deploy-observability.yml` | `langfuse/`   | phase 2               |
 
-Cross-service URLs live in `inventory/production/group_vars/all.yml` under `platform_integration`.
+Cross-service URLs live in `inventory/production/group_vars/platform.yml` under `platform_integration`.
 
 ## Quick start
 
@@ -22,9 +22,9 @@ Cross-service URLs live in `inventory/production/group_vars/all.yml` under `plat
 cd ansible
 ansible-galaxy collection install -r requirements.yml
 
-cp inventory/production/group_vars/all/vault.yml.example \
-   inventory/production/group_vars/all/vault.yml
-ansible-vault encrypt inventory/production/group_vars/all/vault.yml
+mkdir -p secrets
+cp docs/vault.yml.example secrets/vault.yml
+ansible-vault encrypt secrets/vault.yml
 
 # Edit hosts, secrets, and URLs
 vim inventory/production/hosts.yml
@@ -69,4 +69,31 @@ Do **not** commit `erp/.env`; secrets are rendered from Ansible Vault into `.env
 
 ## ERP prerequisites on the server
 
-`erp/compose.yaml` expects external Docker networks `net_fx_alpha`, `redis_insight`, and volume `pg-csv-exports-alpha`. The `erp` role creates these before `docker compose up`.
+`erp/compose.yaml` expects external Docker networks `net_fx_alpha`, `redis_insight`, and volume `pg-csv-exports-demo`. The `erp` role creates these before `docker compose up`.
+
+## Test connectivity (no vault password)
+
+`ansible.cfg` uses **`inventory/production/hosts.yml` only** (not the whole `production/` directory).
+
+```bash
+cd ansible
+ansible all -m ping
+ansible-inventory --host erp-01 -y | grep platform_integration
+```
+
+**If you see vault/inventory warnings**, the control node is almost always using **directory** inventory (`inventory/production/`) and/or vault files still live under that folder. Fix:
+
+```bash
+cd /path/to/ansible
+grep '^inventory' ansible.cfg
+ansible-config dump | grep -i INVENTORY   # must list .../hosts.yml only
+echo "${ANSIBLE_INVENTORY:-<unset>}"    # should be unset
+rm -f inventory/production/vault.yml inventory/production/vault.yml.example
+rm -f inventory/production/group_vars/all/vault.yml
+# move secrets out of inventory (playbooks load secrets/vault.yml)
+mkdir -p secrets && mv inventory/production/vault.yml secrets/vault.yml 2>/dev/null || true
+```
+
+See [secrets/README.md](secrets/README.md) and [inventory/production/README.md](inventory/production/README.md).
+
+Use `--ask-vault-pass` for playbooks when `secrets/vault.yml` exists.

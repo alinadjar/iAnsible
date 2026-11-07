@@ -55,25 +55,37 @@
     - stack_source | default('local') == 'local'
     - not (stack_skip_sync | default(false))
 
-- name: Check required env file exists before compose
-  ansible.builtin.stat:
-    path: "{{ stack_deploy_path }}/{{ stack_require_env_file }}"
-  register: stack_env_file_stat
-  when:
-    - not (stack_skip_compose | default(false))
-    - stack_require_env_file | default('') | length > 0
-
-- name: Fail when env file is missing before Docker Compose
+- name: Refuse sync+compose in one pass when env must be templated first
   ansible.builtin.fail:
     msg: >-
-      {{ stack_deploy_path }}/{{ stack_require_env_file }} is missing.
-      erp/compose.yaml declares env_file: .env — render secrets first (erp role:
-      sync with stack_skip_compose=true, template erp.env.j2, then compose with stack_skip_sync=true).
-      Do not set stack_skip_compose=false on the sync pass.
+      stack_deploy was called with stack_skip_sync=false and stack_skip_compose=false.
+      Compose ran before .env exists. Use the erp/dify/superset role pattern: sync (skip_compose=true),
+      template env, compose (skip_sync=true, stack_env_guard=true).
+  when:
+    - not (stack_skip_sync | default(false))
+    - not (stack_skip_compose | default(false))
+    - stack_env_guard | default(false)
+
+- name: Ensure required env file exists before Docker Compose
   when:
     - not (stack_skip_compose | default(false))
-    - stack_require_env_file | default('') | length > 0
-    - not stack_env_file_stat.stat.exists | default(false)
+    - stack_env_guard | default(false)
+  block:
+    - name: Resolve env file path for compose guard
+      ansible.builtin.set_fact:
+        stack_compose_env_path: "{{ stack_deploy_path }}/{{ stack_require_env_file | default('.env') }}"
+
+    - name: Stat env file before compose
+      ansible.builtin.stat:
+        path: "{{ stack_compose_env_path }}"
+      register: stack_env_file_stat
+
+    - name: Fail when env file is missing before Docker Compose
+      ansible.builtin.fail:
+        msg: >-
+          {{ stack_compose_env_path }} is missing.
+          Render the stack env template in the app role, then run compose with stack_skip_sync=true.
+      when: not stack_env_file_stat.stat.exists
 
 - name: Pull container images
   community.docker.docker_compose_v2:

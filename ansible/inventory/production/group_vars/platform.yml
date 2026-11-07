@@ -1,6 +1,18 @@
 ---
 # Applied to every host in the `platform` group (bootstrap.yml targets platform).
+# All app hosts (erp, dify, superset, …) are children of `platform` in hosts.yml.
 deploy_user: devops
 deploy_group: devops
 
-...
+# Cross-service URLs (ERP ↔ Dify ↔ Superset). Kept on `platform` so ad-hoc/ping works
+# even if group_vars/all.yml is misconfigured; verify with:
+#   ansible erp-01 -m debug -a 'var=platform_integration'
+platform_integration:
+  erp_public_api_url: "https://api.demo.sadgan.int"
+  erp_public_app_url: "https://panel.demo.sadgan.int"
+  dify_public_url: "https://dify.demo.sadgan.int"
+  dify_internal_api_url: "http://dify-01:80"
+  superset_public_url: "https://superset.demo.sadgan.int"
+  xwiki_public_url: "http://xwiki.demo.sadgan.int:8080"
+  langfuse_public_url: ""
+  headroom_public_url: ""
