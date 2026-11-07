@@ -8,3 +8,15 @@ common_install_docker: auto
 
 # Still start/enable docker when the daemon is present (set false only if you manage service elsewhere)
 common_ensure_docker_service: true
+
+# /etc/docker/daemon.json — merged into existing file (does not replace other keys).
+# Only these hosts are appended to insecure-registries if missing.
+common_configure_docker_daemon: true
+docker_daemon_insecure_registries_add:
+  - registry.sadgan.int
+docker_daemon_log_driver: json-file
+docker_daemon_log_opts:
+  max-size: "10m"
+  max-file: "3"
+common_docker_health_retries: 5
+common_docker_health_delay: 3

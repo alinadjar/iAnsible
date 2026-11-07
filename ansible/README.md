@@ -67,6 +67,10 @@ Do **not** commit `erp/.env`; secrets are rendered from Ansible Vault into `.env
 - Set `langfuse_enabled: true` in `group_vars/observability.yml` and fill vault secrets.
 - Set `headroom_enabled: true` to install **Headroom LLM Proxy** as `headroom.service` under `/opt/headroom-ai` (Python 3.13 venv `venv-313`, port **8787** by default). Override `headroom_pip_packages` / `headroom_pip_extra_args` if you use a private PyPI index or version pin.
 
+## Docker daemon (private registry)
+
+`common` **merges** `registry.sadgan.int` into `insecure-registries` in an existing `/etc/docker/daemon.json` (other keys unchanged). If the file is missing, it creates one with log rotation defaults. Restarts Docker when the file changes, then runs `docker info`. Add more hosts via `docker_daemon_insecure_registries_add` in `group_vars/all.yml`.
+
 ## ERP prerequisites on the server
 
 `erp/compose.yaml` expects external Docker networks `net_fx_alpha`, `redis_insight`, and volume `pg-csv-exports-demo`. The `erp` role creates these before `docker compose up`.

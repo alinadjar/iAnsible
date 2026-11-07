@@ -1,0 +1,49 @@
+---
+- name: Stat existing Docker daemon.json
+  ansible.builtin.stat:
+    path: /etc/docker/daemon.json
+  register: common_daemon_json_stat
+
+- name: Read existing Docker daemon.json
+  ansible.builtin.slurp:
+    path: /etc/docker/daemon.json
+  register: common_daemon_json_slurp
+  when: common_daemon_json_stat.stat.exists | default(false)
+
+- name: Load and merge Docker daemon configuration
+  ansible.builtin.set_fact:
+    common_docker_daemon_config: "{{ _merged_cfg }}"
+  vars:
+    _existing: >-
+      {{
+        (common_daemon_json_slurp.content | b64decode | from_json)
+        if (common_daemon_json_stat.stat.exists | default(false))
+        else {}
+      }}
+    _current_insecure: "{{ _existing['insecure-registries'] | default([], true) }}"
+    _merged_insecure: "{{ _current_insecure | union(docker_daemon_insecure_registries_add) | unique | list }}"
+    _merged_cfg: >-
+      {{
+        _existing | combine({'insecure-registries': _merged_insecure}, recursive=True)
+        if (common_daemon_json_stat.stat.exists | default(false))
+        else {
+          'insecure-registries': docker_daemon_insecure_registries_add,
+          'log-driver': docker_daemon_log_driver,
+          'log-opts': docker_daemon_log_opts
+        }
+      }}
+
+- name: Write merged Docker daemon.json
+  ansible.builtin.copy:
+    dest: /etc/docker/daemon.json
+    mode: "0644"
+    content: "{{ common_docker_daemon_config | to_nice_json(indent=2, ensure_ascii=False) }}\n"
+  notify: Restart Docker
+
+- name: Report merged insecure registries
+  ansible.builtin.debug:
+    msg: >-
+      daemon.json insecure-registries: {{ common_docker_daemon_config['insecure-registries'] | join(', ') }}
+      (other daemon.json keys left unchanged)
+    verbosity: 1
+  when: common_daemon_json_stat.stat.exists | default(false)

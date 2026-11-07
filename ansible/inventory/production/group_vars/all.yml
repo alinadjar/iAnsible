@@ -20,6 +20,11 @@ docker_packages_state: present
 docker_users:
   - "{{ deploy_user }}"
 
+# Merged into existing /etc/docker/daemon.json insecure-registries (never removes entries)
+# docker_daemon_insecure_registries_add:
+#   - registry.sadgan.int
+#   - nexus.sadgan.int
+
 # Private registries used by ERP / internal images.
 docker_registries: []
 #  - registry_url: nexus.sadgan.int

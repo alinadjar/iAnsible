@@ -96,11 +96,49 @@
     - common_install_docker == 'auto'
     - not (common_run_docker_install | default(true))
 
+- name: Configure Docker daemon (insecure registries, logging)
+  when:
+    - common_configure_docker_daemon
+    - common_install_docker == 'never'
+      or common_docker_present | default(false)
+      or common_run_docker_install | default(false)
+  block:
+    - name: Ensure Docker config directory exists
+      ansible.builtin.file:
+        path: /etc/docker
+        state: directory
+        mode: "0755"
+
+    - name: Merge registry settings into Docker daemon.json
+      ansible.builtin.import_tasks: docker-daemon.yml
+
 - name: Ensure Docker service is running
   ansible.builtin.service:
     name: docker
     state: started
     enabled: true
+  when:
+    - common_ensure_docker_service
+    - common_install_docker == 'never'
+      or common_docker_present | default(false)
+      or common_run_docker_install | default(false)
+
+- name: Apply Docker daemon restart if daemon.json changed
+  ansible.builtin.meta: flush_handlers
+  when:
+    - common_configure_docker_daemon
+    - common_ensure_docker_service
+    - common_install_docker == 'never'
+      or common_docker_present | default(false)
+      or common_run_docker_install | default(false)
+
+- name: Verify Docker daemon is healthy
+  ansible.builtin.command: docker info
+  register: common_docker_info
+  changed_when: false
+  retries: "{{ common_docker_health_retries }}"
+  delay: "{{ common_docker_health_delay }}"
+  until: common_docker_info.rc == 0
   when:
     - common_ensure_docker_service
     - common_install_docker == 'never'
