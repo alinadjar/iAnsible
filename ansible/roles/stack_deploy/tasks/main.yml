@@ -71,27 +71,51 @@
     - not (stack_skip_compose | default(false))
     - stack_env_guard | default(false)
   block:
-    - name: Resolve env file path for compose guard
+    - name: Resolve required env files for compose guard
       ansible.builtin.set_fact:
-        stack_compose_env_path: "{{ stack_deploy_path }}/{{ stack_require_env_file | default('.env') }}"
+        stack_required_env_file_list: >-
+          {{
+            stack_require_env_files
+            | default([stack_require_env_file | default('.env')])
+          }}
 
-    - name: Stat env file before compose
+    - name: Stat required env files before compose
       ansible.builtin.stat:
-        path: "{{ stack_compose_env_path }}"
-      register: stack_env_file_stat
+        path: "{{ stack_deploy_path }}/{{ item }}"
+      loop: "{{ stack_required_env_file_list }}"
+      register: stack_env_files_stat
 
-    - name: Fail when env file is missing before Docker Compose
+    - name: Fail when a required env file is missing before Docker Compose
       ansible.builtin.fail:
         msg: >-
-          {{ stack_compose_env_path }} is missing.
-          Render the stack env template in the app role, then run compose with stack_skip_sync=true.
-      when: not stack_env_file_stat.stat.exists
+          {{ item.item }} is missing under {{ stack_deploy_path }}.
+          Render env templates in the app role, then run compose with stack_skip_sync=true.
+      loop: "{{ stack_env_files_stat.results }}"
+      when: not item.stat.exists
+
+- name: Verify Compose files exist in project directory
+  ansible.builtin.stat:
+    path: "{{ stack_deploy_path }}/{{ item }}"
+  loop: "{{ stack_compose_files }}"
+  register: stack_compose_file_checks
+  when: not (stack_skip_compose | default(false))
+
+- name: Fail when Compose file is missing in project directory
+  ansible.builtin.fail:
+    msg: >-
+      Missing {{ stack_deploy_path }}/{{ item.item }} (sync source: {{ stack_subpath | default('?') }}).
+      Confirm stack_deploy_path is the compose project root (for Dify: .../dify/docker).
+  loop: "{{ stack_compose_file_checks.results | default([]) }}"
+  when:
+    - not (stack_skip_compose | default(false))
+    - not item.stat.exists | default(false)
 
 - name: Pull container images
   community.docker.docker_compose_v2:
     project_src: "{{ stack_deploy_path }}"
     project_name: "{{ stack_compose_project_name }}"
     files: "{{ stack_compose_files }}"
+    env_files: "{{ stack_compose_env_files | default(omit) }}"
     pull: always
     state: present
   become_user: "{{ deploy_user }}"
@@ -105,6 +129,7 @@
     project_src: "{{ stack_deploy_path }}"
     project_name: "{{ stack_compose_project_name }}"
     files: "{{ stack_compose_files }}"
+    env_files: "{{ stack_compose_env_files | default(omit) }}"
     state: present
     recreate: "{{ stack_compose_recreate | default('auto') }}"
     remove_orphans: true

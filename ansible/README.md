@@ -9,7 +9,7 @@ Deploy **ERP**, **Dify**, and **Superset** from this monorepo with **one host pe
 | Inventory group   | Playbook                 | Monorepo path   | Default deploy path   |
 |-------------------|--------------------------|-----------------|-----------------------|
 | `erp`             | `deploy-erp.yml`         | `erp/`          | `/opt/sadgan/erp`     |
-| `dify`            | `deploy-dify.yml`        | `dify/docker/`  | `/opt/sadgan/dify`    |
+| `dify`            | `deploy-dify.yml`        | `dify/docker/`  | `/opt/sadgan/dify/docker` |
 | `superset`        | `deploy-superset.yml`    | `superset/`     | `/opt/sadgan/superset`|
 | `xwiki`           | `deploy-xwiki.yml`       | `xwiki/`        | `/opt/sadgan/xwiki`   |
 | `observability`   | `deploy-observability.yml` | `langfuse/`   | phase 2               |

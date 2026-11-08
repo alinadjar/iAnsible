@@ -3,14 +3,24 @@ dify_enabled: true
 platform_vault_required_vars:
   - vault_dify_secret_key
   - vault_dify_db_password
-dify_deploy_path: /opt/sadgan/dify
+# Compose project root (repo path dify/docker — not the parent dify/ tree)
+dify_deploy_path: /opt/sadgan/dify/docker
 dify_compose_project_name: dify
 
 dify_stack_subpath: dify/docker
+
+# Equivalent: docker compose --env-file .env --env-file .build-tag.env -f compose.yaml -f compose.custom.yaml
 dify_compose_files:
-  - docker-compose.yaml
-dify_compose_overlays:
-  - docker-compose.sadgan.yaml
+  - compose.yaml
+  - compose.custom.yaml
+dify_compose_env_files:
+  - .env
+  - .build-tag.env
+
+dify_api_image: registry.sadgan.com/oss/dify_api
+dify_web_image: registry.sadgan.com/oss/dify_web
+dify_api_image_tag: ea872d64c48e
+dify_web_image_tag: "20260917"
 
 # URLs exposed to browsers and to ERP when calling Dify API.
 dify_console_url: "{{ platform_integration.dify_public_url }}"

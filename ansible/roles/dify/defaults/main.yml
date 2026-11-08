@@ -1,0 +1,25 @@
+---
+dify_enabled: true
+dify_deploy_path: /opt/sadgan/dify/docker
+dify_stack_subpath: dify/docker
+dify_compose_project_name: dify
+dify_env_template: dify.env.j2
+dify_build_tag_env_template: dify-build-tag.env.j2
+dify_build_tag_env_file: .build-tag.env
+
+dify_compose_files:
+  - compose.yaml
+  - compose.custom.yaml
+
+dify_compose_env_files:
+  - .env
+  - .build-tag.env
+
+dify_api_image: registry.sadgan.com/oss/dify_api
+dify_web_image: registry.sadgan.com/oss/dify_web
+dify_api_image_tag: ea872d64c48e
+dify_web_image_tag: "20260917"
+
+dify_stack_rsync_opts:
+  - "--exclude=.env"
+  - "--exclude=.build-tag.env"

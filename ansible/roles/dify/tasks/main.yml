@@ -1,8 +1,4 @@
 ---
-- name: Build Dify compose file list
-  ansible.builtin.set_fact:
-    dify_compose_file_list: "{{ dify_compose_files + (dify_compose_overlays | default([])) }}"
-
 - name: Sync Dify stack files
   ansible.builtin.include_role:
     name: stack_deploy
@@ -10,9 +6,10 @@
     stack_deploy_path: "{{ dify_deploy_path }}"
     stack_subpath: "{{ dify_stack_subpath }}"
     stack_compose_project_name: "{{ dify_compose_project_name }}"
-    stack_compose_files: "{{ dify_compose_file_list }}"
+    stack_compose_files: "{{ dify_compose_files }}"
     stack_skip_sync: false
     stack_skip_compose: true
+    stack_rsync_opts: "{{ dify_stack_rsync_opts | default([]) }}"
 
 - name: Render Dify environment file
   ansible.builtin.template:
@@ -22,6 +19,14 @@
     group: "{{ deploy_group }}"
     mode: "0600"
   no_log: true
+
+- name: Render Dify build image tag environment file
+  ansible.builtin.template:
+    src: "{{ dify_build_tag_env_template }}"
+    dest: "{{ dify_deploy_path }}/{{ dify_build_tag_env_file }}"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
 
 - name: Ensure Dify env directory exists
   ansible.builtin.file:
@@ -46,8 +51,10 @@
     stack_deploy_path: "{{ dify_deploy_path }}"
     stack_subpath: "{{ dify_stack_subpath }}"
     stack_compose_project_name: "{{ dify_compose_project_name }}"
-    stack_compose_files: "{{ dify_compose_file_list }}"
+    stack_compose_files: "{{ dify_compose_files }}"
+    stack_compose_env_files: "{{ dify_compose_env_files }}"
     stack_skip_sync: true
     stack_skip_compose: false
     stack_env_guard: true
-    stack_require_env_file: .env
+    stack_require_env_files: "{{ dify_compose_env_files }}"
+    stack_rsync_opts: "{{ dify_stack_rsync_opts | default([]) }}"
