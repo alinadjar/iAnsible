@@ -1,0 +1,8 @@
+---
+- name: Reload systemd and restart fingerprint agent
+  ansible.builtin.systemd:
+    name: "{{ erp_fingerprint_systemd_service }}"
+    daemon_reload: true
+    enabled: true
+    state: restarted
+  when: erp_fingerprint_systemd_service is defined

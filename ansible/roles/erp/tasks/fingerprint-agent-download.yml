@@ -1,0 +1,50 @@
+---
+- name: Ensure fingerprint agent cache directory on control node
+  ansible.builtin.file:
+    path: "{{ erp_fingerprint_agent_cache_dir }}"
+    state: directory
+    mode: "0755"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  when: erp_fingerprint_agent_download_via_controller | default(true) | bool
+
+- name: Download SadganFingerprintAgent on control node
+  ansible.builtin.get_url:
+    url: "{{ erp_fingerprint_agent_download_url }}"
+    dest: "{{ erp_fingerprint_agent_cache_dir }}/SadganFingerprintAgent"
+    mode: "0755"
+    force: "{{ erp_fingerprint_agent_download_force | default(false) }}"
+    timeout: "{{ erp_fingerprint_agent_download_timeout }}"
+    headers: "{{ erp_fingerprint_agent_download_headers | default(omit) }}"
+    validate_certs: "{{ erp_fingerprint_agent_download_validate_certs | default(true) }}"
+  register: erp_fingerprint_download_controller
+  until: erp_fingerprint_download_controller is succeeded
+  retries: "{{ erp_fingerprint_agent_download_retries }}"
+  delay: "{{ erp_fingerprint_agent_download_retry_delay }}"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  when: erp_fingerprint_agent_download_via_controller | default(true) | bool
+
+- name: Install SadganFingerprintAgent binary on target (from control node cache)
+  ansible.builtin.copy:
+    src: "{{ erp_fingerprint_agent_cache_dir }}/SadganFingerprintAgent"
+    dest: "{{ erp_fingerprint_install_path }}/bin/SadganFingerprintAgent"
+    mode: "0755"
+  when: erp_fingerprint_agent_download_via_controller | default(true) | bool
+
+- name: Download SadganFingerprintAgent directly on target host
+  ansible.builtin.get_url:
+    url: "{{ erp_fingerprint_agent_download_url }}"
+    dest: "{{ erp_fingerprint_install_path }}/bin/SadganFingerprintAgent"
+    mode: "0755"
+    force: "{{ erp_fingerprint_agent_download_force | default(false) }}"
+    timeout: "{{ erp_fingerprint_agent_download_timeout }}"
+    headers: "{{ erp_fingerprint_agent_download_headers | default(omit) }}"
+    validate_certs: "{{ erp_fingerprint_agent_download_validate_certs | default(true) }}"
+  register: erp_fingerprint_download_target
+  until: erp_fingerprint_download_target is succeeded
+  retries: "{{ erp_fingerprint_agent_download_retries }}"
+  delay: "{{ erp_fingerprint_agent_download_retry_delay }}"
+  when: not (erp_fingerprint_agent_download_via_controller | default(true) | bool)

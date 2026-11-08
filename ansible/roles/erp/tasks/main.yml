@@ -17,6 +17,23 @@
       - "{{ erp_compose_file }}"
     stack_skip_sync: false
     stack_skip_compose: true
+    stack_rsync_opts: "{{ erp_stack_rsync_opts | default([]) }}"
+
+- name: Generate self-signed TLS certs for nginx
+  ansible.builtin.import_tasks: ssl-selfsigned.yml
+  when: erp_ssl_self_signed_enabled | default(true)
+
+- name: Resolve ERP INSTANCE_ID
+  ansible.builtin.import_tasks: resolve-instance-id.yml
+  when: erp_instance_lock_enabled | default(true) or erp_fingerprint_agent_enabled | default(true)
+
+- name: Install Sadgan Fingerprint Agent (systemd)
+  ansible.builtin.import_tasks: fingerprint-agent.yml
+  when: erp_fingerprint_agent_enabled | default(true)
+
+- name: Obtain ERP instance lock (license)
+  ansible.builtin.import_tasks: instance-lock.yml
+  when: erp_instance_lock_enabled | default(true)
 
 - name: Render ERP environment file
   ansible.builtin.template:
@@ -40,3 +57,4 @@
     stack_skip_compose: false
     stack_env_guard: true
     stack_require_env_file: "{{ erp_env_file }}"
+    stack_rsync_opts: "{{ erp_stack_rsync_opts | default([]) }}"

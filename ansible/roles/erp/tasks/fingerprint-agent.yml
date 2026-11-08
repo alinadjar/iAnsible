@@ -1,0 +1,61 @@
+---
+# SadganFingerprintAgent on the host (systemd) — must run before getLock.sh fingerprint curl.
+- name: Detect node IPv4 for fingerprint / getLock URL
+  ansible.builtin.set_fact:
+    erp_node_ip: >-
+      {{
+        erp_node_ip
+        | default(ansible_default_ipv4.address | default(hostvars[inventory_hostname].ansible_host))
+      }}
+
+- name: Set LOCAL_FG_AGENT URL from detected node IP
+  ansible.builtin.set_fact:
+    erp_getlock_local_fg_agent: >-
+      {{ erp_getlock_local_fg_agent | default('http://' ~ erp_node_ip ~ ':' ~ (erp_agent_port_fingerprint | string)) }}
+
+- name: Build fingerprint systemd unit name
+  ansible.builtin.set_fact:
+    erp_fingerprint_systemd_service: >-
+      SadganERP-Core-{{ erp_project_code | upper }}__{{ erp_lock_instance_id }}
+
+- name: Ensure fingerprint agent install tree exists
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+  loop:
+    - "{{ erp_fingerprint_install_path }}"
+    - "{{ erp_fingerprint_install_path }}/bin"
+
+- name: Download and install SadganFingerprintAgent binary
+  ansible.builtin.import_tasks: fingerprint-agent-download.yml
+
+- name: Install fingerprint agent systemd unit
+  ansible.builtin.template:
+    src: fingerprint-agent.service.j2
+    dest: "/etc/systemd/system/{{ erp_fingerprint_systemd_service }}.service"
+    mode: "0644"
+  notify: Reload systemd and restart fingerprint agent
+
+- name: Apply fingerprint unit changes before start
+  ansible.builtin.meta: flush_handlers
+
+- name: Enable and start fingerprint agent service
+  ansible.builtin.systemd:
+    name: "{{ erp_fingerprint_systemd_service }}"
+    enabled: true
+    state: started
+    daemon_reload: true
+
+- name: Wait for fingerprint HTTP endpoint
+  ansible.builtin.uri:
+    url: "{{ erp_getlock_local_fg_agent }}/fingerprint"
+    method: GET
+    headers:
+      Accept: application/json
+    status_code: 200
+  register: erp_fingerprint_health
+  until: erp_fingerprint_health is succeeded
+  retries: "{{ erp_fingerprint_health_retries }}"
+  delay: "{{ erp_fingerprint_health_delay }}"
+  changed_when: false
