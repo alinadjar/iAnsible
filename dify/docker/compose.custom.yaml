@@ -1,0 +1,82 @@
+# Overlay for locally built dify-api / dify-web images.
+#
+# Build first (all or selected targets):
+#   ./docker/build-images.sh           # api + web
+#   ./docker/build-images.sh api       # api only
+#   ./docker/build-images.sh web       # web only
+#
+
+# Internal ERP hostnames (.palood.local) are not visible to Docker's embedded DNS.
+# Services that call api.erp.palood.local (MCP, HTTP tools, plugins) need extra_hosts.
+x-erp-api-host: &erp-api-host
+  extra_hosts:
+    - "api.erp.palood.local:192.168.200.60"
+
+
+
+# Deploy:
+#   cd docker
+#   docker compose -f docker-compose.yaml -f docker-compose.local-build.yaml \
+#     --env-file .build-tag.env up -d --force-recreate api api_websocket worker worker_beat web
+#
+# Per-service tags are written to .build-tag.env by build-images.sh.
+# Partial builds preserve the previous tag for services that were not rebuilt.
+
+services:
+  api:
+    <<: *erp-api-host
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG:?Run ./docker/build-images.sh api first}
+    # labels:
+    #   logging: "enabled"
+    #   release: "dify"
+    #   proj: "FX"
+
+  api_websocket:
+    <<: *erp-api-host
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG}
+
+  worker:
+    <<: *erp-api-host
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG}
+
+  worker_beat:
+    <<: *erp-api-host
+    image: ${DIFY_API_IMAGE:-langgenius/dify-api}:${DIFY_API_IMAGE_TAG}
+
+  web:
+    <<: *erp-api-host
+    image: ${DIFY_WEB_IMAGE:-langgenius/dify-web}:${DIFY_WEB_IMAGE_TAG:?Run ./docker/build-images.sh web first, or ./docker/build-images.sh api to seed upstream web tag}
+
+  db_postgres:
+    image: registry.sadgan.com/oss/postgres:15-alpine
+
+  redis:
+    image: registry.sadgan.com/common/redis:7.2
+
+  nginx:
+    image: registry.sadgan.com/common/nginx:1.28.0
+
+  sandbox:
+    image: registry.sadgan.com/oss/dify-sandbox:0.2.15
+
+  local_sandbox:
+    image: registry.sadgan.com/oss/dify-agent-local-sandbox:1.16.1
+
+  plugin_daemon:
+    <<: *erp-api-host
+    image: registry.sadgan.com/oss/dify-plugin-daemon:0.6.10-local
+
+  agent_backend:
+    <<: *erp-api-host
+    image: registry.sadgan.com/oss/dify-agent-backend:1.16.1
+
+  agent_ssrf_proxy:
+    image: registry.sadgan.com/oss/squid:latest
+
+  ssrf_proxy:
+    <<: *erp-api-host
+    image: registry.sadgan.com/oss/squid:latest
+
+  weaviate:
+    image: registry.sadgan.com/oss/weaviate:1.27.0
+

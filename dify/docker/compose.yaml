@@ -206,7 +206,7 @@ x-shared-worker-beat-config: &shared-worker-beat-config
 services:
   # Init container to fix permissions
   init_permissions:
-    image: busybox:latest
+    image: registry.sadgan.int/common/busybox:latest
     command:
       - sh
       - -c
@@ -226,7 +226,7 @@ services:
   # API service
   api:
     <<: *shared-api-worker-config
-    image: nexus.sadgan.int/dify/api:d0b3f7672432-dirty
+    image: registry.sadgan.int/oss/dify_api:ea872d64c48e
       # image: langgenius/dify-api:1.16.1
     environment:
       MODE: api
@@ -284,8 +284,7 @@ services:
   # WebSocket service for workflow collaboration.
   api_websocket:
     <<: *shared-api-worker-config
-    image: nexus.sadgan.int/dify/api:d0b3f7672432-dirty  
-    # image: langgenius/dify-api:1.16.1
+    image: registry.sadgan.int/oss/dify_api:ea872d64c48e  
     profiles:
       - collaboration
     environment:
@@ -320,8 +319,7 @@ services:
   # The Celery worker for processing all queues (dataset, workflow, mail, etc.)
   worker:
     <<: *shared-worker-config
-    image: nexus.sadgan.int/dify/api:d0b3f7672432-dirty
-    # image: langgenius/dify-api:1.16.1
+    image: registry.sadgan.int/oss/dify_api:ea872d64c48e
     environment:
       MODE: worker
       SENTRY_DSN: ${API_SENTRY_DSN:-}
@@ -375,8 +373,7 @@ services:
   # Celery beat for scheduling periodic tasks.
   worker_beat:
     <<: *shared-worker-beat-config
-    image: nexus.sadgan.int/dify/api:d0b3f7672432-dirty
-    #image: langgenius/dify-api:1.16.1
+    image: registry.sadgan.int/oss/dify_api:ea872d64c48e
     environment:
       MODE: beat
     depends_on:
@@ -413,7 +410,7 @@ services:
 
   # Frontend web application.
   web:
-    image: langgenius/dify-web:sadgan
+    image: registry.sadgan.int/oss/dify_web:20260917
     restart: always
     env_file:
       - path: ./envs/core-services/web.env
@@ -455,12 +452,12 @@ services:
 
   # The PostgreSQL database.
   db_postgres:
-    image: postgres:15-alpine
+    image: registry.sadgan.int/oss/postgres:15-alpine
     profiles:
       - postgresql
     restart: always
-    ports:
-      - 5432:5432   
+    # ports:
+    #   - 5432:5432   
     environment:
       POSTGRES_USER: ${DB_USERNAME:-postgres}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-difyai123456}
@@ -524,7 +521,7 @@ services:
 
   # The redis cache.
   redis:
-    image: redis:7.2
+    image: registry.sadgan.int/common/redis:7.2
     restart: always
     environment:
       REDISCLI_AUTH: ${REDIS_PASSWORD:-difyai123456}
@@ -542,7 +539,7 @@ services:
 
   # The DifySandbox
   sandbox:
-    image: langgenius/dify-sandbox:0.2.15
+    image: registry.sadgan.int/oss/dify-sandbox:0.2.15
     restart: always
     env_file:
       - path: ./envs/core-services/sandbox.env
@@ -580,7 +577,7 @@ services:
   # on port 3128, which only allows agent_backend /agent-stub/ and the Dify API
   # /files/* endpoints (see ssrf_proxy/squid-agent.conf.template).
   local_sandbox:
-    image: langgenius/dify-agent-local-sandbox:1.16.1
+    image: registry.sadgan.int/oss/dify-agent-local-sandbox:1.16.1
     restart: always
     env_file:
       - path: ./envs/core-services/local-sandbox.env
@@ -602,7 +599,7 @@ services:
 
   # plugin daemon
   plugin_daemon:
-    image: langgenius/dify-plugin-daemon:0.6.10-local
+    image: registry.sadgan.int/oss/dify-plugin-daemon:0.6.10-local
     restart: always
     env_file:
       - path: ./envs/core-services/shared.env
@@ -689,7 +686,7 @@ services:
 
   # Dify Agent backend service.
   agent_backend:
-    image: langgenius/dify-agent-backend:1.16.1
+    image: registry.sadgan.int/oss/dify-agent-backend:1.16.1
     restart: always
     env_file:
       - path: ./envs/core-services/dify-agent.env
@@ -738,7 +735,7 @@ services:
 
   # Dedicated SSRF proxy for the dify-agent local_sandbox.
   agent_ssrf_proxy:
-    image: ubuntu/squid:latest
+    image: registry.sadgan.int/oss/squid:latest
     restart: always
     volumes:
       - ./ssrf_proxy/squid-agent.conf.template:/etc/squid/squid.conf.template
@@ -764,7 +761,7 @@ services:
   # for more information, please refer to
   # https://docs.dify.ai/learn-more/faq/install-faq#18-why-is-ssrf-proxy-needed%3F
   ssrf_proxy:
-    image: ubuntu/squid:latest
+    image: registry.sadgan.int/oss/squid:latest
     restart: always
     volumes:
       - ./ssrf_proxy/squid.conf.template:/etc/squid/squid.conf.template
@@ -809,7 +806,7 @@ services:
   # The nginx reverse proxy.
   # used for reverse proxying the API service and Web service.
   nginx:
-    image: nginx:latest
+    image: registry.sadgan.int/common/nginx:latest
     restart: always
     volumes:
       - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
@@ -854,7 +851,7 @@ services:
 
   # The Weaviate vector store.
   weaviate:
-    image: semitechnologies/weaviate:1.27.0
+    image: registry.sadgan.int/oss/weaviate:1.27.0
     profiles:
       - weaviate
     restart: always
