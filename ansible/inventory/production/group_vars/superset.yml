@@ -1,5 +1,7 @@
 ---
 superset_enabled: true
+platform_vault_required_vars:
+  - vault_superset_secret_key
 superset_deploy_path: /opt/sadgan/superset
 superset_compose_project_name: superset
 

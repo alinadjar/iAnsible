@@ -1,6 +1,10 @@
 ---
 # Phase 2 — Langfuse + Headroom (optional hosts in observability group).
 
+platform_vault_required_vars:
+  - vault_langfuse_salt
+  - vault_langfuse_encryption_key
+
 langfuse_enabled: false
 langfuse_deploy_path: /opt/sadgan/langfuse
 langfuse_compose_project_name: langfuse

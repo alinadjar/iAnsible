@@ -1,0 +1,27 @@
+---
+- name: Check whether UFW is installed
+  ansible.builtin.stat:
+    path: /usr/sbin/ufw
+  register: xwiki_ufw_binary
+
+- name: Read UFW status
+  ansible.builtin.command:
+    argv:
+      - ufw
+      - status
+  register: xwiki_ufw_status
+  changed_when: false
+  failed_when: false
+  when: xwiki_ufw_binary.stat.exists | default(false)
+
+- name: Allow XWiki TCP ports in UFW when firewall is active
+  community.general.ufw:
+    rule: allow
+    port: "{{ item | string }}"
+    proto: tcp
+  loop: "{{ xwiki_ufw_allow_tcp_ports | default([xwiki_http_port]) }}"
+  when:
+    - xwiki_ufw_manage | default(true)
+    - xwiki_ufw_binary.stat.exists | default(false)
+    - xwiki_ufw_status.stdout is defined
+    - "'Status: active' in xwiki_ufw_status.stdout"

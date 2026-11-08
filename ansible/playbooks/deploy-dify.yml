@@ -2,6 +2,9 @@
 - name: Deploy Dify stack
   hosts: dify
   gather_facts: true
+  pre_tasks:
+    - ansible.builtin.import_tasks: "{{ playbook_dir }}/../tasks/load-vault.yml"
+    - ansible.builtin.import_tasks: "{{ playbook_dir }}/../tasks/validate-platform-secrets.yml"
   roles:
     - role: common
       tags: [common, bootstrap]

@@ -34,3 +34,7 @@
     stack_skip_compose: false
     stack_env_guard: true
     stack_require_env_file: .env
+
+- name: Open XWiki port in UFW when active
+  ansible.builtin.import_tasks: firewall.yml
+  when: xwiki_ufw_manage | default(true)

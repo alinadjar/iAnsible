@@ -36,6 +36,8 @@ ansible-playbook playbooks/deploy-superset.yml --ask-vault-pass
 ansible-playbook playbooks/deploy-xwiki.yml --ask-vault-pass
 ```
 
+Each deploy playbook loads `secrets/vault.yml` in `pre_tasks` (use `--ask-vault-pass` when the file is encrypted).
+
 Or everything:
 
 ```bash
