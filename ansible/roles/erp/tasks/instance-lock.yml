@@ -35,35 +35,32 @@
     group: "{{ deploy_group }}"
     mode: "0755"
 
-- name: Ensure getLock.sh is executable
-  ansible.builtin.file:
-    path: "{{ erp_deploy_path }}/getLock.sh"
+- name: Install getLock.sh on deploy path
+  ansible.builtin.copy:
+    src: getLock.sh
+    dest: "{{ erp_deploy_path }}/getLock.sh"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
     mode: "0755"
 
 - name: Request instance lock from license API
   ansible.builtin.command:
     argv:
-      - ./getLock.sh
+      - /bin/bash
+      - "{{ erp_deploy_path }}/getLock.sh"
       - "{{ erp_lock_instance_id }}"
-    chdir: "{{ erp_deploy_path }}"
   environment:
     LOCAL_FG_AGENT: "{{ erp_getlock_local_fg_agent }}"
     API_URL: "{{ erp_getlock_api_url }}"
-    LICENSE_LOCK: "{{ erp_deploy_path }}/instance.lock"
+    # metadata/ is owned by deploy_user; deploy root may be root-only after rsync
+    LICENSE_LOCK: "{{ erp_deploy_path }}/metadata/instance.lock"
   become_user: "{{ deploy_user }}"
   register: erp_getlock_result
   changed_when: true
 
-- name: Install instance.lock under metadata
-  ansible.builtin.copy:
-    src: "{{ erp_deploy_path }}/instance.lock"
-    dest: "{{ erp_deploy_path }}/metadata/instance.lock"
-    remote_src: true
+- name: Set instance.lock permissions
+  ansible.builtin.file:
+    path: "{{ erp_deploy_path }}/metadata/instance.lock"
     owner: "{{ deploy_user }}"
     group: "{{ deploy_group }}"
     mode: "0644"
-
-- name: Remove temporary instance.lock from deploy root
-  ansible.builtin.file:
-    path: "{{ erp_deploy_path }}/instance.lock"
-    state: absent
