@@ -25,8 +25,15 @@ dify_web_image_tag: "20260917"
 # URLs exposed to browsers and to ERP when calling Dify API.
 dify_console_url: "{{ platform_integration.dify_public_url }}"
 dify_app_web_url: "{{ platform_integration.dify_public_url }}"
+# Optional override; else role uses primary IPv4 / ansible_host in .env (localhost replacement)
+# dify_node_ip: 192.168.10.159
 
 # Allow ERP (and other app servers) to reach Dify when Dify runs on another host.
 dify_ssrf_allow_private_domains: "{{ groups['erp'] | map('extract', hostvars, 'ansible_host') | list | join(',') }}"
+dify_ssrf_allow_private_ips: "127.0.0.1"
+
+# Sadgan deployment overrides (match dify/docker/.env; secrets still come from vault)
+dify_openai_api_base: "http://127.0.0.1:8787/v1"
+dify_expose_nginx_port: 8080
 
 dify_env_template: dify.env.j2

@@ -11,6 +11,9 @@
     stack_skip_compose: true
     stack_rsync_opts: "{{ dify_stack_rsync_opts | default([]) }}"
 
+- name: Prepare Dify .env rendering facts
+  ansible.builtin.import_tasks: render-env.yml
+
 - name: Render Dify environment file
   ansible.builtin.template:
     src: "{{ dify_env_template }}"

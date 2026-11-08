@@ -33,7 +33,7 @@ services:
       LiteTableSync__IsEnabled: true
       TaxPayer__IsEnabled: true
       License__LicenseServerUrl: ${LicenseServer}/api/licensemanagement/activation
-      License__FingerprintAgentUrl: "http://192.168.10.244:4000"
+      License__FingerprintAgentUrl: "http://${NODE_IP}:4000"
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_RO_PASSWORD: ${POSTGRES_RO_PASSWORD}  
       App__UpdateServerUrl: "http://sidecar:3000/upgrade"

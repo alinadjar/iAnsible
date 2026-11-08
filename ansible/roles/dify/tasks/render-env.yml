@@ -1,0 +1,40 @@
+---
+- name: Resolve Dify node IP for .env (inventory override, else facts)
+  vars:
+    _dify_ip_inventory: "{{ dify_node_ip | default('') }}"
+  ansible.builtin.set_fact:
+    dify_node_ip: >-
+      {{
+        _dify_ip_inventory | trim
+        if (_dify_ip_inventory | trim | length > 0)
+        else (
+          ansible_default_ipv4.address | default(ansible_host) | trim
+        )
+      }}
+
+- name: Require a node IP for localhost replacement in .env
+  ansible.builtin.assert:
+    that:
+      - dify_node_ip is defined
+      - dify_node_ip | length > 0
+      - dify_node_ip != '127.0.0.1'
+    fail_msg: >-
+      Could not resolve dify_node_ip for {{ inventory_hostname }}.
+      Set dify_node_ip in group_vars/dify.yml (e.g. the host's LAN address).
+
+- name: Locate monorepo dify/docker/.env on control node
+  ansible.builtin.stat:
+    path: "{{ dify_env_repo_path }}"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  register: dify_env_repo_stat
+
+- name: Choose Dify .env template base file
+  ansible.builtin.set_fact:
+    dify_env_base_path: >-
+      {{
+        dify_env_repo_path
+        if dify_env_repo_stat.stat.exists | default(false)
+        else (role_path ~ '/files/dify.env.j2.base')
+      }}

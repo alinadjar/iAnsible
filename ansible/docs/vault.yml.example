@@ -14,6 +14,12 @@ vault_erp_postgres_db: SADGAN
 
 vault_dify_secret_key: "CHANGE_ME"
 vault_dify_db_password: "CHANGE_ME"
+# Optional — same values as dify/docker/.env if you rotate them out of the repo file
+# vault_dify_init_password: "CHANGE_ME"
+# vault_dify_redis_password: "CHANGE_ME"
+# vault_dify_plugin_daemon_key: "CHANGE_ME"
+# vault_dify_plugin_inner_api_key: "CHANGE_ME"
+# vault_dify_agent_server_secret_key: "CHANGE_ME"
 
 vault_superset_secret_key: "CHANGE_ME"
 vault_superset_admin_password: "CHANGE_ME"

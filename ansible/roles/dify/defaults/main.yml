@@ -4,6 +4,15 @@ dify_deploy_path: /opt/sadgan/dify/docker
 dify_stack_subpath: dify/docker
 dify_compose_project_name: dify
 dify_env_template: dify.env.j2
+# Base .env on the control node (synced monorepo); fallback: roles/dify/files/dify.env.j2.base
+dify_env_repo_path: "{{ repo_root | default(playbook_dir ~ '/../..') }}/dify/docker/.env"
+# When true (default if dify_console_url set), set CONSOLE_* / APP_* from platform URLs not bare host IP
+# dify_env_use_platform_urls: true
+# Host IP for replacing localhost/127.0.0.1 in docker/.env (defaults to target ansible_host)
+# dify_node_ip: 192.168.10.159
+# dify_openai_api_base: "http://127.0.0.1:8787/v1"
+# dify_expose_nginx_port: 8080
+# dify_ssrf_allow_private_ips: "127.0.0.1"
 dify_build_tag_env_template: dify-build-tag.env.j2
 dify_build_tag_env_file: .build-tag.env
 

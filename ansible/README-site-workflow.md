@@ -166,7 +166,7 @@ flowchart TD
 
 **Sadgan overlay:** `docker-compose.sadgan.yaml` switches API images to `langgenius/dify-api:sadgan` and related settings. `shared.env` sets `SSRF_PROXY_ALLOW_PRIVATE_DOMAINS` from ERP host IPs (`dify_ssrf_allow_private_domains` in `group_vars/dify.yml`) so Dify on another server can call internal ERP endpoints safely through the SSRF proxy.
 
-**Public URLs** (`CONSOLE_*`, `APP_*`, …) come from `platform_integration.dify_public_url` and related vars in `group_vars/dify.yml`. ERP and browsers must use those URLs, not Docker internal hostnames.
+**`.env` URLs:** By default Ansible replaces `127.0.0.1` / host-facing `localhost` with `dify_node_ip` (or set `dify_node_ip` explicitly). It does **not** inject `platform_integration.dify_public_url` unless `dify_env_use_platform_urls: true`. Browsers and ERP still use the public URL via DNS/nginx; optional overrides include `dify_next_public_socket_url`.
 
 ---
 
@@ -316,7 +316,7 @@ flowchart LR
 | `rsync` / SSH errors | Any sync step | Ansible user, key, `ansible_host`, `deploy_user` home permissions |
 | External network not found | ERP | `docker_resources` / `erp_external_networks` |
 | Registry pull 401 | common / compose | `docker_registries` in `all.yml` + vault credentials |
-| Dify UI wrong links | Dify | `platform_integration.dify_public_url`, `dify.env.j2` URL fields |
+| Dify UI wrong links | Dify | `dify_node_ip`, `dify_next_public_socket_url`, or `dify_env_use_platform_urls` + `dify_console_url` |
 | Superset cannot query ERP data | Superset + network | `superset_erp_sqlalchemy_uri`, ERP `5401`, `pg_hba`, BI user in `erp/init` |
 | Langfuse does nothing | Observability | `langfuse_enabled: true` and vault secrets |
 

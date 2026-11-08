@@ -6,11 +6,9 @@
 #   ./docker/build-images.sh web       # web only
 #
 
-# Internal ERP hostnames (.palood.local) are not visible to Docker's embedded DNS.
-# Services that call api.erp.palood.local (MCP, HTTP tools, plugins) need extra_hosts.
 x-erp-api-host: &erp-api-host
   extra_hosts:
-    - "api.erp.palood.local:192.168.200.60"
+    - "api.erp.dify.local:127.0.0.1"
 
 
 
