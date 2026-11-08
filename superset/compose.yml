@@ -23,7 +23,7 @@
 # -----------------------------------------------------------------------
 # x-superset-image: &superset-image apachesuperset.docker.scarf.sh/apache/superset:${TAG:-latest-dev}
 # x-superset-image: &superset-image registry.sadgan.int/common/superset:6.1.0-custom.2
-x-superset-image: &superset-image nexus.sadgan.int/superset:${TAG}
+x-superset-image: &superset-image registry.sadgan.int/oss/superset:${TAG}
 x-superset-volumes:
   &superset-volumes # /app/pythonpath_docker will be appended to the PYTHONPATH in the final container
   - ./docker:/app/docker
@@ -34,7 +34,7 @@ x-superset-volumes:
 
 services:
   redis:
-    image: redis:7.2
+    image: registry.sadgan.com/common/redis:7.2
     container_name: superset_cache
     restart: unless-stopped
     volumes:
@@ -48,7 +48,7 @@ services:
         required: true
       - path: docker/.env-local # optional override
         required: false
-    image: postgres:18.0
+    image: registry.sadgan.com/common/postgres:18.0
     container_name: superset_db
     restart: unless-stopped
     volumes:
@@ -96,7 +96,7 @@ services:
     healthcheck:
       disable: true
     environment:
-      SUPERSET_LOAD_EXAMPLES: "${SUPERSET_LOAD_EXAMPLES:-yes}"
+      SUPERSET_LOAD_EXAMPLES: "${SUPERSET_LOAD_EXAMPLES:-no}"
       SUPERSET_LOG_LEVEL: "${SUPERSET_LOG_LEVEL:-info}"
 
   superset-worker:
@@ -143,26 +143,10 @@ services:
     environment:
       SUPERSET_LOG_LEVEL: "${SUPERSET_LOG_LEVEL:-info}"
 
-
-  # superset-mcp1:
-  #   image: mrrayudu/mcp-superset:latest
-  #   labels:
-  #     logging: "enabled"
-  #     release: "superset"
-  #     proj: "FX"
-  #   environment:
-  #     - SUPERSET_BASE_URL=http://superset_app:8088
-  #     - SUPERSET_USERNAME=admin
-  #     - SUPERSET_PASSWORD=admin
-  #     - SUPERSET_PROVIDER=db
-  #   ports:
-  #     - "5009:8001"
-  #   depends_on:
-  #     superset-init:
-  #       condition: service_completed_successfully   
+ 
 
   superset-mcp:
-    image: nexus.sadgan.int/superset-mcp:${MCPTAG}
+    image: registry.sadgan.com/oss/superset-mcp:${MCPTAG}
     container_name: superset-mcp
     labels:
       logging: "enabled"

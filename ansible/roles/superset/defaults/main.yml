@@ -1,0 +1,16 @@
+---
+superset_enabled: true
+superset_deploy_path: /opt/sadgan/superset
+superset_stack_subpath: superset
+superset_compose_project_name: superset
+superset_compose_file: compose.yml
+superset_env_template: superset.env.j2
+
+# Image tags for compose.yml (${TAG}, ${MCPTAG}) — rendered to {{ superset_deploy_path }}/.env
+superset_tag: 855cf3f
+superset_mcptag: f41ee79
+superset_compose_env_template: superset-compose.env.j2
+superset_compose_env_file: .env
+
+# Rsync from Windows often drops +x; required for compose entrypoints (docker-init.sh, etc.)
+superset_ensure_docker_scripts_executable: true

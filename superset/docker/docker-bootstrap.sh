@@ -34,17 +34,31 @@ if [ "$CYPRESS_CONFIG" == "true" ]; then
     export SUPERSET__SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://superset:superset@db:5432/superset_cypress
     PORT=8081
 fi
+
 if [[ "$DATABASE_DIALECT" == postgres* ]] && [ "$(whoami)" = "root" ]; then
-    # older images may not have the postgres dev requirements installed
-    echo "Installing postgres requirements"
-    if command -v uv > /dev/null 2>&1; then
-        # Use uv in newer images
-        uv pip install -e .[postgres]
+    if python -c "import psycopg2" >/dev/null 2>&1; then
+        echo "Postgres driver already installed"
     else
-        # Use pip in older images
-        pip install -e .[postgres]
+        echo "Installing postgres driver"
+        if command -v uv > /dev/null 2>&1; then
+            uv pip install --no-cache-dir "psycopg2-binary==2.9.6"
+        else
+            pip install --no-cache-dir "psycopg2-binary==2.9.6"
+        fi
     fi
 fi
+
+# if [[ "$DATABASE_DIALECT" == postgres* ]] && [ "$(whoami)" = "root" ]; then
+#     # older images may not have the postgres dev requirements installed
+#     echo "Installing postgres requirements"
+#     if command -v uv > /dev/null 2>&1; then
+#         # Use uv in newer images
+#         uv pip install -e .[postgres]
+#     else
+#         # Use pip in older images
+#         pip install -e .[postgres]
+#     fi
+# fi
 #
 # Make sure we have dev requirements installed
 #

@@ -11,6 +11,34 @@
     stack_skip_sync: false
     stack_skip_compose: true
 
+- name: Find shell scripts under Superset docker/
+  ansible.builtin.find:
+    paths: "{{ superset_deploy_path }}/docker"
+    patterns: "*.sh"
+    recurse: true
+    file_type: file
+  register: superset_docker_shell_scripts
+  when: superset_ensure_docker_scripts_executable | default(true)
+
+- name: Ensure Superset docker shell scripts are executable
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    mode: "0755"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+  loop: "{{ superset_docker_shell_scripts.files }}"
+  when:
+    - superset_ensure_docker_scripts_executable | default(true)
+    - superset_docker_shell_scripts.matched | default(0) > 0
+
+- name: Render Superset compose environment file (project root, beside docker/)
+  ansible.builtin.template:
+    src: "{{ superset_compose_env_template }}"
+    dest: "{{ superset_deploy_path }}/{{ superset_compose_env_file }}"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
+
 - name: Ensure Superset docker env directory exists
   ansible.builtin.file:
     path: "{{ superset_deploy_path }}/docker"
