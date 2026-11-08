@@ -1,18 +1,31 @@
 ---
 # License instance.lock — after fingerprint-agent systemd (LOCAL_FG_AGENT = erp_getlock_local_fg_agent).
 - name: Detect node IP when fingerprint agent step was skipped
+  vars:
+    _fg_agent_override: "{{ erp_getlock_local_fg_agent | default('') }}"
+    _erp_ip_override: "{{ erp_node_ip | default('') }}"
   ansible.builtin.set_fact:
     erp_node_ip: >-
       {{
-        erp_node_ip
-        | default(ansible_default_ipv4.address | default(hostvars[inventory_hostname].ansible_host))
+        _erp_ip_override | trim
+        if (_erp_ip_override | trim | length) > 0
+        else (
+          ansible_default_ipv4.address | default(ansible_host) | trim
+        )
       }}
     erp_getlock_local_fg_agent: >-
       {{
-        erp_getlock_local_fg_agent
-        | default('http://' ~ (erp_node_ip | default(ansible_default_ipv4.address | default(hostvars[inventory_hostname].ansible_host))) ~ ':' ~ (erp_agent_port_fingerprint | string))
+        _fg_agent_override | trim | regex_replace('/$', '')
+        if (_fg_agent_override | trim | length) > 0
+        else (
+          'http://' ~ (
+            _erp_ip_override | trim
+            if (_erp_ip_override | trim | length) > 0
+            else (ansible_default_ipv4.address | default(ansible_host) | trim)
+          ) ~ ':' ~ (erp_agent_port_fingerprint | string)
+        )
       }}
-  when: erp_getlock_local_fg_agent | default('') | length == 0
+  when: (_fg_agent_override | trim | length) == 0
 
 - name: Ensure ERP metadata directory exists
   ansible.builtin.file:

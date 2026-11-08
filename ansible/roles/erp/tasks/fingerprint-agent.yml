@@ -1,22 +1,32 @@
 ---
 # SadganFingerprintAgent on the host (systemd) — must run before getLock.sh fingerprint curl.
 - name: Detect node IPv4 for fingerprint / getLock URL
+  vars:
+    _erp_ip_override: "{{ erp_node_ip | default('') }}"
   ansible.builtin.set_fact:
     erp_node_ip: >-
       {{
-        erp_node_ip
-        | default(ansible_default_ipv4.address | default(hostvars[inventory_hostname].ansible_host))
+        _erp_ip_override | trim
+        if (_erp_ip_override | trim | length) > 0
+        else (
+          ansible_default_ipv4.address | default(ansible_host) | trim
+        )
       }}
 
 - name: Set LOCAL_FG_AGENT URL from detected node IP
+  vars:
+    _fg_agent_override: "{{ erp_getlock_local_fg_agent | default('') }}"
   ansible.builtin.set_fact:
     erp_getlock_local_fg_agent: >-
-      {{ erp_getlock_local_fg_agent | default('http://' ~ erp_node_ip ~ ':' ~ (erp_agent_port_fingerprint | string)) }}
+      {{
+        _fg_agent_override | trim | regex_replace('/$', '')
+        if (_fg_agent_override | trim | length) > 0
+        else ('http://' ~ erp_node_ip ~ ':' ~ (erp_agent_port_fingerprint | string))
+      }}
 
 - name: Build fingerprint systemd unit name
   ansible.builtin.set_fact:
-    erp_fingerprint_systemd_service: >-
-      SadganERP-Core-{{ erp_project_code | upper }}__{{ erp_lock_instance_id }}
+    erp_fingerprint_systemd_service: "SadganERP-Core-{{ erp_project_code | upper }}__{{ erp_lock_instance_id | trim }}"
 
 - name: Ensure fingerprint agent install tree exists
   ansible.builtin.file:
@@ -35,17 +45,24 @@
     src: fingerprint-agent.service.j2
     dest: "/etc/systemd/system/{{ erp_fingerprint_systemd_service }}.service"
     mode: "0644"
-  notify: Reload systemd and restart fingerprint agent
+  register: erp_fingerprint_unit
 
-- name: Apply fingerprint unit changes before start
-  ansible.builtin.meta: flush_handlers
+- name: Reload systemd after unit install or update
+  ansible.builtin.systemd:
+    daemon_reload: true
+  when: erp_fingerprint_unit.changed
 
 - name: Enable and start fingerprint agent service
   ansible.builtin.systemd:
     name: "{{ erp_fingerprint_systemd_service }}"
     enabled: true
     state: started
-    daemon_reload: true
+
+- name: Restart fingerprint agent after unit file change
+  ansible.builtin.systemd:
+    name: "{{ erp_fingerprint_systemd_service }}"
+    state: restarted
+  when: erp_fingerprint_unit.changed
 
 - name: Wait for fingerprint HTTP endpoint
   ansible.builtin.uri:

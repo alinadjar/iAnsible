@@ -37,8 +37,9 @@ erp_agent_port_fingerprint: 4000
 # getLock.sh / instance.lock (before compose pull)
 erp_instance_lock_enabled: true
 erp_instance_lock_prompt: true
-# Set by fingerprint-agent.yml from erp_node_ip unless overridden
-erp_getlock_local_fg_agent: ""
+# Base URL for fingerprint agent (no trailing slash). Omitted here — empty string breaks default().
+# Auto-set in fingerprint-agent.yml as http://<node-ip>:<erp_agent_port_fingerprint> unless overridden in group_vars.
+# erp_getlock_local_fg_agent: "http://192.168.10.159:4000"
 erp_getlock_api_url: "{{ erp_license_server }}/api/licensemanagement/instanceLock"
 
 # Self-signed TLS under config/certs (nginx) — generated on target after sync

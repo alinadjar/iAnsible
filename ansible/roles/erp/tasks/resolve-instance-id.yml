@@ -17,13 +17,13 @@
 
 - name: Resolve INSTANCE_ID from inventory default
   ansible.builtin.set_fact:
-    erp_lock_instance_id: "{{ erp_instance_id | default('ERP01') }}"
+    erp_lock_instance_id: "{{ erp_instance_id | default('ERP01') | trim }}"
   run_once: true
-  when: erp_lock_instance_id | default('') | length == 0
+  when: hostvars[ansible_play_hosts[0]].erp_lock_instance_id | default('') | length == 0
 
 - name: Share INSTANCE_ID with all ERP hosts
   ansible.builtin.set_fact:
-    erp_lock_instance_id: "{{ hostvars[ansible_play_hosts[0]].erp_lock_instance_id }}"
+    erp_lock_instance_id: "{{ hostvars[ansible_play_hosts[0]].erp_lock_instance_id | trim }}"
   when:
-    - inventory_hostname != ansible_play_hosts[0]
     - hostvars[ansible_play_hosts[0]].erp_lock_instance_id is defined
+    - hostvars[ansible_play_hosts[0]].erp_lock_instance_id | length > 0
