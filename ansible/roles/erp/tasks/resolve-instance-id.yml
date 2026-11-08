@@ -1,0 +1,29 @@
+---
+- name: Prompt for ERP INSTANCE_ID
+  ansible.builtin.pause:
+    prompt: "Enter INSTANCE_ID for license lock and fingerprint service name"
+    echo: true
+  register: erp_instance_lock_input
+  run_once: true
+  when: erp_instance_lock_prompt | default(true)
+
+- name: Resolve INSTANCE_ID from playbook prompt
+  ansible.builtin.set_fact:
+    erp_lock_instance_id: "{{ erp_instance_lock_input.user_input | trim }}"
+  run_once: true
+  when:
+    - erp_instance_lock_prompt | default(true)
+    - erp_instance_lock_input.user_input | default('') | trim | length > 0
+
+- name: Resolve INSTANCE_ID from inventory default
+  ansible.builtin.set_fact:
+    erp_lock_instance_id: "{{ erp_instance_id | default('ERP01') }}"
+  run_once: true
+  when: erp_lock_instance_id | default('') | length == 0
+
+- name: Share INSTANCE_ID with all ERP hosts
+  ansible.builtin.set_fact:
+    erp_lock_instance_id: "{{ hostvars[ansible_play_hosts[0]].erp_lock_instance_id }}"
+  when:
+    - inventory_hostname != ansible_play_hosts[0]
+    - hostvars[ansible_play_hosts[0]].erp_lock_instance_id is defined

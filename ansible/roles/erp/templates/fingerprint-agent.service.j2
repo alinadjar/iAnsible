@@ -1,0 +1,16 @@
+[Unit]
+Description=Sadgan Fingerprint Agent v7
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=root
+Restart=always
+RestartSec=3
+ExecStart={{ erp_fingerprint_install_path }}/bin/SadganFingerprintAgent --port={{ erp_agent_port_fingerprint }} --listen=any
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

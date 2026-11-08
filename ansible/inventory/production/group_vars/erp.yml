@@ -28,6 +28,17 @@ erp_env_template: erp.env.j2
 
 erp_registry_url: registry.sadgan.int
 erp_version: v1.20.0
+erp_license_server: https://api-license-alpha.sadgan.com
+erp_project_code: fx
+
+erp_fingerprint_agent_download_url: https://get.sadgan.com/SadganFingerprintAgent
+# erp_fingerprint_agent_download_via_controller: true
+
+# Self-signed nginx TLS (paths under {{ erp_deploy_path }}/config/certs)
+# erp_ssl_cert_cn: erp.demo.sadgan.int
+# erp_fingerprint_install_path: /opt/sadgan/fingerprint-agent
+# erp_node_ip: 192.168.10.159
+# erp_getlock_local_fg_agent: "http://192.168.10.159:4000"
 
 # Optional if group_vars/all.yml does not load (normally use platform_integration there)
 # erp_self_url: "https://api.demo.sadgan.int"

@@ -1,0 +1,62 @@
+---
+# Self-signed TLS material for nginx under {{ erp_deploy_path }}/config/certs (after stack sync).
+- name: Ensure OpenSSL is installed
+  ansible.builtin.package:
+    name: openssl
+    state: present
+  when: ansible_os_family != 'Windows'
+
+- name: Ensure ERP TLS certificate directory exists
+  ansible.builtin.file:
+    path: "{{ erp_deploy_path }}/{{ erp_ssl_cert_dir }}"
+    state: directory
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0750"
+
+- name: Stat existing ERP TLS certificate
+  ansible.builtin.stat:
+    path: "{{ erp_deploy_path }}/{{ erp_ssl_cert_path }}"
+  register: erp_ssl_cert_stat
+
+- name: Stat existing ERP TLS private key
+  ansible.builtin.stat:
+    path: "{{ erp_deploy_path }}/{{ erp_ssl_key_path }}"
+  register: erp_ssl_key_stat
+
+- name: Generate self-signed ERP TLS certificate and key
+  ansible.builtin.command:
+    argv:
+      - openssl
+      - req
+      - -x509
+      - -nodes
+      - -newkey
+      - "rsa:{{ erp_ssl_key_bits }}"
+      - -days
+      - "{{ erp_ssl_days | string }}"
+      - -keyout
+      - "{{ erp_deploy_path }}/{{ erp_ssl_key_path }}"
+      - -out
+      - "{{ erp_deploy_path }}/{{ erp_ssl_cert_path }}"
+      - -subj
+      - "/CN={{ erp_ssl_cert_cn }}"
+  become_user: "{{ deploy_user }}"
+  when: >-
+    erp_ssl_regenerate | default(false) | bool
+    or not erp_ssl_cert_stat.stat.exists | default(false)
+    or not erp_ssl_key_stat.stat.exists | default(false)
+
+- name: Set permissions on ERP TLS private key
+  ansible.builtin.file:
+    path: "{{ erp_deploy_path }}/{{ erp_ssl_key_path }}"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0600"
+
+- name: Set permissions on ERP TLS certificate
+  ansible.builtin.file:
+    path: "{{ erp_deploy_path }}/{{ erp_ssl_cert_path }}"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"

@@ -17,6 +17,44 @@ erp_nginx_port_back: 5056
 erp_replica_port_lb: 5401
 erp_instance_id: ERP01
 
+erp_project_code: fx
+
+# SadganFingerprintAgent (systemd on host — before getLock / compose pull)
+erp_fingerprint_agent_enabled: true
+erp_fingerprint_agent_download_url: https://get.sadgan.com/SadganFingerprintAgent
+erp_fingerprint_agent_download_via_controller: true
+erp_fingerprint_agent_cache_dir: "{{ playbook_dir }}/../.cache/fingerprint-agent"
+erp_fingerprint_agent_download_timeout: 300
+erp_fingerprint_agent_download_retries: 3
+erp_fingerprint_agent_download_retry_delay: 10
+erp_fingerprint_agent_download_force: false
+erp_fingerprint_agent_download_validate_certs: true
+erp_fingerprint_install_path: /opt/sadgan/fingerprint-agent
+erp_fingerprint_health_retries: 15
+erp_fingerprint_health_delay: 2
+erp_agent_port_fingerprint: 4000
+
+# getLock.sh / instance.lock (before compose pull)
+erp_instance_lock_enabled: true
+erp_instance_lock_prompt: true
+# Set by fingerprint-agent.yml from erp_node_ip unless overridden
+erp_getlock_local_fg_agent: ""
+erp_getlock_api_url: "{{ erp_license_server }}/api/licensemanagement/instanceLock"
+
+# Self-signed TLS under config/certs (nginx) — generated on target after sync
+erp_ssl_self_signed_enabled: true
+erp_ssl_cert_dir: config/certs
+erp_ssl_cert_file: server.crt
+erp_ssl_key_file: server.key
+erp_ssl_cert_path: "{{ erp_ssl_cert_dir }}/{{ erp_ssl_cert_file }}"
+erp_ssl_key_path: "{{ erp_ssl_cert_dir }}/{{ erp_ssl_key_file }}"
+erp_ssl_cert_cn: "{{ hostvars[inventory_hostname].ansible_host }}"
+erp_ssl_days: 825
+erp_ssl_key_bits: 2048
+erp_ssl_regenerate: false
+erp_stack_rsync_opts:
+  - "--exclude=config/certs/"
+
 erp_external_networks:
   - net_fx_alpha
   - redis_insight
