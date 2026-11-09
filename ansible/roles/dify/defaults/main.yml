@@ -7,6 +7,9 @@ dify_env_template: dify.env.j2
 # Base .env on the control node (synced monorepo); fallback: roles/dify/files/dify.env.j2.base
 dify_env_repo_path: "{{ repo_root | default(playbook_dir ~ '/../..') }}/dify/docker/.env"
 dify_env_use_platform_urls: false
+# INIT_PASSWORD: off by default — follows monorepo docker/.env (use # INIT_PASSWORD= to disable setup password)
+# Set true only with vault_dify_init_password to force-inject from vault
+dify_env_inject_init_password: false
 # Host IP for replacing localhost/127.0.0.1 in docker/.env (defaults to target ansible_host)
 # dify_node_ip: 192.168.10.159
 # Port paired with 127.0.0.1 in monorepo dify/docker/.env (e.g. :8080 on CONSOLE_* URLs)
@@ -34,3 +37,6 @@ dify_web_image_tag: "20260917"
 dify_stack_rsync_opts:
   - "--exclude=.env"
   - "--exclude=.build-tag.env"
+
+# Sandbox code-execution config (mounted at volumes/sandbox/conf/config.yaml)
+dify_sandbox_conf_src_path: "{{ repo_root | default(playbook_dir ~ '/../..') }}/dify/docker/volumes/sandbox/conf/config.yaml"

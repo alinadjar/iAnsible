@@ -23,6 +23,7 @@ dify_api_image_tag: ea872d64c48e
 dify_web_image_tag: "20260917"
 
 dify_env_use_platform_urls: false
+dify_env_inject_init_password: false
 # Optional explicit LAN IP; else role uses ansible_default_ipv4 / ansible_host
 # dify_node_ip: 192.168.10.159
 dify_env_loopback_nginx_port: 8080

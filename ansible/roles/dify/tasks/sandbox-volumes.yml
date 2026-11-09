@@ -1,0 +1,39 @@
+---
+# Sandbox bind mounts (compose: ./volumes/sandbox/conf, ./volumes/sandbox/dependencies).
+# Rsync often skips volumes/ on the control node; Docker may create empty root-owned dirs on first up.
+- name: Ensure Dify sandbox volume directories exist
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0755"
+  loop:
+    - "{{ dify_deploy_path }}/volumes/sandbox/conf"
+    - "{{ dify_deploy_path }}/volumes/sandbox/dependencies"
+
+- name: Locate sandbox config.yaml on Ansible control node
+  ansible.builtin.stat:
+    path: "{{ dify_sandbox_conf_src_path }}"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  register: dify_sandbox_conf_src
+
+- name: Install sandbox config.yaml from monorepo
+  ansible.builtin.copy:
+    src: "{{ dify_sandbox_conf_src_path }}"
+    dest: "{{ dify_deploy_path }}/volumes/sandbox/conf/config.yaml"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
+  when: dify_sandbox_conf_src.stat.exists | default(false)
+
+- name: Install sandbox config.yaml from role files
+  ansible.builtin.copy:
+    src: sandbox-config.yaml
+    dest: "{{ dify_deploy_path }}/volumes/sandbox/conf/config.yaml"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
+  when: not (dify_sandbox_conf_src.stat.exists | default(false))

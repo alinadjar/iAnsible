@@ -47,6 +47,9 @@
     group: "{{ deploy_group }}"
     mode: "0644"
 
+- name: Install Dify sandbox volume config before compose
+  ansible.builtin.import_tasks: sandbox-volumes.yml
+
 - name: Apply Dify Docker Compose stack
   ansible.builtin.include_role:
     name: stack_deploy
