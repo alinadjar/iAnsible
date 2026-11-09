@@ -92,7 +92,7 @@ Do **not** commit `erp/.env`; secrets are rendered from Ansible Vault into `.env
 ## Phase 2: Langfuse & Headroom
 
 - Set `langfuse_enabled: true` in `group_vars/observability.yml` and fill vault secrets.
-- Set `headroom_enabled: true` to install **Headroom LLM Proxy** as `headroom.service` under `/opt/headroom-ai` (venv from `headroom_python_version`, port **8787** by default). Override `headroom_pip_packages` / `headroom_pip_extra_args` if you use a private PyPI index or version pin.
+- Set `headroom_enabled: true` for **Headroom LLM Proxy** (`headroom.service`, port **8787**). Default: rsync monorepo `headroom-ai/` **including `venv/`** (`headroom_use_bundled_venv: true`) so deploy works without PyPI. If the folder is `venv-313`, set `headroom_bundled_venv_name: venv-313`. Otherwise use `headroom_python_version` + `headroom_pip_index_url` or offline wheels.
 
 ## Docker daemon (private registry)
 

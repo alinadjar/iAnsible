@@ -7,6 +7,7 @@
   when:
     - headroom_enabled
     - ansible_os_family == "Debian"
+    - not (headroom_use_bundled_venv | default(false) | bool)
 
 - name: Ensure Headroom deploy directory exists
   ansible.builtin.file:
@@ -17,36 +18,63 @@
     mode: "0755"
   when: headroom_enabled
 
-- name: Sync Headroom project files from monorepo (optional)
-  ansible.posix.synchronize:
-    src: "{{ repo_root }}/{{ headroom_stack_subpath }}/"
-    dest: "{{ headroom_service_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ headroom_deploy_path }}/"
-    delete: false
-    rsync_opts:
-      - "--exclude=venv"
-      - "--exclude=venv-313"
-      - "--exclude=venv-*"
-      - "--exclude=.git"
-  delegate_to: localhost
+# - name: Sync Headroom project files from monorepo (optional)
+#   ansible.posix.synchronize:
+#     src: "{{ repo_root }}/{{ headroom_stack_subpath }}/"
+#     dest: "{{ headroom_service_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ headroom_deploy_path }}/"
+#     delete: false
+#     rsync_opts:
+#       - "--exclude=venv"
+#       - "--exclude=venv-313"
+#       - "--exclude=venv-*"
+#       - "--exclude=.git"
+#   delegate_to: localhost
+- name: Sync Headroom project from monorepo
+  ansible.builtin.import_tasks: sync-from-repo.yml
   when:
     - headroom_enabled
-    - headroom_sync_from_repo
+    - headroom_sync_from_repo | default(false)
     - stack_source | default('local') == 'local'
+
+- name: Check bundled Headroom venv on target
+  ansible.builtin.stat:
+    path: "{{ headroom_venv_path }}/bin/headroom"
+  register: headroom_bundled_cli
+  when: headroom_enabled
+
+- name: Use monorepo bundled venv (skip PyPI)
+  ansible.builtin.set_fact:
+    headroom_skip_pip_install: true
+  when:
+    - headroom_enabled
+    - headroom_use_bundled_venv | default(false) | bool
+    - headroom_bundled_cli.stat.exists | default(false)
+
+- name: Fail when bundled venv was required but headroom CLI is missing
+  ansible.builtin.fail:
+    msg: >-
+      headroom_use_bundled_venv=true but {{ headroom_venv_path }}/bin/headroom was not found after sync.
+      Sync headroom-ai/ from the monorepo (including venv/) or set headroom_use_bundled_venv: false
+      and use headroom_pip_index_url / headroom_pip_wheels_src.
+  when:
+    - headroom_enabled
+    - headroom_use_bundled_venv | default(false) | bool
+    - headroom_sync_from_repo | default(false)
+    - not headroom_bundled_cli.stat.exists | default(false)
 
 - name: Create Headroom virtualenv
   ansible.builtin.command:
     cmd: "{{ headroom_python_binary }} -m venv {{ headroom_venv_path }}"
     creates: "{{ headroom_venv_path }}/pyvenv.cfg"
-  when: headroom_enabled
+  when:
+    - headroom_enabled
+    - not (headroom_skip_pip_install | default(false))
 
 - name: Install Headroom Python packages into venv
-  ansible.builtin.pip:
-    name: "{{ headroom_pip_packages }}"
-    virtualenv: "{{ headroom_venv_path }}"
-    virtualenv_command: "{{ headroom_python_binary }} -m venv"
-    extra_args: "{{ headroom_pip_extra_args }}"
-  when: headroom_enabled
-  notify: Restart headroom
+  ansible.builtin.import_tasks: install-python-packages.yml
+  when:
+    - headroom_enabled
+    - not (headroom_skip_pip_install | default(false))
 
 - name: Install Headroom from local tree (editable)
   ansible.builtin.pip:

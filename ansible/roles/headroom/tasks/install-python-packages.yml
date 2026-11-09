@@ -1,0 +1,90 @@
+---
+- name: Build Headroom pip extra arguments
+  ansible.builtin.set_fact:
+    headroom_pip_extra_args_resolved: >-
+      {{
+        [
+          headroom_pip_extra_args | default(''),
+          ('-i ' ~ headroom_pip_index_url)
+            if headroom_pip_index_url | default('') | length > 0 else '',
+          ('--timeout ' ~ (headroom_pip_timeout | string))
+            if (headroom_pip_timeout | default(0) | int) > 0 else '',
+          ('--trusted-host ' ~ headroom_pip_trusted_host)
+            if headroom_pip_trusted_host | default('') | length > 0 else ''
+        ]
+        | reject('equalto', '')
+        | join(' ')
+      }}
+
+- name: Locate Headroom wheel source on control node
+  ansible.builtin.stat:
+    path: "{{ headroom_pip_wheels_src }}"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  register: headroom_wheels_src_stat
+  when:
+    - headroom_pip_wheels_src | default('') | length > 0
+
+- name: Share Headroom wheel source stat with play hosts
+  ansible.builtin.set_fact:
+    headroom_wheels_src_present: "{{ headroom_wheels_src_stat.stat.exists | default(false) }}"
+  when: headroom_pip_wheels_src | default('') | length > 0
+
+- name: Ensure Headroom wheels directory on target
+  ansible.builtin.file:
+    path: "{{ headroom_deploy_path }}/wheels"
+    state: directory
+    owner: "{{ headroom_service_user }}"
+    group: "{{ headroom_service_group }}"
+    mode: "0755"
+  when: headroom_wheels_src_present | default(false)
+
+- name: Copy Headroom wheels from control node (offline install)
+  ansible.builtin.copy:
+    src: "{{ headroom_pip_wheels_src }}/"
+    dest: "{{ headroom_deploy_path }}/wheels/"
+    owner: "{{ headroom_service_user }}"
+    group: "{{ headroom_service_group }}"
+    mode: "0644"
+  when: headroom_wheels_src_present | default(false)
+  notify: Restart headroom
+
+- name: Find Headroom wheels on target
+  ansible.builtin.find:
+    paths: "{{ headroom_deploy_path }}/wheels"
+    patterns: "*.whl"
+    file_type: file
+  register: headroom_wheels_found
+  when:
+    - headroom_wheels_src_present | default(false)
+    - headroom_deploy_path is defined
+
+- name: Assume no offline wheels when wheel copy was skipped
+  ansible.builtin.set_fact:
+    headroom_wheels_found:
+      matched: 0
+      files: []
+  when:
+    - headroom_wheels_found is not defined
+      or headroom_wheels_found.skipped | default(false)
+
+- name: Install Headroom from wheels (no PyPI)
+  ansible.builtin.pip:
+    name: "{{ item.path }}"
+    virtualenv: "{{ headroom_venv_path }}"
+    extra_args: "{{ headroom_pip_extra_args_resolved }}"
+  loop: "{{ headroom_wheels_found.files | default([]) }}"
+  when:
+    - headroom_wheels_src_present | default(false)
+    - headroom_wheels_found.matched | default(0) > 0
+  notify: Restart headroom
+
+- name: Install Headroom Python packages from index
+  ansible.builtin.pip:
+    name: "{{ headroom_pip_packages }}"
+    virtualenv: "{{ headroom_venv_path }}"
+    virtualenv_command: "{{ headroom_python_binary }} -m venv"
+    extra_args: "{{ headroom_pip_extra_args_resolved }}"
+  when: headroom_wheels_found.matched | default(0) == 0
+  notify: Restart headroom

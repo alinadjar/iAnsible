@@ -20,6 +20,10 @@ langfuse_clickhouse_image_tag: "25.12.2"
 
 headroom_enabled: false
 headroom_deploy_path: /opt/headroom-ai
+# Sync monorepo headroom-ai/; use bundled venv/ when present (no PyPI). Folder name if not "venv":
+# headroom_bundled_venv_name: venv
+headroom_sync_from_repo: true
+headroom_use_bundled_venv: true
 # Match an apt Python on the host (python3.12, python3.11, …). venv dir follows: venv-312, venv-311
 # headroom_python_version in observability.yml has priority over role defaults. 
 # if both set value,  observability wins. If you remove it from observability.yml, the role default (3.12) applies
@@ -28,7 +32,11 @@ headroom_proxy_host: 0.0.0.0
 headroom_proxy_port: 8787
 headroom_service_user: root
 headroom_service_group: root
-# pip package(s) installed into venv-313; pin version or index via headroom_pip_extra_args
+# PyPI: obs-01 needs outbound HTTPS or a private index (pypi.org timeouts otherwise).
+# headroom_pip_index_url: "https://nexus.example/repository/pypi/simple"
+# headroom_pip_trusted_host: "nexus.example"
+# Offline: put *.whl under ansible/roles/headroom/files/wheels/ on the control node
+# headroom_pip_wheels_src: "{{ playbook_dir }}/../roles/headroom/files/wheels"
 headroom_pip_packages:
   - headroom-ai
 headroom_service_environment: []

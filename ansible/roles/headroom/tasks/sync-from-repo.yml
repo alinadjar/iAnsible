@@ -1,0 +1,20 @@
+---
+- name: Build Headroom rsync options
+  ansible.builtin.set_fact:
+    headroom_rsync_opts_resolved: >-
+      {{
+        ['--exclude=.git']
+        + (
+          []
+          if (headroom_use_bundled_venv | default(false) | bool)
+          else ['--exclude=venv', '--exclude=venv-313', '--exclude=venv-*']
+        )
+      }}
+
+- name: Sync Headroom project files from monorepo
+  ansible.posix.synchronize:
+    src: "{{ repo_root }}/{{ headroom_stack_subpath }}/"
+    dest: "{{ headroom_service_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ headroom_deploy_path }}/"
+    delete: false
+    rsync_opts: "{{ headroom_rsync_opts_resolved }}"
+  delegate_to: localhost

@@ -3,7 +3,18 @@ headroom_deploy_path: /opt/headroom-ai
 # e.g. 3.12 on Ubuntu 24.04; use 3.11 on Debian 12 if 3.12 apt packages are unavailable
 headroom_python_version: "3.12"
 headroom_python_binary: "python{{ headroom_python_version }}"
-headroom_venv_name: "venv-{{ headroom_python_version | replace('.', '') }}"
+
+# Monorepo headroom-ai/ with a prebuilt venv (offline). venv must match target OS/arch + Python minor.
+headroom_sync_from_repo: true
+headroom_use_bundled_venv: true
+headroom_bundled_venv_name: venv
+
+headroom_venv_name: >-
+  {{
+    headroom_bundled_venv_name
+    if (headroom_use_bundled_venv | default(false) | bool)
+    else ('venv-' ~ (headroom_python_version | replace('.', '')))
+  }}
 headroom_venv_path: "{{ headroom_deploy_path }}/{{ headroom_venv_name }}"
 
 headroom_python_packages:
@@ -13,7 +24,14 @@ headroom_python_packages:
 headroom_pip_packages:
   - headroom-ai
 
+# PyPI on the target often times out on-prem — use a Nexus/Artifactory proxy or offline wheels.
+headroom_pip_index_url: ""
+headroom_pip_trusted_host: ""
+headroom_pip_timeout: 120
 headroom_pip_extra_args: ""
+# If this directory exists on the Ansible control node, *.whl files are copied and installed (skips PyPI).
+# Example: roles/headroom/files/wheels/ (place headroom-ai and dependency wheels there)
+headroom_pip_wheels_src: ""
 
 headroom_proxy_host: 0.0.0.0
 headroom_proxy_port: 8787
@@ -23,7 +41,6 @@ headroom_service_group: root
 headroom_systemd_unit: headroom.service
 headroom_systemd_description: Headroom LLM Proxy
 
-headroom_sync_from_repo: false
 headroom_stack_subpath: headroom-ai
 headroom_editable_install: false
 headroom_service_environment: []
