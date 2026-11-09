@@ -20,7 +20,10 @@ langfuse_clickhouse_image_tag: "25.12.2"
 
 headroom_enabled: false
 headroom_deploy_path: /opt/headroom-ai
-headroom_venv_name: venv-313
+# Match an apt Python on the host (python3.12, python3.11, …). venv dir follows: venv-312, venv-311
+# headroom_python_version in observability.yml has priority over role defaults. 
+# if both set value,  observability wins. If you remove it from observability.yml, the role default (3.12) applies
+headroom_python_version: "3.12"
 headroom_proxy_host: 0.0.0.0
 headroom_proxy_port: 8787
 headroom_service_user: root

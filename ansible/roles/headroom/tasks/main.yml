@@ -35,7 +35,7 @@
 
 - name: Create Headroom virtualenv
   ansible.builtin.command:
-    cmd: python3.13 -m venv {{ headroom_venv_path }}
+    cmd: "{{ headroom_python_binary }} -m venv {{ headroom_venv_path }}"
     creates: "{{ headroom_venv_path }}/pyvenv.cfg"
   when: headroom_enabled
 
@@ -43,7 +43,7 @@
   ansible.builtin.pip:
     name: "{{ headroom_pip_packages }}"
     virtualenv: "{{ headroom_venv_path }}"
-    virtualenv_command: python3.13 -m venv
+    virtualenv_command: "{{ headroom_python_binary }} -m venv"
     extra_args: "{{ headroom_pip_extra_args }}"
   when: headroom_enabled
   notify: Restart headroom

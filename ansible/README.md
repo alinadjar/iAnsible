@@ -16,6 +16,31 @@ Deploy **ERP**, **Dify**, and **Superset** from this monorepo with **one host pe
 
 Cross-service URLs live in `inventory/production/group_vars/platform.yml` under `platform_integration`.
 
+## Variable precedence (golden rule)
+
+For one variable on one host, **more specific layers win** over broader ones. From **lowest → highest** priority:
+
+**role defaults → group_vars (parent groups, then child groups) → host_vars → play/extra vars, `set_fact`, …**
+
+| Layer | Typical use |
+|-------|----------------|
+| **Role `defaults/main.yml`** | Sensible default if inventory does not set the key (e.g. `headroom_python_version: "3.12"`). |
+| **`group_vars`** | Shared settings for every host in a group (`erp.yml`, `observability.yml`, `platform.yml`, …). |
+| **`host_vars`** | Exceptions for a single host (different IP, one-off Python version, disk layout). |
+
+It is normal to define the same key in **role defaults and `group_vars`** with the same value: defaults document the role; `group_vars` document your environment. When they differ, **`group_vars` overrides defaults**. **`host_vars` overrides `group_vars`** for that host only.
+
+If two groups set the same key differently, resolution depends on group ancestry and merge order — prefer **`host_vars`** or a single owning group when you need a clear override.
+
+Inspect the merged result:
+
+```bash
+ansible-inventory -i inventory/production --host obs-01 --yaml
+ansible obs-01 -m debug -a "var=headroom_python_version"
+```
+
+Playbook-loaded secrets (`tasks/load-vault.yml`) and other play-time vars sit **above** inventory for that run. See [README-site-workflow.md](README-site-workflow.md#variables-and-secrets-loading-order).
+
 ## Quick start
 
 ```bash
@@ -67,7 +92,7 @@ Do **not** commit `erp/.env`; secrets are rendered from Ansible Vault into `.env
 ## Phase 2: Langfuse & Headroom
 
 - Set `langfuse_enabled: true` in `group_vars/observability.yml` and fill vault secrets.
-- Set `headroom_enabled: true` to install **Headroom LLM Proxy** as `headroom.service` under `/opt/headroom-ai` (Python 3.13 venv `venv-313`, port **8787** by default). Override `headroom_pip_packages` / `headroom_pip_extra_args` if you use a private PyPI index or version pin.
+- Set `headroom_enabled: true` to install **Headroom LLM Proxy** as `headroom.service` under `/opt/headroom-ai` (venv from `headroom_python_version`, port **8787** by default). Override `headroom_pip_packages` / `headroom_pip_extra_args` if you use a private PyPI index or version pin.
 
 ## Docker daemon (private registry)
 

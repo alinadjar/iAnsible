@@ -1,11 +1,14 @@
 ---
 headroom_deploy_path: /opt/headroom-ai
-headroom_venv_name: venv-313
+# e.g. 3.12 on Ubuntu 24.04; use 3.11 on Debian 12 if 3.12 apt packages are unavailable
+headroom_python_version: "3.12"
+headroom_python_binary: "python{{ headroom_python_version }}"
+headroom_venv_name: "venv-{{ headroom_python_version | replace('.', '') }}"
 headroom_venv_path: "{{ headroom_deploy_path }}/{{ headroom_venv_name }}"
 
 headroom_python_packages:
-  - python3.13
-  - python3.13-venv
+  - "python{{ headroom_python_version }}"
+  - "python{{ headroom_python_version }}-venv"
 
 headroom_pip_packages:
   - headroom-ai

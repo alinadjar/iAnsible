@@ -250,11 +250,23 @@ Secrets are **never** copied from the monorepo’s committed `.env` files; they 
 
 ## Variables and secrets loading order
 
-Ansible merges variables roughly as follows for each host:
+### Golden rule (inventory + roles)
 
-1. `group_vars/all.yml` — global deploy settings; `group_vars/platform.yml` — `platform_integration` URLs
-2. `group_vars/<group>.yml` — per-stack paths, compose names, feature flags
-3. `secrets/vault.yml` — encrypted secrets (loaded in playbook `pre_tasks` via `tasks/load-vault.yml` with `--ask-vault-pass`)
+From **lowest → highest** priority for a single key on one host:
+
+**role defaults → group_vars (parent groups, then child groups) → host_vars → play/extra vars, `set_fact`, …**
+
+- Put stack-wide values in **`group_vars/<group>.yml`** (e.g. `erp.yml`, `observability.yml`).
+- Put **one-host overrides** in **`host_vars/<hostname>.yml`** — uncommon but overrides group vars.
+- Role **`defaults/main.yml`** is the fallback when inventory does not set the key.
+
+### This repo’s usual sources
+
+1. `roles/*/defaults/main.yml` — per-role defaults
+2. `group_vars/all.yml` — global deploy settings; `group_vars/platform.yml` — `platform_integration` URLs
+3. `group_vars/<group>.yml` — per-stack paths, compose names, feature flags
+4. `host_vars/<host>.yml` — optional per-host overrides
+5. `secrets/vault.yml` — encrypted secrets (loaded in playbook `pre_tasks` via `tasks/load-vault.yml` with `--ask-vault-pass`; wins over plain inventory for those keys during the play)
 
 ```mermaid
 flowchart LR
