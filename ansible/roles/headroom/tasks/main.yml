@@ -62,6 +62,13 @@
     - headroom_sync_from_repo | default(false)
     - not headroom_bundled_cli.stat.exists | default(false)
 
+- name: Prepare and validate bundled venv on target
+  ansible.builtin.import_tasks: prepare-bundled-venv.yml
+  when:
+    - headroom_enabled
+    - headroom_use_bundled_venv | default(false) | bool
+    - headroom_bundled_cli.stat.exists | default(false)
+
 - name: Create Headroom virtualenv
   ansible.builtin.command:
     cmd: "{{ headroom_python_binary }} -m venv {{ headroom_venv_path }}"

@@ -1,0 +1,46 @@
+---
+# Bundled venv/ is often rsync'd from another host; fix execute bits and verify execve works before systemd.
+- name: Ensure bundled venv bin files are executable
+  ansible.builtin.shell: |
+    set -euo pipefail
+    chmod -R a+X "{{ headroom_deploy_path }}" "{{ headroom_venv_path }}"
+    find "{{ headroom_venv_path }}/bin" -type f -exec chmod a+x {} +
+  args:
+    executable: /bin/bash
+  when:
+    - headroom_enabled
+    - headroom_use_bundled_venv | default(false) | bool
+    - headroom_bundled_cli.stat.exists | default(false)
+  changed_when: false
+
+- name: Verify Headroom CLI runs as service user
+  ansible.builtin.command:
+    argv:
+      - "{{ headroom_venv_path }}/bin/python3"
+      - "{{ headroom_venv_path }}/bin/headroom"
+      - --help
+  become: true
+  become_user: "{{ headroom_service_user }}"
+  register: headroom_cli_smoke
+  changed_when: false
+  failed_when: false
+  when:
+    - headroom_enabled
+    - headroom_use_bundled_venv | default(false) | bool
+    - headroom_bundled_cli.stat.exists | default(false)
+
+- name: Diagnose bundled venv exec failure
+  ansible.builtin.fail:
+    msg: >-
+      Headroom bundled venv cannot execute on this host (systemd would exit 203/EXEC).
+      Ran as {{ headroom_service_user }}: {{ headroom_venv_path }}/bin/python3 {{ headroom_venv_path }}/bin/headroom --help
+      → rc={{ headroom_cli_smoke.rc | default('?') }}, stderr={{ headroom_cli_smoke.stderr | default('') | trim }}
+      Common causes: /opt mounted noexec (findmnt -no OPTIONS /opt), venv built on Windows or another CPU arch,
+      or missing execute on {{ headroom_venv_path }}/bin/python3 (file + namei -l on that path).
+      Rebuild venv on a Linux host matching the target: python3 -m venv venv && venv/bin/pip install headroom-ai
+      Or set headroom_use_bundled_venv: false and use PyPI/wheels on the target.
+  when:
+    - headroom_enabled
+    - headroom_use_bundled_venv | default(false) | bool
+    - headroom_bundled_cli.stat.exists | default(false)
+    - headroom_cli_smoke.rc | default(1) != 0
