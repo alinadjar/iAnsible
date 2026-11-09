@@ -1,0 +1,118 @@
+---
+# Pre-flight: required host TCP ports must be free (or bound by Docker) and allowed in UFW when active.
+- name: Normalize required host TCP ports
+  ansible.builtin.set_fact:
+    common_required_tcp_ports: >-
+      {{
+        common_host_tcp_ports
+        | default([])
+        | map('int')
+        | unique
+        | sort
+        | list
+      }}
+
+- name: Check whether UFW is installed
+  ansible.builtin.stat:
+    path: /usr/sbin/ufw
+  register: common_ufw_binary
+
+- name: Read UFW status
+  ansible.builtin.command:
+    argv:
+      - ufw
+      - status
+  register: common_ufw_status
+  changed_when: false
+  failed_when: false
+  when: common_ufw_binary.stat.exists | default(false)
+
+- name: Detect whether UFW is active
+  ansible.builtin.set_fact:
+    common_ufw_active: >-
+      {{
+        common_ufw_binary.stat.exists | default(false)
+        and (common_ufw_status.stdout | default('') is search('Status: active'))
+      }}
+
+- name: Query listener for required TCP port
+  ansible.builtin.command:
+    argv:
+      - ss
+      - -H
+      - -ltnp
+      - "sport = :{{ item }}"
+  register: common_tcp_port_listener
+  loop: "{{ common_required_tcp_ports }}"
+  loop_control:
+    label: "tcp/{{ item }}"
+  become: true
+  changed_when: false
+  failed_when: false
+
+- name: Fail when required TCP port is held by a non-Docker process
+  ansible.builtin.fail:
+    msg: >-
+      Host {{ inventory_hostname }}: TCP port {{ item.item }} is already in use (not docker-proxy/dockerd).
+      Free the port or stop the conflicting service before deploy.
+      Listener: {{ item.stdout | default('') | trim }}
+  loop: "{{ common_tcp_port_listener.results }}"
+  loop_control:
+    label: "tcp/{{ item.item }}"
+  when:
+    - item.stdout | default('') | length > 0
+    - item.stdout is not search(common_port_docker_listener_pattern)
+
+- name: Allow required TCP ports in UFW when active and port is vacant
+  community.general.ufw:
+    rule: allow
+    port: "{{ item.item | string }}"
+    proto: tcp
+  become: true
+  loop: "{{ common_tcp_port_listener.results }}"
+  loop_control:
+    label: "tcp/{{ item.item }}"
+  vars:
+    _port_vacant: "{{ item.stdout | default('') | trim | length == 0 }}"
+    _port_docker: "{{ item.stdout | default('') is search(common_port_docker_listener_pattern) }}"
+    _auto_allow: >-
+      {{
+        (common_ufw_auto_allow_vacant | default(true) | bool and _port_vacant)
+        or (common_ufw_auto_allow_docker_bound | default(true) | bool and _port_docker)
+        or (common_ufw_manage | default(false) | bool)
+      }}
+  when:
+    - common_ufw_active | default(false) | bool
+    - _auto_allow | bool
+
+- name: Verify UFW allows required TCP port after auto-allow
+  ansible.builtin.shell: |
+    set -euo pipefail
+    port="{{ item }}"
+    # IPv4 and IPv6 rows, e.g. "3001/tcp ALLOW" and "3001/tcp (v6) ALLOW"
+    ufw status | grep -E "^${port}/tcp" | grep -q ALLOW
+  args:
+    executable: /bin/bash
+  register: common_ufw_port_ok
+  loop: "{{ common_required_tcp_ports }}"
+  loop_control:
+    label: "tcp/{{ item }}"
+  become: true
+  changed_when: false
+  failed_when: false
+  when:
+    - common_ufw_verify | default(true) | bool
+    - common_ufw_active | default(false) | bool
+
+- name: Fail when UFW is active but required TCP port is still not allowed
+  ansible.builtin.fail:
+    msg: >-
+      UFW is active on {{ inventory_hostname }} but TCP {{ item.item }} is not allowed after auto-allow.
+      Check manually: sudo ufw status | grep {{ item.item }}
+  loop: "{{ common_ufw_port_ok.results | default([]) }}"
+  loop_control:
+    label: "tcp/{{ item.item }}"
+  when:
+    - common_ufw_verify | default(true) | bool
+    - common_ufw_active | default(false) | bool
+    - item.rc | default(1) != 0

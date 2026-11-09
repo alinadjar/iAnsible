@@ -5,6 +5,15 @@ platform_vault_required_vars:
   - vault_langfuse_salt
   - vault_langfuse_encryption_key
 
+common_check_host_ports: true
+common_host_tcp_ports: >-
+  {{
+    ([langfuse_web_host_port | default(3000), langfuse_minio_api_port | default(9090)]
+      if (langfuse_enabled | default(false) | bool) else [])
+    + ([headroom_proxy_port | default(8787)]
+      if (headroom_enabled | default(false) | bool) else [])
+  }}
+
 langfuse_enabled: true
 langfuse_deploy_path: /opt/sadgan/langfuse
 langfuse_compose_project_name: langfuse

@@ -1,4 +1,12 @@
 ---
+common_check_host_ports: true
+common_host_tcp_ports:
+  - "{{ erp_nginx_port_front }}"
+  - "{{ erp_nginx_port_back }}"
+  - "{{ erp_replica_port_lb | default(5401) }}"
+  - "{{ erp_dash_port | default(3001) }}"
+  - "{{ erp_agent_port_fingerprint | default(4000) }}"
+
 erp_enabled: true
 
 # Fails deploy-erp if vault did not decrypt (see tasks/validate-platform-secrets.yml).

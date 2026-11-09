@@ -94,6 +94,15 @@ Do **not** commit `erp/.env`; secrets are rendered from Ansible Vault into `.env
 - Set `langfuse_enabled: true` in `group_vars/observability.yml` and fill vault secrets.
 - Set `headroom_enabled: true` for **Headroom LLM Proxy** (`headroom.service`, port **8787**). Default: rsync monorepo `headroom-ai/` **including `venv/`** (`headroom_use_bundled_venv: true`) so deploy works without PyPI. If the folder is `venv-313`, set `headroom_bundled_venv_name: venv-313`. Otherwise use `headroom_python_version` + `headroom_pip_index_url` or offline wheels.
 
+## Host TCP ports and UFW (`common`)
+
+Each stack can set `common_check_host_ports: true` and `common_host_tcp_ports` in its `group_vars` (see `observability.yml`, `erp.yml`, …). Early in the `common` role Ansible:
+
+1. Ensures each port is **free** or already bound by **Docker** (re-deploy safe).
+2. If **UFW is active**, runs `ufw allow <port>/tcp` when the port is **vacant** (`common_ufw_auto_allow_vacant`, default true) or **Docker-bound** (`common_ufw_auto_allow_docker_bound`). Then verifies the rule exists.
+
+Set `common_ufw_manage: true` to open every listed port regardless of listener state. Does not enable UFW.
+
 ## Docker daemon (private registry)
 
 `common` **merges** `registry.sadgan.int` into `insecure-registries` in an existing `/etc/docker/daemon.json` (other keys unchanged). If the file is missing, it creates one with log rotation defaults. Restarts Docker when the file changes, then runs `docker info`. Add more hosts via `docker_daemon_insecure_registries_add` in `group_vars/all.yml`.

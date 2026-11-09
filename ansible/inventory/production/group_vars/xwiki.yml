@@ -1,4 +1,9 @@
 ---
+common_check_host_ports: true
+common_host_tcp_ports:
+  - "{{ xwiki_http_port }}"
+  - "{{ xwiki_postgres_host_port }}"
+
 xwiki_enabled: true
 platform_vault_required_vars:
   - vault_xwiki_db_password

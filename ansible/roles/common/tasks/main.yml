@@ -14,6 +14,12 @@
     shell: /bin/bash
     state: present
 
+- name: Validate host TCP ports and UFW rules
+  ansible.builtin.import_tasks: host-ports.yml
+  when:
+    - common_check_host_ports | default(false) | bool
+    - common_host_tcp_ports | default([]) | length > 0
+
 - name: Check whether Docker CLI is available
   ansible.builtin.command: docker --version
   register: common_docker_version_check

@@ -20,3 +20,17 @@ docker_daemon_log_opts:
   max-file: "3"
 common_docker_health_retries: 5
 common_docker_health_delay: 3
+
+# Host-published TCP ports for this machine (set in stack group_vars). Empty = skip checks.
+common_check_host_ports: false
+common_host_tcp_ports: []
+# When occupied, accept listeners matching this regex (docker-proxy on compose re-deploy).
+common_port_docker_listener_pattern: docker-proxy|dockerd|containerd
+# If UFW is active: re-check ALLOW after auto-allow (fail if still missing).
+common_ufw_verify: true
+# When UFW is active: ufw allow <port>/tcp if the port is free (no listener).
+common_ufw_auto_allow_vacant: true
+# Also allow when the port is already bound by Docker (re-deploy / published compose port).
+common_ufw_auto_allow_docker_bound: true
+# If true: allow every required port regardless of listener state (does not enable UFW).
+common_ufw_manage: false

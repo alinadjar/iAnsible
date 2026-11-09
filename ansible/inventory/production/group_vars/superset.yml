@@ -1,4 +1,8 @@
 ---
+common_check_host_ports: true
+common_host_tcp_ports:
+  - "{{ superset_http_port }}"
+
 superset_enabled: true
 platform_vault_required_vars:
   - vault_superset_secret_key
