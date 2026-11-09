@@ -1,0 +1,42 @@
+---
+- name: Locate monorepo langfuse/.env on control node
+  ansible.builtin.stat:
+    path: "{{ langfuse_env_repo_path }}"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  register: langfuse_env_repo_stat
+
+- name: Choose Langfuse .env template base file
+  ansible.builtin.set_fact:
+    langfuse_env_base_path: >-
+      {{
+        langfuse_env_repo_path
+        if (langfuse_env_use_monorepo_base | default(true) | bool)
+          and langfuse_env_repo_stat.stat.exists | default(false)
+        else (role_path ~ '/files/langfuse.env.j2.base')
+      }}
+  run_once: true
+
+- name: Share Langfuse .env base path with play hosts
+  ansible.builtin.set_fact:
+    langfuse_env_base_path: "{{ hostvars[ansible_play_hosts_all[0]].langfuse_env_base_path }}"
+
+- name: Resolve Langfuse node IP for .env (inventory override, else ansible_host)
+  ansible.builtin.set_fact:
+    langfuse_node_ip: >-
+      {{
+        langfuse_node_ip
+        | default(hostvars[inventory_hostname].ansible_host, true)
+        | default((hostvars[inventory_hostname].ansible_default_ipv4 or {}).get('address'), true)
+      }}
+
+- name: Require a node IP for Langfuse host-facing URLs in .env
+  ansible.builtin.assert:
+    that:
+      - langfuse_node_ip is defined
+      - langfuse_node_ip | string | length > 0
+    fail_msg: >-
+      langfuse_node_ip is empty. Set ansible_host, langfuse_node_ip in group_vars,
+      or ensure gathering facts provides ansible_default_ipv4.
+    quiet: true

@@ -5,13 +5,18 @@ platform_vault_required_vars:
   - vault_langfuse_salt
   - vault_langfuse_encryption_key
 
-langfuse_enabled: false
+langfuse_enabled: true
 langfuse_deploy_path: /opt/sadgan/langfuse
 langfuse_compose_project_name: langfuse
 langfuse_stack_subpath: langfuse
-langfuse_compose_file: docker-compose.yml
-langfuse_compose_origin_file: docker-compose.yml.origin
+langfuse_compose_file: compose.yaml
+langfuse_compose_origin_file: ""
 langfuse_env_template: langfuse.env.j2
+langfuse_registry_url: "{{ platform_registry_url }}"
+# Must exist in Harbor — find the tag with: docker pull ... or Harbor UI
+langfuse_clickhouse_image_tag: "25.12.2"
+# Full ref override (repo/path + tag), e.g. after mirroring clickhouse/clickhouse-server:
+# langfuse_image_clickhouse: "registry.sadgan.int/common/clickhouse-server:<tag>"
 
 headroom_enabled: false
 headroom_deploy_path: /opt/headroom-ai

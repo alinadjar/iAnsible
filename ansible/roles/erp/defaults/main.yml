@@ -8,7 +8,7 @@ erp_compose_file: compose.yaml
 erp_compose_project_name: fx_alpha
 erp_env_template: erp.env.j2
 
-erp_registry_url: registry.sadgan.int
+erp_registry_url: "{{ platform_registry_url | default('registry.sadgan.int') }}"
 # Compose `.env`: `$$` becomes `$` in REGISTRY_USER
 erp_registry_user: "robot$$fx+sidecar-readonly"
 erp_registry_tls_skip_verify: "true"

@@ -24,15 +24,30 @@
     - langfuse_enabled
     - langfuse_compose_origin_file | length > 0
 
+- name: Prepare Langfuse .env rendering facts
+  when: langfuse_enabled
+  ansible.builtin.import_tasks: render-env.yml
+
 - name: Render Langfuse environment file
   when: langfuse_enabled
   ansible.builtin.template:
     src: "{{ langfuse_env_template }}"
-    dest: "{{ langfuse_deploy_path }}/.env"
+    dest: "{{ langfuse_deploy_path }}/{{ langfuse_env_file | default('.env') }}"
     owner: "{{ deploy_user }}"
     group: "{{ deploy_group }}"
     mode: "0600"
   no_log: true
+
+- name: Render Langfuse compose image override
+  when:
+    - langfuse_enabled
+    - langfuse_compose_use_image_override | default(true) | bool
+  ansible.builtin.template:
+    src: "{{ langfuse_compose_override_images_template }}"
+    dest: "{{ langfuse_deploy_path }}/{{ langfuse_compose_override_images_file }}"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
 
 - name: Apply Langfuse Docker Compose stack
   when: langfuse_enabled
@@ -42,8 +57,14 @@
     stack_deploy_path: "{{ langfuse_deploy_path }}"
     stack_subpath: "{{ langfuse_stack_subpath }}"
     stack_compose_project_name: "{{ langfuse_compose_project_name }}"
-    stack_compose_files:
-      - "{{ langfuse_compose_file }}"
+    stack_compose_files: >-
+      {{
+        langfuse_compose_files
+        if (langfuse_compose_use_image_override | default(true) | bool)
+        else [langfuse_compose_file]
+      }}
+    stack_compose_env_files:
+      - "{{ langfuse_env_file | default('.env') }}"
     stack_skip_sync: true
     stack_skip_compose: false
     stack_env_guard: true

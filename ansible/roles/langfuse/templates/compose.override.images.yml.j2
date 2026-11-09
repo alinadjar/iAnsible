@@ -1,0 +1,15 @@
+# Ansible-managed — overrides compose.yaml image: lines with full refs from inventory.
+# Merge file: docker compose -f compose.yaml -f compose.override.images.yml
+services:
+  langfuse-worker:
+    image: {{ langfuse_image_worker }}
+  langfuse-web:
+    image: {{ langfuse_image_web }}
+  clickhouse:
+    image: {{ langfuse_image_clickhouse }}
+  minio:
+    image: {{ langfuse_image_minio }}
+  redis:
+    image: {{ langfuse_image_redis }}
+  postgres:
+    image: {{ langfuse_image_postgres }}

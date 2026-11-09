@@ -137,7 +137,7 @@ services:
       LANGFUSE_IN_APP_AGENT_MAX_ACTIVE_RUNS_PER_ORG: ${LANGFUSE_IN_APP_AGENT_MAX_ACTIVE_RUNS_PER_ORG:-}
 
   clickhouse:
-    image: ${REGISTRY_URL}/common/clickhouse-server:25.122
+    image: ${REGISTRY_URL}/common/clickhouse-server:${LANGFUSE_CLICKHOUSE_IMAGE_TAG:-25.12.2}
     restart: always
     user: "101:101"
     environment:
@@ -197,7 +197,7 @@ services:
       retries: 10
 
   postgres:
-    image: ${REGISTRY_URL}/common/postgres:${POSTGRES_VERSION:-17}
+    image: ${REGISTRY_URL}/common/postgres:${LANGFUSE_POSTGRES_IMAGE_TAG:-18.0}
     restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]

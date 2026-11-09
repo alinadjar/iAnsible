@@ -16,7 +16,7 @@ dify_env_inject_init_password: false
 dify_env_loopback_nginx_port: 8080
 # Published nginx HTTP port on the host (EXPOSE_NGINX_PORT and replacement for 127.0.0.1:<loopback port>)
 dify_expose_nginx_port: 8081
-# dify_openai_api_base: "http://192.168.10.209:8787/v1"
+# dify_openai_api_base: "http://127.0.0.1:8787/v1"
 # dify_ssrf_allow_private_ips: "127.0.0.1"
 dify_build_tag_env_template: dify-build-tag.env.j2
 dify_build_tag_env_file: .build-tag.env

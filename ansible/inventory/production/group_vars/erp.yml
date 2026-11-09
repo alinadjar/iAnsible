@@ -30,7 +30,7 @@ erp_external_volumes:
 # Rendered on the server; do not copy erp/.env from the repo (contains secrets).
 erp_env_template: erp.env.j2
 
-erp_registry_url: registry.sadgan.int
+erp_registry_url: "{{ platform_registry_url }}"
 erp_registry_user: "robot$$fx+sidecar-readonly"
 erp_sidecar_deploy_path: "{{ erp_deploy_path }}"
 erp_sidecar_version: v1.4.7

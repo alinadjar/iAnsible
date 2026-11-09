@@ -4,6 +4,9 @@
 deploy_user: devops
 deploy_group: devops
 
+# Private image registry (ERP .env, Langfuse compose image prefixes, etc.)
+platform_registry_url: registry.sadgan.int
+
 # Cross-service URLs (ERP ↔ Dify ↔ Superset). Kept on `platform` so ad-hoc/ping works
 # even if group_vars/all.yml is misconfigured; verify with:
 #   ansible erp-01 -m debug -a 'var=platform_integration'
