@@ -9,6 +9,7 @@
     stack_compose_project_name: "{{ langfuse_compose_project_name }}"
     stack_compose_files:
       - "{{ langfuse_compose_file }}"
+    stack_rsync_opts: "{{ langfuse_stack_rsync_opts | default([]) }}"
     stack_skip_sync: false
     stack_skip_compose: true
 

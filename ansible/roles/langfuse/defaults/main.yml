@@ -16,6 +16,9 @@ langfuse_env_file: .env
 # Same registry host as ERP (`platform_registry_url` / `erp_registry_url` in group_vars).
 langfuse_registry_url: "{{ platform_registry_url | default(erp_registry_url | default('registry.sadgan.int')) }}"
 langfuse_env_repo_path: "{{ repo_root | default(playbook_dir ~ '/../..') }}/langfuse/.env"
+# Ansible-rendered on the target; must survive stack_deploy rsync --delete (see erp_stack_rsync_opts).
+langfuse_stack_rsync_opts:
+  - "--exclude={{ langfuse_compose_override_images_file }}"
 # true: monorepo langfuse/.env on the control node wins when present; else roles/langfuse/files/langfuse.env.j2.base
 langfuse_env_use_monorepo_base: true
 langfuse_web_host_port: 3000
