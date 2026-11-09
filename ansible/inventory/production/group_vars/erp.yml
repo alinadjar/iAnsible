@@ -4,10 +4,14 @@ erp_enabled: true
 # Fails deploy-erp if vault did not decrypt (see tasks/validate-platform-secrets.yml).
 platform_vault_required_vars:
   - vault_erp_postgres_password
+  - vault_erp_postgres_ro_password
+  - vault_erp_postgres_bi_password
   - vault_erp_redis_password
+  - vault_erp_backup_password
+  - vault_erp_registry_password
 
 erp_deploy_path: /opt/sadgan/erp
-erp_compose_project_name: fx_demo
+erp_compose_project_name: fx
 
 # Paths inside the monorepo (relative to repo root).
 erp_stack_subpath: erp
@@ -17,7 +21,7 @@ erp_compose_file: compose.yaml
 # Compose must run only after erp.env.j2 is rendered to {{ erp_deploy_path }}/.env.
 
 erp_external_networks:
-  - net_fx_demo
+  - net_fx
   - redis_insight
 
 erp_external_volumes:
@@ -27,6 +31,9 @@ erp_external_volumes:
 erp_env_template: erp.env.j2
 
 erp_registry_url: registry.sadgan.int
+erp_registry_user: "robot$$fx+sidecar-readonly"
+erp_sidecar_deploy_path: "{{ erp_deploy_path }}"
+erp_sidecar_version: v1.4.7
 erp_version: v1.20.0
 erp_license_server: https://api-license-alpha.sadgan.com
 erp_project_code: fx
@@ -44,8 +51,9 @@ erp_fingerprint_agent_download_url: https://get.sadgan.com/SadganFingerprintAgen
 # erp_self_url: "https://api.demo.sadgan.int"
 # erp_app_url: "https://panel.demo.sadgan.int"
 
-erp_nginx_port_front: 7076
-erp_nginx_port_back: 5056
+erp_nginx_port_front: "{{ platform_host_ports.erp_nginx_front | default(8080) }}"
+erp_nginx_port_back: "{{ platform_host_ports.erp_nginx_back | default(8000) }}"
+# erp_node_ip: 192.168.10.159
 
 # Superset / BI read-only access to ERP Postgres (via HAProxy read port on ERP host).
 erp_pg_bi_host: "{{ hostvars[groups['erp'] | first]['ansible_host'] }}"

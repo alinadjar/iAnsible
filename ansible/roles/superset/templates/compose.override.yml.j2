@@ -1,0 +1,5 @@
+# Managed by Ansible — host HTTP port for Superset UI (container still listens on 8088)
+services:
+  superset:
+    ports:
+      - "{{ superset_http_port | default(8082) }}:8088"

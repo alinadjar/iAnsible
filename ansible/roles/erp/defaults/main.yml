@@ -9,11 +9,25 @@ erp_compose_project_name: fx_alpha
 erp_env_template: erp.env.j2
 
 erp_registry_url: registry.sadgan.int
+# Compose `.env`: `$$` becomes `$` in REGISTRY_USER
+erp_registry_user: "robot$$fx+sidecar-readonly"
+erp_registry_tls_skip_verify: "true"
+erp_sidecar_version: v1.4.7
+# Sidecar bind mount target inside the container (must match compose `:${DEPLOY_PATH}`)
+erp_sidecar_deploy_path: "{{ erp_deploy_path }}"
+erp_backup_retention_days: 7
+erp_backup_retention_count: 10
+erp_nginx_container_port_front: 8001
+erp_nginx_container_port_back: 8000
+erp_nginx_config_template: nginx.conf.j2
+erp_nginx_ssl_cert_dir: /etc/nginx/certs
 erp_version: v1.20.0
 erp_license_server: https://api-license-alpha.sadgan.com
 
-erp_nginx_port_front: 7076
-erp_nginx_port_back: 5056
+erp_nginx_port_front: 8080
+erp_nginx_port_back: 8000
+erp_public_url_scheme: https
+erp_use_platform_integration_urls: false
 erp_replica_port_lb: 5401
 erp_instance_id: ERP01
 
@@ -54,7 +68,10 @@ erp_ssl_days: 825
 erp_ssl_key_bits: 2048
 erp_ssl_regenerate: false
 erp_stack_rsync_opts:
+  - "--exclude=.env"
   - "--exclude=config/certs/"
+  - "--exclude=config/nginx.conf"
+  - "--exclude=config/appsettings.front.json"
 
 erp_external_networks:
   - net_fx_alpha

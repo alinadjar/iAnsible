@@ -1,0 +1,13 @@
+---
+- name: Resolve ERP node IP for URLs and .env
+  vars:
+    _erp_ip_inventory: "{{ erp_node_ip | default('') }}"
+  ansible.builtin.set_fact:
+    erp_node_ip: >-
+      {{
+        _erp_ip_inventory | trim
+        if (_erp_ip_inventory | trim | length) > 0
+        else (
+          ansible_default_ipv4.address | default(ansible_host) | trim
+        )
+      }}

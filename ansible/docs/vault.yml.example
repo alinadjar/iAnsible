@@ -9,6 +9,9 @@ vault_erp_postgres_password: "CHANGE_ME"
 vault_erp_postgres_ro_password: "CHANGE_ME"
 vault_erp_postgres_bi_password: "CHANGE_ME"
 vault_erp_redis_password: "CHANGE_ME"
+vault_erp_backup_password: "CHANGE_ME"
+vault_erp_registry_password: "CHANGE_ME"
+vault_erp_pg_replica_password: "CHANGE_ME"
 vault_erp_pg_bi_user: ro
 vault_erp_postgres_db: SADGAN
 

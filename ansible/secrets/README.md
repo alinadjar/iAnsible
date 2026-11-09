@@ -6,6 +6,8 @@ Encrypted variables live here — **not** under `inventory/`, so Ansible never t
 cp ../docs/vault.yml.example vault.yml
 ansible-vault encrypt vault.yml
 ansible-playbook playbooks/deploy-erp.yml --ask-vault-pass
+
+Vault is read on the **Ansible control node** (`secrets/vault.yml`), not on erp-01/dify-01. Wrong `--ask-vault-pass` or a bad YAML file shows a clear error after `Load platform vault secrets on control node`.
 ```
 
 If you previously used `inventory/production/vault.yml`, move and delete the old path:

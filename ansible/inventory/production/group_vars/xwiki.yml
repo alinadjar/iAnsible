@@ -11,7 +11,7 @@ xwiki_image: registry.sadgan.int/oss/xwiki:18.8.0-postgres-tomcat-202610271445
 xwiki_version: "18.8.0"
 xwiki_postgres_image: registry.sadgan.int/oss/postgres:xwiki
 
-xwiki_http_port: 8083
+xwiki_http_port: "{{ platform_host_ports.xwiki_http | default(8083) }}"
 xwiki_postgres_host_port: 5433
 
 xwiki_db_user: xwiki

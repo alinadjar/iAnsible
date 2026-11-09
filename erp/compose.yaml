@@ -74,7 +74,7 @@ services:
       - $PWD/backups:/app/backups  
     restart: unless-stopped
     networks:
-      - net_fx_demo
+      - net_fx
     depends_on:
       - pg
     logging:
@@ -97,7 +97,7 @@ services:
     # labels:
     #   logging: "true"  # Promtail will filter by this  
     networks:
-      - net_fx_demo
+      - net_fx
     volumes:
       - ./config/appsettings.front.json:/usr/share/nginx/html/appsettings.json    
     logging:
@@ -138,7 +138,7 @@ services:
     ports:
       - 5437:5432
     networks:
-      - net_fx_demo
+      - net_fx
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${PG_RW_USER} -d ${POSTGRES_DB}"]
@@ -159,13 +159,46 @@ services:
       - ${NGINX_PORT_FRONT}:8001
       - ${NGINX_PORT_BACK}:8000
     networks:
-      - net_fx_demo
+      - net_fx
     volumes:
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./config/maintenance:/etc/nginx/maintenance:ro
+      - ./config/certs:/etc/nginx/certs:ro
     logging:
-      <<: *default-logging       
+      <<: *default-logging
+       
   
+  sidecar:
+    image: ${REGISTRY_URL}/common/sidecar:${SIDECAR_VERSION}
+    restart: unless-stopped
+    env_file:
+      - .env
+        # labels:
+        #   logging: "enabled"
+        #   release: "rc"
+        #   proj: "FX"
+    environment:
+      - NODE_CONFIG_ENV=prod
+      - PORT=3000
+      # - API_KEY=beAlXhSgSxajd4SaX8FS1DNX6zAeyo4Oh1+MYonnIWA=
+      - DEPLOY_PATH=${DEPLOY_PATH}
+      - ERP=${ERP}
+      - ERP_VERSION=${ERP_VERSION}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker:ro
+      - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose:rwx
+      - /usr/libexec/docker:/usr/libexec/docker:ro
+      - ./:${DEPLOY_PATH}
+      - ./backups:/backups
+    networks:
+      - net_fx
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "1"
+        
 
   mongo:
     image: ${REGISTRY_URL}/common/mongo:8.3.2-noble
@@ -203,7 +236,7 @@ services:
         hard: 32000
     stop_grace_period: 60s
     networks:
-      - net_fx_demo
+      - net_fx
     logging:
       <<: *default-logging
 
@@ -226,7 +259,7 @@ services:
       - --appendonly
       - "yes"
     networks:
-      - net_fx_demo
+      - net_fx
       - redis_insight
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -253,7 +286,7 @@ services:
       - ./config/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
       - ./haproxy-errors:/usr/local/etc/haproxy/errors:ro
     networks:
-      - net_fx_demo
+      - net_fx
     logging:
       driver: "json-file"
       options:
@@ -268,7 +301,7 @@ services:
 
 
 networks:
-  net_fx_demo:
+  net_fx:
     external: true
   redis_insight:
     external: true

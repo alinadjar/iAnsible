@@ -21,7 +21,9 @@
 
 - name: Generate self-signed TLS certs for nginx
   ansible.builtin.import_tasks: ssl-selfsigned.yml
-  when: erp_ssl_self_signed_enabled | default(true)
+  when:
+    - erp_ssl_self_signed_enabled | default(true)
+    - (erp_public_url_scheme | default('https')) == 'https'
 
 - name: Resolve ERP INSTANCE_ID
   ansible.builtin.import_tasks: resolve-instance-id.yml
@@ -35,6 +37,9 @@
   ansible.builtin.import_tasks: instance-lock.yml
   when: erp_instance_lock_enabled | default(true)
 
+- name: Resolve ERP node IP for rendered config
+  ansible.builtin.import_tasks: render-node.yml
+
 - name: Render ERP environment file
   ansible.builtin.template:
     src: "{{ erp_env_template }}"
@@ -43,6 +48,22 @@
     group: "{{ deploy_group }}"
     mode: "0600"
   no_log: true
+
+- name: Render ERP front appsettings (API BaseUrl)
+  ansible.builtin.template:
+    src: appsettings.front.json.j2
+    dest: "{{ erp_deploy_path }}/config/appsettings.front.json"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
+
+- name: Render ERP nginx config (host ports + TLS scheme)
+  ansible.builtin.template:
+    src: "{{ erp_nginx_config_template | default('nginx.conf.j2') }}"
+    dest: "{{ erp_deploy_path }}/config/nginx.conf"
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_group }}"
+    mode: "0644"
 
 - name: Apply ERP Docker Compose stack (no sync)
   ansible.builtin.include_role:

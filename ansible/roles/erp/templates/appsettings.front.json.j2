@@ -1,0 +1,20 @@
+{% set hv = hostvars[inventory_hostname] %}
+{% set ip = hv.get('erp_node_ip') | default(hv.get('ansible_host'), true) %}
+{% set scheme = erp_public_url_scheme | default('https') %}
+{% set erp_appsettings_base_url = erp_self_url | default('') | trim %}
+{% if erp_appsettings_base_url | length == 0 %}
+{% set erp_appsettings_base_url = scheme ~ '://' ~ ip ~ ':' ~ erp_nginx_port_back %}
+{% endif %}
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "BaseUrl": "{{ erp_appsettings_base_url }}",
+  "Application": {
+    "Version": "0.0.0.0",
+    "IsDeveloperMode": false
+  }
+}

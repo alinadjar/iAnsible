@@ -34,6 +34,6 @@ dify_ssrf_allow_private_ips: "127.0.0.1"
 
 # Sadgan deployment overrides (match dify/docker/.env; secrets still come from vault)
 dify_openai_api_base: "http://192.168.10.209:8787/v1"
-dify_expose_nginx_port: 8080
+dify_expose_nginx_port: "{{ platform_host_ports.dify_nginx | default(8081) }}"
 
 dify_env_template: dify.env.j2

@@ -4,6 +4,12 @@ superset_deploy_path: /opt/sadgan/superset
 superset_stack_subpath: superset
 superset_compose_project_name: superset
 superset_compose_file: compose.yml
+superset_http_port: 8082
+superset_compose_override_template: compose.override.yml.j2
+superset_compose_override_file: compose.override.yml
+superset_compose_files:
+  - compose.yml
+  - compose.override.yml
 superset_env_template: superset.env.j2
 
 # Image tags for compose.yml (${TAG}, ${MCPTAG}) — rendered to {{ superset_deploy_path }}/.env

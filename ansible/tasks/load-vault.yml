@@ -1,6 +1,8 @@
 ---
 # Loaded from playbooks only — never put vault.yml under inventory/production/ for inventory parsing.
 # Decrypt target: secrets/vault.yml (override with platform_secrets_file in group_vars).
+#
+# run_once + delegate_to: localhost leaves path and include_vars on the first play host, not hostvars['localhost'].
 - name: Resolve platform secrets file path
   ansible.builtin.set_fact:
     _platform_secrets_file: >-
@@ -32,13 +34,12 @@
   ansible.builtin.fail:
     msg: >-
       Platform secrets are required (platform_secrets_required=true) but
-      {{ _platform_secrets_file }} was not found.
+      {{ _platform_secrets_file }} was not found on the Ansible control node.
       {% if platform_legacy_vault_file.stat.exists | default(false) %}
       Legacy file exists at inventory/production/vault.yml — playbooks do not load it automatically.
       Move it: mkdir -p secrets && ansible-vault decrypt inventory/production/vault.yml
       && mv inventory/production/vault.yml secrets/vault.yml && ansible-vault encrypt secrets/vault.yml
-      Or set platform_secrets_file: "{{ playbook_dir }}/../inventory/production/vault.yml" in group_vars/all.yml
-      (keep the file out of directory inventory).
+      Or set platform_secrets_file in group_vars/all.yml (keep the file out of directory inventory).
       {% else %}
       Create secrets from docs/vault.yml.example, encrypt, and run with --ask-vault-pass.
       {% endif %}
@@ -46,15 +47,52 @@
     - platform_secrets_required | default(true)
     - not platform_vault_file.stat.exists
   run_once: true
+  delegate_to: localhost
+  become: false
 
-# Load on each play host (no run_once) so vault_* vars are in hostvars for templates and asserts.
-- name: Load platform vault secrets
+# Vault file lives on the control node only — never include_vars on the target host.
+- name: Load platform vault secrets on control node
   ansible.builtin.include_vars:
     file: "{{ _platform_secrets_file }}"
+  delegate_to: localhost
+  run_once: true
+  become: false
+  register: platform_vault_load
   when: platform_vault_file.stat.exists
+  no_log: true
+
+- name: Fail when vault file cannot be decrypted or parsed
+  ansible.builtin.fail:
+    msg: >-
+      Could not load {{ _platform_secrets_file }} on the control node.
+      Run: ansible-vault view {{ _platform_secrets_file }}
+      Then re-run with: ansible-playbook ... --ask-vault-pass
+      If the password is correct, fix YAML syntax (ansible-vault edit).
+  when:
+    - platform_vault_file.stat.exists
+    - platform_vault_load is failed
+  run_once: true
+  delegate_to: localhost
+  become: false
+
+- name: Share vault variables with play hosts
+  ansible.builtin.set_fact:
+    "{{ item.key }}": "{{ item.value }}"
+  loop: >-
+    {{
+      hostvars[ansible_play_hosts_all[0]] | dict2items
+      | selectattr('key', 'match', '^vault_.*')
+      | list
+    }}
+  when:
+    - platform_vault_file.stat.exists
+    - platform_vault_load is succeeded
   no_log: true
 
 - name: Record that vault secrets were loaded
   ansible.builtin.set_fact:
     platform_vault_loaded: true
-  when: platform_vault_file.stat.exists
+    platform_secrets_file: "{{ hostvars[ansible_play_hosts_all[0]]['_platform_secrets_file'] }}"
+  when:
+    - platform_vault_file.stat.exists
+    - platform_vault_load is succeeded

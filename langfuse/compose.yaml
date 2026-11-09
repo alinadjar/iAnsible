@@ -5,7 +5,7 @@
 # External connections from other machines will not be able to reach these services directly.
 services:
   langfuse-worker:
-    image: docker.langfuse.com/langfuse/langfuse-worker:4
+    image: ${REGISTRY_URL}/oss/langfuse-worker:4
     restart: always
     depends_on: &langfuse-depends-on
       postgres:
@@ -107,7 +107,7 @@ services:
       LANGFUSE_IN_APP_AGENT_SANDBOX_AWS_LAMBDA_MICROVM_REGION: ${LANGFUSE_IN_APP_AGENT_SANDBOX_AWS_LAMBDA_MICROVM_REGION:-}
 
   langfuse-web:
-    image: docker.langfuse.com/langfuse/langfuse:4
+    image: ${REGISTRY_URL}/oss/langfuse:4
     restart: always
     depends_on: *langfuse-depends-on
     ports:
@@ -137,7 +137,7 @@ services:
       LANGFUSE_IN_APP_AGENT_MAX_ACTIVE_RUNS_PER_ORG: ${LANGFUSE_IN_APP_AGENT_MAX_ACTIVE_RUNS_PER_ORG:-}
 
   clickhouse:
-    image: docker.io/clickhouse/clickhouse-server:25.12
+    image: ${REGISTRY_URL}/common/clickhouse-server:25.122
     restart: always
     user: "101:101"
     environment:
@@ -158,7 +158,7 @@ services:
       start_period: 1s
 
   minio:
-    image: minio/minio:latest
+    image: ${REGISTRY_URL}/common/minio:latest
     # image: cgr.dev/chainguard/minio
     restart: always
     entrypoint: sh
@@ -180,7 +180,7 @@ services:
       start_period: 1s
 
   redis:
-    image: redis:7.2
+    image: ${REGISTRY_URL}/common/redis:7.2
     restart: always
     # CHANGEME: row below to secure redis password
     command: >
@@ -197,7 +197,7 @@ services:
       retries: 10
 
   postgres:
-    image: docker.io/postgres:${POSTGRES_VERSION:-17}
+    image: ${REGISTRY_URL}/common/postgres:${POSTGRES_VERSION:-17}
     restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]

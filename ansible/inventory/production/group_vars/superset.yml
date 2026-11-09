@@ -7,6 +7,7 @@ superset_compose_project_name: superset
 
 superset_stack_subpath: superset
 superset_compose_file: compose.yml
+superset_http_port: "{{ platform_host_ports.superset_http | default(8082) }}"
 
 # Rendered to {{ superset_deploy_path }}/.env (beside docker/) for ${TAG} / ${MCPTAG}
 superset_tag: 855cf3f

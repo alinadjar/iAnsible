@@ -7,6 +7,14 @@ deploy_group: devops
 # Cross-service URLs (ERP ↔ Dify ↔ Superset). Kept on `platform` so ad-hoc/ping works
 # even if group_vars/all.yml is misconfigured; verify with:
 #   ansible erp-01 -m debug -a 'var=platform_integration'
+# Host-published HTTP ports (on-prem LAN); use in group_vars per stack
+platform_host_ports:
+  erp_nginx_front: 8080
+  erp_nginx_back: 8000
+  dify_nginx: 8081
+  superset_http: 8082
+  xwiki_http: 8083
+
 platform_integration:
   erp_public_api_url: "https://api.demo.sadgan.int"
   erp_public_app_url: "https://panel.demo.sadgan.int"
