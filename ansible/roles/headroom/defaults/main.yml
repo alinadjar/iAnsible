@@ -42,7 +42,11 @@ headroom_systemd_unit: headroom.service
 headroom_systemd_description: Headroom LLM Proxy
 
 headroom_stack_subpath: headroom-ai
-# Monorepo root on the control node (same fallback chain as stack_deploy / langfuse).
-headroom_repo_root: "{{ repo_root | default(ansible_project_dir ~ '/..') | default(playbook_dir ~ '/../..') }}"
+# Monorepo root on the control node (same fallback as langfuse/dify — do not reference ansible_project_dir in default(); it is evaluated eagerly).
+headroom_repo_root: "{{ repo_root | default(playbook_dir ~ '/../..') }}"
+# SSH/rsync login for push sync (inventory ansible_user / deploy_user — not headroom_service_user).
+headroom_rsync_user: "{{ deploy_user | default(ansible_user | default('ansible')) }}"
+headroom_deploy_owner: "{{ deploy_user | default(headroom_service_user) }}"
+headroom_deploy_group: "{{ deploy_group | default(headroom_service_group) }}"
 headroom_editable_install: false
 headroom_service_environment: []

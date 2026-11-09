@@ -13,8 +13,8 @@
   ansible.builtin.file:
     path: "{{ headroom_deploy_path }}"
     state: directory
-    owner: "{{ headroom_service_user }}"
-    group: "{{ headroom_service_group }}"
+    owner: "{{ headroom_deploy_owner | default(deploy_user) | default(headroom_service_user) }}"
+    group: "{{ headroom_deploy_group | default(deploy_group) | default(headroom_service_group) }}"
     mode: "0755"
   when: headroom_enabled
 
