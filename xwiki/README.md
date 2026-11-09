@@ -6,7 +6,7 @@ Wiki stack: custom XWiki image from Nexus + PostgreSQL.
 
 | Service | Image | Role |
 |---------|--------|------|
-| **web** | `nexus.sadgan.int/xwiki:18.8.0-postgres-tomcat-…` | Tomcat + XWiki 18.8.0, port **8080** |
+| **web** | `nexus.sadgan.int/xwiki:18.8.0-postgres-tomcat-…` | Tomcat + XWiki 18.8.0, host port **8083** → container **8080** |
 | **db** | `postgres:latest` | Postgres for XWiki, host port **5433** → container 5432 |
 
 - **Network:** internal `bridge` (not shared with ERP/Dify unless you attach externally).

@@ -6,7 +6,7 @@ xwiki_compose_file: compose.yml
 xwiki_compose_project_name: xwiki
 xwiki_env_template: xwiki.env.j2
 
-xwiki_http_port: 8080
+xwiki_http_port: 8083
 xwiki_postgres_host_port: 5433
 
 # UFW: open ports only when firewall is already active (does not enable UFW).
