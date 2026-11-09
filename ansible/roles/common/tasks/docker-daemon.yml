@@ -21,24 +21,56 @@
         else {}
       }}
     _current_insecure: "{{ _existing['insecure-registries'] | default([], true) }}"
-    _merged_insecure: "{{ _current_insecure | union(docker_daemon_insecure_registries_add) | unique | list }}"
+    _merged_insecure: "{{ (_current_insecure | union(docker_daemon_insecure_registries_add) | unique | sort) | list }}"
     _merged_cfg: >-
       {{
         _existing | combine({'insecure-registries': _merged_insecure}, recursive=True)
         if (common_daemon_json_stat.stat.exists | default(false))
         else {
-          'insecure-registries': docker_daemon_insecure_registries_add,
+          'insecure-registries': (_merged_insecure | default(docker_daemon_insecure_registries_add | sort)),
           'log-driver': docker_daemon_log_driver,
           'log-opts': docker_daemon_log_opts
         }
       }}
 
+- name: Load on-disk daemon.json for semantic compare
+  ansible.builtin.set_fact:
+    common_daemon_json_on_disk: "{{ _disk_norm }}"
+  vars:
+    _disk_raw: >-
+      {{
+        (common_daemon_json_slurp.content | b64decode | from_json)
+        if (common_daemon_json_stat.stat.exists | default(false))
+        else {}
+      }}
+    _disk_norm: >-
+      {{
+        _disk_raw
+        | combine(
+            {'insecure-registries': (_disk_raw['insecure-registries'] | default([], true) | sort)},
+            recursive=True
+          )
+        if (_disk_raw | length > 0)
+        else {}
+      }}
+
+- name: Decide whether daemon.json must be rewritten
+  ansible.builtin.set_fact:
+    common_daemon_json_needs_update: >-
+      {{ common_docker_daemon_config != common_daemon_json_on_disk }}
+
+- name: Compute canonical Docker daemon.json body
+  ansible.builtin.set_fact:
+    common_daemon_json_text: "{{ common_docker_daemon_config | to_nice_json(indent=2, ensure_ascii=False) }}\n"
+  when: common_daemon_json_needs_update | bool
+
 - name: Write merged Docker daemon.json
   ansible.builtin.copy:
     dest: /etc/docker/daemon.json
     mode: "0644"
-    content: "{{ common_docker_daemon_config | to_nice_json(indent=2, ensure_ascii=False) }}\n"
+    content: "{{ common_daemon_json_text }}"
   notify: Restart Docker
+  when: common_daemon_json_needs_update | bool
 
 - name: Report merged insecure registries
   ansible.builtin.debug:

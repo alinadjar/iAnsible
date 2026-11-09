@@ -13,7 +13,7 @@
 
 - name: Sync Headroom project files from monorepo
   ansible.posix.synchronize:
-    src: "{{ repo_root }}/{{ headroom_stack_subpath }}/"
+    src: "{{ headroom_repo_root }}/{{ headroom_stack_subpath }}/"
     dest: "{{ headroom_service_user }}@{{ hostvars[inventory_hostname].ansible_host }}:{{ headroom_deploy_path }}/"
     delete: false
     rsync_opts: "{{ headroom_rsync_opts_resolved }}"

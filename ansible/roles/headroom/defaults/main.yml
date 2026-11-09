@@ -42,5 +42,7 @@ headroom_systemd_unit: headroom.service
 headroom_systemd_description: Headroom LLM Proxy
 
 headroom_stack_subpath: headroom-ai
+# Monorepo root on the control node (same fallback chain as stack_deploy / langfuse).
+headroom_repo_root: "{{ repo_root | default(ansible_project_dir ~ '/..') | default(playbook_dir ~ '/../..') }}"
 headroom_editable_install: false
 headroom_service_environment: []
