@@ -69,6 +69,124 @@ Or everything:
 ansible-playbook playbooks/site.yml --ask-vault-pass
 ```
 
+## Docker control node (customer on-prem)
+
+Run Ansible from a **container** on the customer network (laptop, jump host, or CI) so you do not install `ansible-core` and collections on every machine. The image is a thin control node: SSH to targets, rsync stacks from the monorepo, vault decrypt on the controller.
+
+**`playbooks/site.yml` order:** bootstrap → ERP → Dify → Superset → XWiki → observability (Langfuse / Headroom).
+
+### What the image must include
+
+| Requirement | Reason |
+|-------------|--------|
+| `ansible-galaxy collection install -r requirements.yml` | Roles use `community.docker`, `community.general` (UFW), `ansible.posix` (`synchronize`). |
+| `rsync` | Default `stack_source: local` copies `erp/`, `langfuse/`, etc. from the control node. |
+| Full **monorepo** at run time | `repo_root` is the parent of `ansible/`, not the `ansible/` folder alone. |
+| SSH key + vault | Inventory uses `devops` and `secrets/vault.yml` on the controller. |
+
+Reference Dockerfile: [`Dockerfile.ansibleFX`](Dockerfile.ansibleFX).
+
+```bash
+cd ansible
+docker build -f Dockerfile.ansibleFX -t sadgan-ansible-control:latest .
+```
+
+### Customer prep (once per environment)
+
+1. Clone the **full monorepo** on the host that runs Docker.
+2. Edit `inventory/production/hosts.yml` (`ansible_host`, keys).
+3. Tune `inventory/production/group_vars/*.yml` and `platform_integration` in `platform.yml`.
+4. Create `secrets/vault.yml` from `docs/vault.yml.example` and `ansible-vault encrypt` it.
+5. Put the matching private key on the control host; `devops` must accept it on targets.
+
+### Deploy full site from the container
+
+Mount the **repository root** as `/repo`, work inside `/repo/ansible`, use a vault password file (non-interactive), and **`--network host`** if the default bridge cannot reach customer LAN IPs:
+
+```bash
+export REPO=/path/to/monorepo    # parent of ansible/
+export IMAGE=sadgan-ansible-control:latest
+
+docker run --rm -it \
+  --network host \
+  -w /repo/ansible \
+  -v "${REPO}:/repo:ro" \
+  -v "${HOME}/.ssh/id_ed25519_ansible:/root/.ssh/id_ed25519_ansible:ro" \
+  -v "${REPO}/ansible/secrets/vault.pass:/run/vault.pass:ro" \
+  "${IMAGE}" \
+  playbooks/site.yml \
+  --vault-password-file /run/vault.pass
+```
+
+Align the SSH mount path with `ansible_ssh_private_key_file` in `inventory/production/hosts.yml` (default example uses `/root/.ssh/id_ed25519_ansible`).
+
+**Ping** (override entrypoint):
+
+```bash
+docker run --rm -it --network host \
+  --entrypoint ansible \
+  -w /repo/ansible \
+  -v "${REPO}:/repo:ro" \
+  -v "${HOME}/.ssh/id_ed25519_ansible:/root/.ssh/id_ed25519_ansible:ro" \
+  "${IMAGE}" \
+  -i inventory/production/hosts.yml erp-01 -m ping
+```
+
+**Single stack:**
+
+```bash
+docker run --rm -it --network host -w /repo/ansible \
+  -v "${REPO}:/repo:ro" \
+  -v .../id_ed25519_ansible:/root/.ssh/id_ed25519_ansible:ro \
+  -v "${REPO}/ansible/secrets/vault.pass:/run/vault.pass:ro" \
+  "${IMAGE}" playbooks/deploy-erp.yml --vault-password-file /run/vault.pass
+```
+
+**Tags** (e.g. bootstrap only): add `--tags common` to the `ansible-playbook` argument list.
+
+### Run-time mounts
+
+| Host path | Container path | Purpose |
+|-----------|----------------|---------|
+| Monorepo root | `/repo` | Stack trees for rsync (`repo_root` → `/repo`) |
+| (workdir) | `/repo/ansible` | `ansible.cfg`, `roles/`, inventory |
+| SSH private key | e.g. `/root/.ssh/id_ed25519_ansible` | Must match inventory |
+| `secrets/vault.pass` | `/run/vault.pass` | Vault password file (chmod `600`) |
+
+### Without a full monorepo mount
+
+Set `stack_source: git`, `stack_git_url`, and `stack_git_version` in group vars so targets pull stacks from Git. You still need the `ansible/` tree (inventory, roles, secrets) in the image or mounted.
+
+### Control-node troubleshooting
+
+| Symptom | Fix |
+|---------|-----|
+| Collection not found | Rebuild image after `requirements.yml` changes. |
+| `rsync: command not found` on controller | Rebuild; `Dockerfile.ansibleFX` installs `rsync`. |
+| SSH `Permission denied` | Key path / user vs `hosts.yml`. |
+| Empty rsync / wrong paths | `-w /repo/ansible` and mount parent repo at `/repo`. |
+| Vault errors | `secrets/vault.yml` present; password file correct. |
+
+### Docker Hub unavailable (`auth.docker.io` EOF)
+
+If `docker build` fails with `failed to fetch oauth token` / `EOF` when pulling `python:3.12-slim`, the build host cannot reach Docker Hub — not a Dockerfile syntax error.
+
+Check:
+
+```bash
+curl -v https://auth.docker.io/token
+docker pull python:3.12-slim
+```
+
+**Workarounds:**
+
+1. **Save/load on a connected machine:** `docker pull python:3.12-slim && docker save python:3.12-slim | gzip > python-3.12-slim.tar.gz`, copy to customer, `docker load`, then build.
+2. **Private registry:** mirror `library/python:3.12-slim` to Harbor (e.g. `registry.sadgan.int/library/python:3.12-slim`) and change the `FROM` line in `Dockerfile.ansibleFX`.
+3. **HTTP proxy for Docker:** systemd drop-in `HTTP_PROXY` / `HTTPS_PROXY` on `docker.service` (include `NO_PROXY` for internal registries).
+4. **Registry mirror** in `/etc/docker/daemon.json` if operations provides one.
+
+Ship a pre-built `sadgan-ansible-control:latest` tarball from CI when customer sites have no Hub access.
+
 ## Separate server for Dify
 
 1. Put Dify in the `dify` group and ERP in `erp` (different `ansible_host` values).
